@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cavemansfate-model  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+
+<locale>
+	<sentence name="buttonMenu">
+		<lang id="pl">Menu</lang>
+		<lang id="en">Menu</lang>
+        <lang id="ru"></lang>
+        <lang id="de">Menu</lang>
+	</sentence>
+	<sentence name="buttonReset">
+		<lang id="pl">Reset</lang>
+        <lang id="en">Reset</lang>
+        <lang id="ru"></lang>
+        <lang id="de">Reset</lang>
+	</sentence>
+	
+</locale>
+	
+</cavemansfate-model>	

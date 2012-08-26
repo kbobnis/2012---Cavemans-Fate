@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="20" tileheight="20">
+ <properties>
+  <property name="blended tiles" value="0,1,2,3,4,5,6,7,8,9,10"/>
+ </properties>
+ <tileset firstgid="1" name="tes" tilewidth="20" tileheight="20" spacing="2">
+  <image source="../../tileInfo/allgraphics1.png" width="32" height="256"/>
+  <tile id="0">
+   <properties>
+    <property name="name" value="dummy"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="name" value="woodaxe"/>
+    <property name="power" value="10"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="hardness" value="0"/>
+    <property name="name" value="water"/>
+    <property name="swimmable" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="name" value="teleport"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="name" value="stoneAxe"/>
+    <property name="power" value="100"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="name" value="steelAxe"/>
+    <property name="power" value="1000"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="hardness" value="100"/>
+    <property name="name" value="rock"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="hardness" value="1"/>
+    <property name="name" value="mud"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="hardness" value="10"/>
+    <property name="name" value="mildRock"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="name" value="player"/>
+    <property name="power" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="background" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJx9jtEKACAIAwUf0v//4XpwcIxqMEy9cB0Rfbym6u19jiUynOVUzpwhx53UF+6msnx+l/edK8vMbC+OItf2l6wy5seFnBt/uwHa
+  </data>
+ </layer>
+ <layer name="teleport" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAOYKGSOSMdAAAGsAAF
+  </data>
+ </layer>
+ <layer name="player" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFhAAXHe0CAAXIAAs=
+  </data>
+ </layer>
+ <layer name="pickableItems" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFtARMJKoHAAHwAAM=
+  </data>
+ </layer>
+</map>

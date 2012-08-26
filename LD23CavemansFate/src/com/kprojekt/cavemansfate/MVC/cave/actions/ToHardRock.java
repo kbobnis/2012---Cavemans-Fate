@@ -1,0 +1,26 @@
+package com.kprojekt.cavemansfate.MVC.cave.actions;
+
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.kprojekt.cavemansfate.MVC.cave.model.CavemanModel;
+import com.kprojekt.cavemansfate.MVC.cave.model.CavemanState.SIDES;
+import com.kprojekt.utils.fixes.MyTiledMap;
+
+/**
+ * @author Philon
+ */
+public class ToHardRock extends CavemanAction
+{
+
+	@Override
+	public boolean doAction( CavemanModel caveman, MyTiledMap map, SIDES side )
+	{
+		return false;
+	}
+
+	@Override
+	public String getName()
+	{
+		return null;
+	}
+
+}

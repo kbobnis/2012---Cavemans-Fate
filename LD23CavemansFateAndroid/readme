@@ -1,0 +1,5 @@
+When packing files, dont use underscores in filenames, they destroy proper packing.
+
+Interantionalization. 
+ - I had some major problems with my polish diacritic characters to load property with the xmlReader. Finally i found that by default, the libgdx is loading xml with ISO-8859-1 encoding, therefore i had to manually call the xmlReader.parse() method with arguments parse = reader.parse( new InputStreamReader( Gdx.files.internal( filePath ).read(), "UTF-8" ) ); to have it working
+ - it is best to encode the file with a text editor which understands coding and use UTF-8 without BOM.
