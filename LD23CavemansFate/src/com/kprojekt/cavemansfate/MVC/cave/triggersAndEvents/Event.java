@@ -36,7 +36,7 @@ public class Event
 	{
 		if( !this.screensManager.isDismissed() )
 		{
-			this.screensManager.render( delta );
+			this.screensManager.render( delta, 0, 0 );
 		}
 		else
 		{

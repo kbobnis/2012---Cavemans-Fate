@@ -2,8 +2,8 @@ package com.kprojekt.cavemansfate;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.assets.AssetManager;
 import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.core.Core;
 
 /**
  * @author Philon 
@@ -23,8 +23,7 @@ public class CavemansFate extends Game implements Screen
 	@Override
 	public void render( float delta )
 	{
-		this.mvcsManager.render( delta );
-
+		Core.render( delta );
 	}
 
 	@Override

@@ -46,7 +46,7 @@ public class ScreensManager extends Manager
 	}
 
 	@Override
-	public void render( float delta )
+	public void render( float delta, int x, int y )
 	{
 		Gdx.input.setInputProcessor( this.controller );
 		MVCsManager.spriteBatch.begin();
@@ -62,6 +62,27 @@ public class ScreensManager extends Manager
 	public InputProcessor getInputProcessor()
 	{
 		return this.controller;
+	}
+
+	@Override
+	public void touchDown( int x, int y )
+	{
+		// TODO @Krzysiek Auto-generated method stub
+
+	}
+
+	@Override
+	public void touchUp( int x, int y )
+	{
+		// TODO @Krzysiek Auto-generated method stub
+
+	}
+
+	@Override
+	public void dragged( int x, int y, int howX, int howY )
+	{
+		// TODO @Krzysiek Auto-generated method stub
+
 	}
 
 }

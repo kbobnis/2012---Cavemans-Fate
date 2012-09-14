@@ -142,10 +142,10 @@ public class CaveView extends InputWrapper
 	}
 
 	@Override
-	public boolean dragged( int howX, int howY )
+	public boolean dragged( int x, int y, int howX, int howY )
 	{
 		boolean result = false;
-		if( this.cavemanView.dragged( howX, howY ) )
+		if( this.cavemanView.dragged( x, y, howX, howY ) )
 		{
 			result = true;
 		}

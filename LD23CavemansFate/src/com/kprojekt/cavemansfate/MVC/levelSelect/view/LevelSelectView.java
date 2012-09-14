@@ -7,7 +7,6 @@ import com.badlogic.gdx.Gdx;
 import com.kprojekt.cavemansfate.MVC.MVCsManager;
 import com.kprojekt.cavemansfate.MVC.levelSelect.LevelSelectModel;
 import com.kprojekt.cavemansfate.MVC.levelSelect.MenuItemModel;
-import com.kprojekt.cavemansfate.MVC.screens.elements.StringElement;
 import com.kprojekt.cavemansfate.core.Core;
 
 /**

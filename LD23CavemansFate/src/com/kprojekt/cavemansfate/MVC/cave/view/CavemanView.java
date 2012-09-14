@@ -355,7 +355,7 @@ public class CavemanView extends InputWrapper
 	}
 
 	@Override
-	public boolean dragged( int howX, int howY )
+	public boolean dragged( int x, int y, int howX, int howY )
 	{
 		if( this.controller.getState().cavemanSelected )
 		{

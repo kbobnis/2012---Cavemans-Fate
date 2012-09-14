@@ -49,11 +49,11 @@ public abstract class InputWrapper implements InputProcessor
 		this.lastTouchX = x;
 		this.lastTouchY = y;
 
-		boolean res = this.dragged( this.movedX, this.movedY );
+		boolean res = this.dragged( this.lastTouchX, this.lastTouchY, this.movedX, this.movedY );
 		return res;
 	}
 
-	public abstract boolean dragged( int howX, int howY );
+	public abstract boolean dragged( int x, int y, int howX, int howY );
 
 	@Override
 	public final boolean touchMoved( int x, int y )

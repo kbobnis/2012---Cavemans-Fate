@@ -1,6 +1,5 @@
 package com.kprojekt.cavemansfate.MVC.levelSelect;
 
-import com.badlogic.gdx.Gdx;
 import com.kprojekt.cavemansfate.MVC.cave.CaveManager;
 import com.kprojekt.cavemansfate.MVC.levelSelect.view.LevelSelectView;
 import com.kprojekt.utils.Manager;
@@ -10,30 +9,31 @@ import com.kprojekt.utils.Manager;
  */
 public class LevelSelectManager extends Manager
 {
-	private LevelSelectView levelSelectView;
 	private LevelSelectModel model;
 	private LevelSelectController levelSelectController;
+
+	private LevelSelectView view;
+	private MenuItemModel selected;
+	private int movedSinceSelected;
 
 	public LevelSelectManager( CaveManager[] levels )
 	{
 		this.model = new LevelSelectModel( levels );
-		this.levelSelectView = new LevelSelectView( this.model );
-		this.levelSelectController = new LevelSelectController( this.model, this.levelSelectView );
+		this.view = new LevelSelectView( this.model );
+		this.levelSelectController = new LevelSelectController( this.model, this.view );
 	}
 
 	@Override
-	public void render( float delta )
+	public void render( float delta, int x, int y )
 	{
 		MenuItemModel activeLevel = this.model.getActiveLevel();
 		if( activeLevel == null )
 		{
-			Gdx.input.setInputProcessor( this.levelSelectController );
-			this.levelSelectView.render( delta );
+			this.view.render( delta );
 		}
 		else
 		{
-			Gdx.input.setInputProcessor( activeLevel.getCaveManager().getMainInputHandler() );
-			activeLevel.getCaveManager().render( delta );
+			activeLevel.getCaveManager().render( delta, 0, 0 );
 		}
 	}
 
@@ -41,4 +41,40 @@ public class LevelSelectManager extends Manager
 	{
 		return this.levelSelectController;
 	}
+
+	@Override
+	public void touchDown( int x, int y )
+	{
+		MenuItemModel caveManager = null;
+		if( (caveManager = view.getMenuItem( x, y )) != null )
+		{
+			this.selected = caveManager;
+		}
+	}
+
+	@Override
+	public void touchUp( int x, int y )
+	{
+		if( this.selected != null )
+		{
+			if( selected.isUnlocked() )
+			{
+				model.setActiveLevel( this.selected );
+			}
+		}
+	}
+
+	@Override
+	public void dragged( int x, int y, int howX, int howY )
+	{
+		this.movedSinceSelected += Math.abs( howY );
+		if( Math.abs( this.movedSinceSelected ) > 20 )
+		{
+			this.movedSinceSelected = 0;
+			this.selected = null;
+		}
+
+		view.dragMenuItems( howY );
+	}
+
 }

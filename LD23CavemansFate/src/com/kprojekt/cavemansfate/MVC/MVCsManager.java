@@ -1,34 +1,14 @@
 package com.kprojekt.cavemansfate.MVC;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.GL10;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.kprojekt.cavemansfate.MVC.cave.CaveManager;
-import com.kprojekt.cavemansfate.MVC.cave.actions.menu.GotoMenuAction;
-import com.kprojekt.cavemansfate.MVC.cave.actions.menu.MenuAction;
-import com.kprojekt.cavemansfate.MVC.cave.actions.menu.ResetLevelAction;
-import com.kprojekt.cavemansfate.MVC.cave.menu.Button;
-import com.kprojekt.cavemansfate.MVC.cave.menu.Menu;
-import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Event;
-import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Events;
-import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Trigger;
-import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Trigger.ACTIVATE_ACTION;
-import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.TriggerOnTile;
 import com.kprojekt.cavemansfate.MVC.levelSelect.LevelSelectManager;
-import com.kprojekt.cavemansfate.MVC.screens.ScreensManager;
-import com.kprojekt.cavemansfate.MVC.screens.elements.ImageElement;
-import com.kprojekt.cavemansfate.MVC.screens.elements.ScreenElement;
-import com.kprojekt.cavemansfate.MVC.screens.elements.StringElement;
 import com.kprojekt.cavemansfate.core.Core;
-import com.kprojekt.utils.Manager;
+import com.kprojekt.cavemansfate.gui.ButtonEvent;
+import com.kprojekt.cavemansfate.gui.Container;
+import com.kprojekt.cavemansfate.gui.NewButton;
 import com.kprojekt.utils.fixes.MyFont;
-import com.kprojekt.utils.fixes.MyTiledMap;
 
 /**
  * @author Philon
@@ -46,7 +26,6 @@ public class MVCsManager
 	private static float tileWidth = 20f;
 
 	public static float tileScale = Gdx.graphics.getWidth() / tileWidth / tilesPerWidth;
-	private Manager actualManager;
 
 	public MVCsManager()
 	{
@@ -67,37 +46,70 @@ public class MVCsManager
 
 		try
 		{
-			this.actualManager = preparePrepareNewManager();
+			CaveManager[] all = Core.levels.getAll().toArray( new CaveManager[] {} );
+			final LevelSelectManager levelSelectManager = new LevelSelectManager( all );
+			for( CaveManager caveManager : all )
+			{
+				caveManager.addCaveManagerListener( levelSelectManager.getController() );
+			}
+
+			Core.levels.getGotoMenuAction().addListener( levelSelectManager.getController() );
+			Core.levels.getResetLevelAction().addListener( levelSelectManager.getController() );
+
+			final Container mainMenu = new Container( Gdx.graphics.getHeight() );
+			NewButton newGameButton = new NewButton( "Nowa gra" );
+			newGameButton.addEvent( new ButtonEvent()
+			{
+				public void doAction()
+				{
+					Core.actualManager = levelSelectManager;
+				}
+			} );
+
+			final Container options = new Container( Gdx.graphics.getHeight() );
+			NewButton language = new NewButton( "Language" );
+			NewButton polish = new NewButton( "Polish" );
+			polish.addEvent( new ButtonEvent()
+			{
+				public void doAction()
+				{
+					Core.lang.setLocale( "pl" );
+					Core.actualManager = mainMenu;
+				}
+			} );
+			NewButton english = new NewButton( "English" );
+			english.addEvent( new ButtonEvent()
+			{
+				public void doAction()
+				{
+					Core.lang.setLocale( "en" );
+					Core.actualManager = mainMenu;
+				}
+			} );
+
+			options.add( language );
+			options.add( polish );
+			options.add( english );
+
+			NewButton optionsButton = new NewButton( "Opcje" );
+			optionsButton.addEvent( new ButtonEvent()
+			{
+				public void doAction()
+				{
+					Core.actualManager = options;
+				}
+			} );
+
+			mainMenu.add( newGameButton );
+			mainMenu.add( optionsButton );
+			Core.actualManager = mainMenu;
+
 		}
 		catch( Exception e )
 		{
 			e.printStackTrace();
 			Gdx.app.exit();
 		}
-	}
-
-	private Manager preparePrepareNewManager() throws Exception
-	{
-		CaveManager[] all = Core.levels.getAll().toArray( new CaveManager[] {} );
-
-		LevelSelectManager levelSelectManager = new LevelSelectManager( all );
-		for( CaveManager caveManager : all )
-		{
-			caveManager.addCaveManagerListener( levelSelectManager.getController() );
-		}
-
-		Core.levels.getGotoMenuAction().addListener( levelSelectManager.getController() );
-		Core.levels.getResetLevelAction().addListener( levelSelectManager.getController() );
-
-		return levelSelectManager;
-	}
-
-	public void render( float delta )
-	{
-		Gdx.gl.glClearColor( 0.2f, 0f, 0f, 0 );
-		Gdx.gl.glClear( GL10.GL_COLOR_BUFFER_BIT );
-
-		this.actualManager.render( delta );
 	}
 
 }

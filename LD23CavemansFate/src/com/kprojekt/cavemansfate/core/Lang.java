@@ -13,7 +13,8 @@ import com.badlogic.gdx.utils.XmlReader.Element;
  */
 public class Lang
 {
-	private HashMap<String, String> dict = new HashMap<String, String>();
+	private HashMap<String, String> actualDict = new HashMap<String, String>();
+	private HashMap<String, HashMap<String, String>> allDicts = new HashMap<String, HashMap<String, String>>();
 
 	public Lang( String filePath, String localeName )
 	{
@@ -28,24 +29,42 @@ public class Lang
 			throw new RuntimeException( e );
 		}
 
+		HashMap<String, String> plDIct = new HashMap<String, String>();
+		HashMap<String, String> enDIct = new HashMap<String, String>();
+
+		this.allDicts.put( "pl", plDIct );
+		this.allDicts.put( "en", enDIct );
+
 		Element locale = parse.getChildByName( "locale" );
 
 		for( int i = 0; i < locale.getChildCount(); i++ )
 		{
 			Element sentence = locale.getChild( i );
-			Element sentenceInLang = sentence.getChildByName( localeName );
-			dict.put( sentence.getAttribute( "name" ), sentenceInLang.getAttribute( "value" ) );
+			String id = sentence.getAttribute( "name" );
+			for( int j = 0; j < sentence.getChildCount(); j++ )
+			{
+				Element sentenceInLang = sentence.getChild( j );
+				String langName = sentenceInLang.getName();
+				String value = sentenceInLang.getAttribute( "value" );
+				allDicts.get( langName ).put( id, value );
+			}
 		}
+		this.actualDict = this.allDicts.get( localeName );
 	}
 
 	public String get( String string )
 	{
-		String result = this.dict.get( string );
+		String result = this.actualDict.get( string );
 		if( result == null )
 		{
 			throw new RuntimeException( "There is no translation for key (" + string + ")." );
 		}
 		return result;
+	}
+
+	public void setLocale( String string )
+	{
+		this.actualDict = this.allDicts.get( string );
 	}
 
 }

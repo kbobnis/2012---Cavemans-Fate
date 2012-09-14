@@ -27,12 +27,6 @@ public class Menu extends InputWrapper
 	}
 
 	@Override
-	public boolean touchDown( int x, int y )
-	{
-		return false;
-	}
-
-	@Override
 	public boolean touchUp( int x, int y )
 	{
 		for( Button button : this.buttons )
@@ -46,8 +40,15 @@ public class Menu extends InputWrapper
 	}
 
 	@Override
-	public boolean dragged( int howX, int howY )
+	public boolean dragged( int x, int y, int howX, int howY )
 	{
 		return false;
 	}
+
+	@Override
+	public boolean touchDown( int x, int y )
+	{
+		return false;
+	}
+
 }

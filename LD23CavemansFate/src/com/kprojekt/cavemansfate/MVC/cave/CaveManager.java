@@ -39,7 +39,7 @@ public class CaveManager extends Manager
 	}
 
 	@Override
-	public void render( float delta )
+	public void render( float delta, int x, int y )
 	{
 		Gdx.input.setInputProcessor( this.getMainInputHandler() );
 		if( this.caveModel.getEvents().isAnythingToRender() )
@@ -94,6 +94,27 @@ public class CaveManager extends Manager
 	{
 		this.caveModel.getEvents().resetAll();
 		getModel().reset();
+	}
+
+	@Override
+	public void touchDown( int x, int y )
+	{
+		// TODO @Krzysiek Auto-generated method stub
+
+	}
+
+	@Override
+	public void touchUp( int x, int y )
+	{
+		// TODO @Krzysiek Auto-generated method stub
+
+	}
+
+	@Override
+	public void dragged( int x, int y, int howX, int howY )
+	{
+		// TODO @Krzysiek Auto-generated method stub
+
 	}
 
 }

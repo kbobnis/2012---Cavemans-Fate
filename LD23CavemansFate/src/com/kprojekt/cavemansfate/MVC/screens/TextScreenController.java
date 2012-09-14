@@ -35,7 +35,7 @@ public class TextScreenController extends InputWrapper
 	}
 
 	@Override
-	public boolean dragged( int howX, int howY )
+	public boolean dragged( int x, int y, int howX, int howY )
 	{
 		// TODO @Krzysiek Auto-generated method stub
 		return true;

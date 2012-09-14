@@ -40,13 +40,12 @@ public class MainInputHandler extends InputWrapper
 		return false;
 	}
 
-	@Override
-	public boolean dragged( int howX, int howY )
+	public boolean dragged( int x, int y, int howX, int howY )
 	{
 		for( int i = controllers.size() - 1; i >= 0; i-- )
 		{
 			InputWrapper tmp = controllers.get( i );
-			if( tmp.dragged( howX, howY ) )
+			if( tmp.dragged( x, y, howX, howY ) )
 			{
 				return true;
 			}
