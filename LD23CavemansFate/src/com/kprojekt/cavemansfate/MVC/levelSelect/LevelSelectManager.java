@@ -15,6 +15,7 @@ public class LevelSelectManager extends Manager
 	private LevelSelectView view;
 	private MenuItemModel selected;
 	private int movedSinceSelected;
+	private int touchedDownY;
 
 	public LevelSelectManager( CaveManager[] levels )
 	{
@@ -45,6 +46,7 @@ public class LevelSelectManager extends Manager
 	@Override
 	public void touchDown( int x, int y )
 	{
+		this.touchedDownY = y;
 		MenuItemModel caveManager = null;
 		if( (caveManager = view.getMenuItem( x, y )) != null )
 		{
@@ -74,7 +76,8 @@ public class LevelSelectManager extends Manager
 			this.selected = null;
 		}
 
-		view.dragMenuItems( howY );
+		view.dragMenuItems( y - this.touchedDownY );
+		this.touchedDownY = y;
 	}
 
 }
