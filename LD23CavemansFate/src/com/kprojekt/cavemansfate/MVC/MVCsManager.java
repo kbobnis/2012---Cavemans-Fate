@@ -57,7 +57,7 @@ public class MVCsManager
 			Core.levels.getResetLevelAction().addListener( levelSelectManager.getController() );
 
 			final Container mainMenu = new Container( Gdx.graphics.getHeight() );
-			NewButton newGameButton = new NewButton( "Nowa gra" );
+			NewButton newGameButton = new NewButton( Core.lang.get( "menuOptionPlay" ) );
 			newGameButton.addEvent( new ButtonEvent()
 			{
 				public void doAction()
@@ -91,7 +91,7 @@ public class MVCsManager
 			options.add( polish );
 			options.add( english );
 
-			NewButton optionsButton = new NewButton( "Opcje" );
+			NewButton optionsButton = new NewButton( Core.lang.get( "menuOptionPreferences" ) );
 			optionsButton.addEvent( new ButtonEvent()
 			{
 				public void doAction()

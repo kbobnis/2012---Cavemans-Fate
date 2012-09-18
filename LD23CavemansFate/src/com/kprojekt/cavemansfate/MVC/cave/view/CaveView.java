@@ -10,6 +10,7 @@ import com.kprojekt.cavemansfate.MVC.cave.controller.CaveController;
 import com.kprojekt.cavemansfate.MVC.cave.menu.Menu;
 import com.kprojekt.cavemansfate.MVC.cave.model.CaveModel;
 import com.kprojekt.cavemansfate.MVC.cave.model.CaveState;
+import com.kprojekt.cavemansfate.core.Core;
 import com.kprojekt.utils.fixes.MyTextureAtlas;
 import com.kprojekt.utils.wrappers.CameraWrapper;
 import com.kprojekt.utils.wrappers.InputWrapper;

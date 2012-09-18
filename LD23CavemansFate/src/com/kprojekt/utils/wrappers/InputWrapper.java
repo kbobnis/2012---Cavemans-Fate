@@ -1,5 +1,7 @@
 package com.kprojekt.utils.wrappers;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 
 /**
@@ -76,8 +78,27 @@ public abstract class InputWrapper implements InputProcessor
 	@Override
 	public boolean keyDown( int keycode )
 	{
-		// TODO @Krzysiek Auto-generated method stub
+		switch( keycode )
+		{
+			case Input.Keys.MENU:
+				System.out.println( "Menu pressed" );
+				Gdx.input.vibrate( 50 );
+				break;
+			case Input.Keys.BACK:
+				System.out.println( "Back pressed" );
+				Gdx.input.vibrate( 200 );
+				this.backPressed();
+				break;
+			case Input.Keys.ESCAPE:
+				this.backPressed();
+				break;
+		}
 		return false;
+	}
+
+	public void backPressed()
+	{
+		System.out.println( "back pressed" );
 	}
 
 	@Override

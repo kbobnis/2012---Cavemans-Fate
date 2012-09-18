@@ -17,7 +17,7 @@ public class NewButton extends Container
 
 	public NewButton( String string )
 	{
-		super( (int)MVCsManager.font.getXHeight() );
+		super( (int)MVCsManager.font.getXHeight() * 2 );
 		name = string;
 	}
 
