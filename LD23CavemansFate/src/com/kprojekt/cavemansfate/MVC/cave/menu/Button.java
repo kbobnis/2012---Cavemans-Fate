@@ -1,7 +1,7 @@
 package com.kprojekt.cavemansfate.MVC.cave.menu;
 
 import com.badlogic.gdx.Gdx;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 import com.kprojekt.cavemansfate.MVC.cave.actions.menu.MenuAction;
 
 /**
@@ -23,18 +23,18 @@ public class Button
 		this.x = x;
 		this.y = y;
 		this.name = name;
-		MVCsManager.font.setScale( Button.buttonScale );
-		this.maxX = (int)(x + MVCsManager.font.getBounds( name ).width);
-		this.maxY = (int)(y + MVCsManager.font.getBounds( name ).height);
-		MVCsManager.font.setScale( 1 );
+		CavemansFate.font.setScale( Button.buttonScale );
+		this.maxX = (int)(x + CavemansFate.font.getBounds( name ).width);
+		this.maxY = (int)(y + CavemansFate.font.getBounds( name ).height);
+		CavemansFate.font.setScale( 1 );
 		this.action = action;
 	}
 
 	public void render()
 	{
-		MVCsManager.font.setScale( Button.buttonScale );
-		MVCsManager.font.draw( MVCsManager.spriteBatch, this.name, x, Gdx.graphics.getHeight() - y );
-		MVCsManager.font.setScale( 1 );
+		CavemansFate.font.setScale( Button.buttonScale );
+		CavemansFate.font.draw( CavemansFate.spriteBatch, this.name, x, Gdx.graphics.getHeight() - y );
+		CavemansFate.font.setScale( 1 );
 	}
 
 	public boolean touchUp( int x2, int y2 )

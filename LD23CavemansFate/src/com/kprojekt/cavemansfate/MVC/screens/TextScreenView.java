@@ -1,7 +1,7 @@
 package com.kprojekt.cavemansfate.MVC.screens;
 
 import com.badlogic.gdx.Gdx;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 import com.kprojekt.cavemansfate.MVC.screens.elements.ScreenElement;
 import com.kprojekt.cavemansfate.MVC.screens.elements.StringElement;
 import com.kprojekt.cavemansfate.core.Core;
@@ -25,7 +25,7 @@ public class TextScreenView
 
 	public void render( float delta )
 	{
-		MVCsManager.font.setScale( MVCsManager.fontScale );
+		CavemansFate.font.setScale( CavemansFate.fontScale );
 		int y = TextScreenView.startingOffset;
 		for( ScreenElement element : this.model.getElements() )
 		{
@@ -33,7 +33,7 @@ public class TextScreenView
 			y += element.getHeight() + TextScreenView.bufor;
 		}
 		this.downElement.render( this.downElementPos );
-		MVCsManager.font.setScale( 1 );
+		CavemansFate.font.setScale( 1 );
 	}
 
 	public boolean isDownElementTouched( int y )

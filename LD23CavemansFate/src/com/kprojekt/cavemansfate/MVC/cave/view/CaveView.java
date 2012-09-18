@@ -5,12 +5,11 @@ import java.util.HashMap;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 import com.kprojekt.cavemansfate.MVC.cave.controller.CaveController;
 import com.kprojekt.cavemansfate.MVC.cave.menu.Menu;
 import com.kprojekt.cavemansfate.MVC.cave.model.CaveModel;
 import com.kprojekt.cavemansfate.MVC.cave.model.CaveState;
-import com.kprojekt.cavemansfate.core.Core;
 import com.kprojekt.utils.fixes.MyTextureAtlas;
 import com.kprojekt.utils.wrappers.CameraWrapper;
 import com.kprojekt.utils.wrappers.InputWrapper;
@@ -37,8 +36,8 @@ public class CaveView extends InputWrapper
 
 	public CaveView( CaveController caveController, HashMap<String, MyTextureAtlas> atlases, Menu menu )
 	{
-		int tileW = (int)(20 * MVCsManager.tileScale);
-		int tileH = (int)(20 * MVCsManager.tileScale);
+		int tileW = (int)(20 * CavemansFate.tileScale);
+		int tileH = (int)(20 * CavemansFate.tileScale);
 		this.mapHeight = caveController.getModel().getMap().height;
 
 		MyTextureAtlas spritesAtlas = atlases.get( "sprites" );
@@ -83,24 +82,24 @@ public class CaveView extends InputWrapper
 
 	public void render( float delta )
 	{
-		MVCsManager.spriteBatch.begin();
+		CavemansFate.spriteBatch.begin();
 
-		MVCsManager.spriteBatch.draw( this.backgroundImage, 0, 0, Gdx.graphics.getWidth() * 2,
+		CavemansFate.spriteBatch.draw( this.backgroundImage, 0, 0, Gdx.graphics.getWidth() * 2,
 				Gdx.graphics.getHeight() * 2 );
 
-		MVCsManager.spriteBatch.end();
+		CavemansFate.spriteBatch.end();
 
 		this.centerCameraOnCaveman();
 		camera.update();
 		tileMapRendererWrapper.updateCamera( camera.combined );
 		tileMapRendererWrapper.render( camera );
 
-		MVCsManager.spriteBatch.begin();
+		CavemansFate.spriteBatch.begin();
 		this.cavemanView.render();
 		this.renderBackground();
 		//draw restart text
 		this.menu.render();
-		MVCsManager.spriteBatch.end();
+		CavemansFate.spriteBatch.end();
 
 	}
 
@@ -109,10 +108,10 @@ public class CaveView extends InputWrapper
 		if( this.caveModel.getCaveState().isBackgroundSelected() )
 		{
 			CaveState caveState = this.caveModel.getCaveState();
-			int width = (int)(this.arrows.getRegionWidth() * MVCsManager.tileScale);
-			int height = (int)(this.arrows.getRegionHeight() * MVCsManager.tileScale);
+			int width = (int)(this.arrows.getRegionWidth() * CavemansFate.tileScale);
+			int height = (int)(this.arrows.getRegionHeight() * CavemansFate.tileScale);
 
-			MVCsManager.spriteBatch.draw( this.arrows, caveState.getTouchedX() - width / 2, Gdx.graphics.getHeight()
+			CavemansFate.spriteBatch.draw( this.arrows, caveState.getTouchedX() - width / 2, Gdx.graphics.getHeight()
 					- caveState.getTouchedY() - height / 2, width, height );
 		}
 	}

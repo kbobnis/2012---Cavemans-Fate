@@ -2,7 +2,7 @@ package com.kprojekt.cavemansfate.gui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 
 /**
  * 
@@ -17,15 +17,15 @@ public class NewButton extends Container
 
 	public NewButton( String string )
 	{
-		super( (int)MVCsManager.font.getXHeight() * 2 );
+		super( (int)CavemansFate.font.getXHeight() * 2 );
 		name = string;
 	}
 
 	@Override
 	public void render( float delta, int x, int y )
 	{
-		MVCsManager.font.setColor( this.color );
-		MVCsManager.font.draw( MVCsManager.spriteBatch, this.name, x, Gdx.graphics.getHeight() - y );
+		CavemansFate.font.setColor( this.color );
+		CavemansFate.font.draw( CavemansFate.spriteBatch, this.name, x, Gdx.graphics.getHeight() - y );
 	}
 
 	public void addEvent( ButtonEvent buttonEvent )

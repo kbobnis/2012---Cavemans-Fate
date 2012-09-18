@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanModel;
 import com.kprojekt.cavemansfate.MVC.cave.model.Weapon;
 
@@ -31,15 +31,15 @@ public class CavemansStats
 
 	public void render()
 	{
-		Color color = MVCsManager.spriteBatch.getColor();
-		MVCsManager.spriteBatch.setColor( 1, 1, 1, 0.3f );
+		Color color = CavemansFate.spriteBatch.getColor();
+		CavemansFate.spriteBatch.setColor( 1, 1, 1, 0.3f );
 		//the last tile minus 5 pixels will be stats
 		//y start
 		int y = Gdx.graphics.getHeight() - 5 - (int)(itemShed.getRegionHeight() * zoom);
 		int x = Gdx.graphics.getWidth() / 2 - (int)(itemShed.getRegionWidth() * zoom) / 2;
-		MVCsManager.spriteBatch.draw( itemShed, x, y, (int)(itemShed.getRegionWidth() * zoom),
+		CavemansFate.spriteBatch.draw( itemShed, x, y, (int)(itemShed.getRegionWidth() * zoom),
 				(int)(itemShed.getRegionHeight() * zoom) );
-		MVCsManager.spriteBatch.setColor( color );
+		CavemansFate.spriteBatch.setColor( color );
 
 		int tmpX = (int)(x + 5 * zoom);
 		int tmpY = (int)(y + 5 * zoom);
@@ -51,7 +51,7 @@ public class CavemansStats
 				throw new RuntimeException( "There has to be a tile in the map called " + weapon.getName() );
 			}
 
-			MVCsManager.spriteBatch.draw( imageRegion, tmpX, tmpY, (int)(imageRegion.getRegionWidth() * zoom),
+			CavemansFate.spriteBatch.draw( imageRegion, tmpX, tmpY, (int)(imageRegion.getRegionWidth() * zoom),
 					(int)(imageRegion.getRegionHeight() * zoom) );
 			tmpX += (imageRegion.getRegionWidth() + 1) * zoom;
 		}

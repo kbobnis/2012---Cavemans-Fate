@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.badlogic.gdx.Gdx;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 import com.kprojekt.utils.Manager;
 
 /**
@@ -27,12 +27,12 @@ public class Container extends Manager
 	@Override
 	public void render( float delta, int x, int y )
 	{
-		MVCsManager.spriteBatch.begin();
+		CavemansFate.spriteBatch.begin();
 		for( Container el : this.elements )
 		{
 			el.render( delta, this.getX( el ), this.getY( el ) );
 		}
-		MVCsManager.spriteBatch.end();
+		CavemansFate.spriteBatch.end();
 	}
 
 	private int getHeight()

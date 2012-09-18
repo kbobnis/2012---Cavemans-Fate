@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.badlogic.gdx.Gdx;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 import com.kprojekt.cavemansfate.MVC.levelSelect.LevelSelectModel;
 import com.kprojekt.cavemansfate.MVC.levelSelect.MenuItemModel;
 import com.kprojekt.cavemansfate.core.Core;
@@ -30,21 +30,21 @@ public class LevelSelectView
 
 	public void render( float delta )
 	{
-		MVCsManager.spriteBatch.begin();
-		MVCsManager.font.setScale( MVCsManager.fontScale );
+		CavemansFate.spriteBatch.begin();
+		CavemansFate.font.setScale( CavemansFate.fontScale );
 
 		String rightText = Core.lang.get( "levelSelect.info" );
 
 		int wrapWidth = Gdx.graphics.getWidth() / 3;
-		MVCsManager.font.drawWrapped( MVCsManager.spriteBatch, rightText, Gdx.graphics.getWidth() - wrapWidth,
+		CavemansFate.font.drawWrapped( CavemansFate.spriteBatch, rightText, Gdx.graphics.getWidth() - wrapWidth,
 				Gdx.graphics.getHeight() - 10, wrapWidth );
 
 		for( MenuItemView menuItem : this.menuItems )
 		{
 			menuItem.render( delta );
 		}
-		MVCsManager.font.setScale( 1 );
-		MVCsManager.spriteBatch.end();
+		CavemansFate.font.setScale( 1 );
+		CavemansFate.spriteBatch.end();
 	}
 
 	public MenuItemModel getMenuItem( int x, int y )

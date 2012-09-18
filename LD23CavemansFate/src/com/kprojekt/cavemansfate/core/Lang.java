@@ -62,9 +62,10 @@ public class Lang
 		return result;
 	}
 
-	public void setLocale( String string )
+	public void changeLocale( String string )
 	{
 		this.actualDict = this.allDicts.get( string );
+		Core.levels.reload();
 	}
 
 }

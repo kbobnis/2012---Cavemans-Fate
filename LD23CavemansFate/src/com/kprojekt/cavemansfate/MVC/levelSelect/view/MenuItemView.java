@@ -2,7 +2,7 @@ package com.kprojekt.cavemansfate.MVC.levelSelect.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 import com.kprojekt.cavemansfate.MVC.levelSelect.MenuItemModel;
 
 /**
@@ -23,9 +23,9 @@ public class MenuItemView
 
 	public void render( float delta )
 	{
-		MVCsManager.font.setColor( level.isUnlocked() ? Color.GREEN : Color.RED );
+		CavemansFate.font.setColor( level.isUnlocked() ? Color.GREEN : Color.RED );
 
-		MVCsManager.font.draw( MVCsManager.spriteBatch, level.getCaveManager().getModel().getName(), 10,
+		CavemansFate.font.draw( CavemansFate.spriteBatch, level.getCaveManager().getModel().getName(), 10,
 				Gdx.graphics.getHeight() - (this.actualY + this.menuItemHeight / 2) );
 	}
 

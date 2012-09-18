@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 import com.kprojekt.cavemansfate.MVC.Packfiles;
 import com.kprojekt.cavemansfate.MVC.cave.actions.CavemanAction;
 import com.kprojekt.cavemansfate.MVC.cave.actions.DiggAction;
@@ -54,8 +54,8 @@ public class CavemanView extends InputWrapper
 		this.tileW = tileW;
 		this.tileH = tileH;
 		this.circleRegion = spritesAtlas.findRegion( Packfiles.Sprites.circle );
-		this.circleW = (int)(this.circleRegion.getRegionWidth() * MVCsManager.tileScale);
-		this.circleH = (int)(this.circleRegion.getRegionHeight() * MVCsManager.tileScale);
+		this.circleW = (int)(this.circleRegion.getRegionWidth() * CavemansFate.tileScale);
+		this.circleH = (int)(this.circleRegion.getRegionHeight() * CavemansFate.tileScale);
 
 		this.cavemanRegion = mapAtlas.findRegion( MyTiledMap.PLAYER_NAME );
 		this.controller = cavemanController;
@@ -75,9 +75,9 @@ public class CavemanView extends InputWrapper
 	public void renderCircleAround()
 	{
 		Vector3 cavemanXY = this.getCavemansCenterInPixels( true );
-		MVCsManager.spriteBatch.draw( this.circleRegion, cavemanXY.x - circleW / 2, cavemanXY.y - circleH / 2, circleW,
-				circleH );
-		MVCsManager.font.setColor( Color.WHITE );
+		CavemansFate.spriteBatch.draw( this.circleRegion, cavemanXY.x - circleW / 2, cavemanXY.y - circleH / 2,
+				circleW, circleH );
+		CavemansFate.font.setColor( Color.WHITE );
 	}
 
 	/**
@@ -88,9 +88,9 @@ public class CavemanView extends InputWrapper
 
 		Vector3 pos = this.getCavemansCenterInPixels( true );
 
-		int cavemanW = (int)(this.cavemanRegion.getRegionWidth() * MVCsManager.tileScale);
-		int cavemanH = (int)(this.cavemanRegion.getRegionHeight() * MVCsManager.tileScale);
-		MVCsManager.spriteBatch.draw( this.cavemanRegion, pos.x - cavemanW / 2, pos.y - cavemanH / 2, cavemanW,
+		int cavemanW = (int)(this.cavemanRegion.getRegionWidth() * CavemansFate.tileScale);
+		int cavemanH = (int)(this.cavemanRegion.getRegionHeight() * CavemansFate.tileScale);
+		CavemansFate.spriteBatch.draw( this.cavemanRegion, pos.x - cavemanW / 2, pos.y - cavemanH / 2, cavemanW,
 				cavemanH );
 
 		if( this.controller.getState().cavemanSelected )
@@ -103,7 +103,7 @@ public class CavemanView extends InputWrapper
 			this.renderActionMenu();
 		}
 
-		MVCsManager.font.setColor( Color.WHITE );
+		CavemansFate.font.setColor( Color.WHITE );
 
 		this.renderPickedUpTile();
 		this.renderAxes();
@@ -115,15 +115,15 @@ public class CavemanView extends InputWrapper
 
 		Vector3 pos = this.getCavemansCenterInPixels( true );
 
-		int cavemanW = (int)(this.cavemanRegion.getRegionWidth() * MVCsManager.tileScale);
-		int cavemanH = (int)(this.cavemanRegion.getRegionHeight() * MVCsManager.tileScale);
+		int cavemanW = (int)(this.cavemanRegion.getRegionWidth() * CavemansFate.tileScale);
+		int cavemanH = (int)(this.cavemanRegion.getRegionHeight() * CavemansFate.tileScale);
 
-		Color color = MVCsManager.spriteBatch.getColor();
-		MVCsManager.spriteBatch.setColor( 0.7f, 0.7f, 0.7f, 0.9f );
-		MVCsManager.spriteBatch.draw( this.cavemanRegion, pos.x - cavemanW / 2
+		Color color = CavemansFate.spriteBatch.getColor();
+		CavemansFate.spriteBatch.setColor( 0.7f, 0.7f, 0.7f, 0.9f );
+		CavemansFate.spriteBatch.draw( this.cavemanRegion, pos.x - cavemanW / 2
 				+ this.controller.getState().shadowOffsetX, pos.y - cavemanH / 2
 				+ this.controller.getState().shadowOffsetY, cavemanW, cavemanH );
-		MVCsManager.spriteBatch.setColor( color );
+		CavemansFate.spriteBatch.setColor( color );
 
 	}
 
@@ -132,21 +132,21 @@ public class CavemanView extends InputWrapper
 
 		TextureRegion upArrow = this.arrowTextures.get( SIDES.UP );
 		Vector2 upArrowPos = this.getArrowPosMiddle( SIDES.UP );
-		MVCsManager.spriteBatch.draw( upArrow, upArrowPos.x - tileW / 2, upArrowPos.y - tileH / 2, 0, 0, tileW, tileH,
+		CavemansFate.spriteBatch.draw( upArrow, upArrowPos.x - tileW / 2, upArrowPos.y - tileH / 2, 0, 0, tileW, tileH,
 				1, 1, 0 );
-		MVCsManager.font.draw( MVCsManager.spriteBatch, "gorna strzałka", upArrowPos.x, upArrowPos.y );
+		CavemansFate.font.draw( CavemansFate.spriteBatch, "gorna strzałka", upArrowPos.x, upArrowPos.y );
 
 		Vector2 leftArrowPos = this.getArrowPosMiddle( SIDES.LEFT );
-		MVCsManager.spriteBatch.draw( upArrow, leftArrowPos.x, leftArrowPos.y, 0, 0, tileW, tileH, 1, 1, 90 );
-		MVCsManager.font.draw( MVCsManager.spriteBatch, "lewa strzałka", leftArrowPos.x, leftArrowPos.y );
+		CavemansFate.spriteBatch.draw( upArrow, leftArrowPos.x, leftArrowPos.y, 0, 0, tileW, tileH, 1, 1, 90 );
+		CavemansFate.font.draw( CavemansFate.spriteBatch, "lewa strzałka", leftArrowPos.x, leftArrowPos.y );
 
 		Vector2 rightArrowPos = this.getArrowPosMiddle( SIDES.RIGHT );
-		MVCsManager.spriteBatch.draw( upArrow, rightArrowPos.x, rightArrowPos.y, 0, 0, tileW, tileH, 1, 1, 270 );
-		MVCsManager.font.draw( MVCsManager.spriteBatch, "prawa strzałka", rightArrowPos.x, rightArrowPos.y );
+		CavemansFate.spriteBatch.draw( upArrow, rightArrowPos.x, rightArrowPos.y, 0, 0, tileW, tileH, 1, 1, 270 );
+		CavemansFate.font.draw( CavemansFate.spriteBatch, "prawa strzałka", rightArrowPos.x, rightArrowPos.y );
 
 		Vector2 downArrowPos = this.getArrowPosMiddle( SIDES.DOWN );
-		MVCsManager.spriteBatch.draw( upArrow, downArrowPos.x, downArrowPos.y, 0, 0, tileW, tileH, 1, 1, 180 );
-		MVCsManager.font.draw( MVCsManager.spriteBatch, "dolna strzałka", downArrowPos.x, downArrowPos.y );
+		CavemansFate.spriteBatch.draw( upArrow, downArrowPos.x, downArrowPos.y, 0, 0, tileW, tileH, 1, 1, 180 );
+		CavemansFate.font.draw( CavemansFate.spriteBatch, "dolna strzałka", downArrowPos.x, downArrowPos.y );
 
 	}
 
@@ -191,11 +191,11 @@ public class CavemanView extends InputWrapper
 			{
 				throw new RuntimeException( "There has to be a tile in the map called (" + bestWeapon.getName() + ")." );
 			}
-			int axeW = (int)(imageRegion.getRegionWidth() * MVCsManager.tileScale / 2);
-			int axeH = (int)(imageRegion.getRegionHeight() * MVCsManager.tileScale / 2);
-			int cavemanW = (int)(20 * MVCsManager.tileScale);
+			int axeW = (int)(imageRegion.getRegionWidth() * CavemansFate.tileScale / 2);
+			int axeH = (int)(imageRegion.getRegionHeight() * CavemansFate.tileScale / 2);
+			int cavemanW = (int)(20 * CavemansFate.tileScale);
 
-			MVCsManager.spriteBatch.draw( imageRegion, pos.x + cavemanW / 2, pos.y, axeW, axeH );
+			CavemansFate.spriteBatch.draw( imageRegion, pos.x + cavemanW / 2, pos.y, axeW, axeH );
 		}
 
 	}
@@ -207,12 +207,12 @@ public class CavemanView extends InputWrapper
 			int pickupedTileId = this.model.getPickupedTileId();
 			String tileName = this.model.getMap().getTileProperty( pickupedTileId, MyTiledMap.KEY_NAME );
 			AtlasRegion tileRegion = this.mapAtlas.findRegion( tileName );
-			int w = (int)(tileRegion.getRegionWidth() * MVCsManager.tileScale / 2);
-			int h = (int)(tileRegion.getRegionHeight() * MVCsManager.tileScale / 2);
+			int w = (int)(tileRegion.getRegionWidth() * CavemansFate.tileScale / 2);
+			int h = (int)(tileRegion.getRegionHeight() * CavemansFate.tileScale / 2);
 
 			//draw it on the caveman
 			Vector3 pos = this.getCavemansCenterInPixels( true );
-			MVCsManager.spriteBatch.draw( tileRegion, pos.x - w, pos.y + h / 2, w, h );
+			CavemansFate.spriteBatch.draw( tileRegion, pos.x - w, pos.y + h / 2, w, h );
 		}
 	}
 
@@ -229,15 +229,15 @@ public class CavemanView extends InputWrapper
 				if( action != null )
 				{
 					Vector3 actionPos = this.getActionCenter( side, true );
-					Color color = MVCsManager.spriteBatch.getColor();
+					Color color = CavemansFate.spriteBatch.getColor();
 
 					color.a = 0.3f;
-					MVCsManager.spriteBatch.setColor( color );
-					MVCsManager.spriteBatch.draw( this.actionTextures.get( action.getName() ), actionPos.x - this.tileW
-							/ 2, actionPos.y - this.tileH / 2, this.tileW, this.tileH );
+					CavemansFate.spriteBatch.setColor( color );
+					CavemansFate.spriteBatch.draw( this.actionTextures.get( action.getName() ), actionPos.x
+							- this.tileW / 2, actionPos.y - this.tileH / 2, this.tileW, this.tileH );
 
 					color.a = 1f;
-					MVCsManager.spriteBatch.setColor( color );
+					CavemansFate.spriteBatch.setColor( color );
 				}
 
 			}

@@ -2,7 +2,7 @@ package com.kprojekt.cavemansfate.MVC.screens.elements;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 
 /**
  * @author Philon
@@ -18,15 +18,15 @@ public class ImageElement implements ScreenElement
 	public ImageElement( TextureRegion playerRegion )
 	{
 		this.playerRegion = playerRegion;
-		this.width = (int)(this.playerRegion.getRegionWidth() * MVCsManager.tileScale);
-		this.height = (int)(this.playerRegion.getRegionHeight() * MVCsManager.tileScale);
+		this.width = (int)(this.playerRegion.getRegionWidth() * CavemansFate.tileScale);
+		this.height = (int)(this.playerRegion.getRegionHeight() * CavemansFate.tileScale);
 		this.middleX = (int)(Gdx.graphics.getWidth() / 2f - this.width / 2f);
 	}
 
 	@Override
 	public void render( int y )
 	{
-		MVCsManager.spriteBatch.draw( this.playerRegion, this.middleX, Gdx.graphics.getHeight() - this.height - y,
+		CavemansFate.spriteBatch.draw( this.playerRegion, this.middleX, Gdx.graphics.getHeight() - this.height - y,
 				width, height );
 	}
 

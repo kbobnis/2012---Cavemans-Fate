@@ -37,6 +37,8 @@ public class Levels
 	private GotoMenuAction gotoMenuAction;
 	private ResetLevelAction resetLevelAction;
 	private List<CaveManager> caveLevels = new ArrayList<CaveManager>();
+	private XmlReader.Element parse;
+	private HashMap<String, MyTextureAtlas> atlases;
 
 	/**
 	 * Loads levels from the xml file
@@ -45,7 +47,6 @@ public class Levels
 	public Levels( String xmlPath )
 	{
 		XmlReader reader = new XmlReader();
-		Element parse;
 		try
 		{
 			parse = reader.parse( new InputStreamReader( Gdx.files.internal( xmlPath ).read(), "UTF-8" ) );
@@ -58,14 +59,17 @@ public class Levels
 		this.validatePackfile( parse, "map" );
 		this.validatePackfile( parse, "sprites" );
 
-		HashMap<String, MyTextureAtlas> atlases = prepareAtlases( parse );
+		atlases = prepareAtlases( parse );
 
 		this.validateEventElementsForPackfiles( parse, atlases );
 
+		reload();
+	}
+
+	public void reload()
+	{
 		Menu menu = prepareMenu();
-
 		this.caveLevels = prepareLevels( parse, atlases, menu );
-
 	}
 
 	private HashMap<String, MyTextureAtlas> prepareAtlases( Element parse )

@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 import com.kprojekt.cavemansfate.MVC.screens.elements.ScreenElement;
 import com.kprojekt.utils.Manager;
 
@@ -49,9 +49,9 @@ public class ScreensManager extends Manager
 	public void render( float delta, int x, int y )
 	{
 		Gdx.input.setInputProcessor( this.controller );
-		MVCsManager.spriteBatch.begin();
+		CavemansFate.spriteBatch.begin();
 		this.view.render( delta );
-		MVCsManager.spriteBatch.end();
+		CavemansFate.spriteBatch.end();
 	}
 
 	public void dismiss( boolean b )

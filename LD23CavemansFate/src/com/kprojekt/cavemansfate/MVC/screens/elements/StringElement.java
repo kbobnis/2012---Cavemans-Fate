@@ -1,7 +1,7 @@
 package com.kprojekt.cavemansfate.MVC.screens.elements;
 
 import com.badlogic.gdx.Gdx;
-import com.kprojekt.cavemansfate.MVC.MVCsManager;
+import com.kprojekt.cavemansfate.CavemansFate;
 
 /**
  * @author Philon
@@ -15,18 +15,18 @@ public class StringElement implements ScreenElement
 	public StringElement( String string )
 	{
 		this.string = string;
-		MVCsManager.font.setScale( MVCsManager.fontScale );
-		this.height = (int)MVCsManager.font.getWrappedBounds( string, Gdx.graphics.getWidth() - buffer * 2 ).height;
-		MVCsManager.font.setScale( 1 );
+		CavemansFate.font.setScale( CavemansFate.fontScale );
+		this.height = (int)CavemansFate.font.getWrappedBounds( string, Gdx.graphics.getWidth() - buffer * 2 ).height;
+		CavemansFate.font.setScale( 1 );
 	}
 
 	@Override
 	public void render( int y )
 	{
-		MVCsManager.font.setScale( MVCsManager.fontScale );
-		MVCsManager.font.drawWrapped( MVCsManager.spriteBatch, this.string, buffer, Gdx.graphics.getHeight() - y,
+		CavemansFate.font.setScale( CavemansFate.fontScale );
+		CavemansFate.font.drawWrapped( CavemansFate.spriteBatch, this.string, buffer, Gdx.graphics.getHeight() - y,
 				Gdx.graphics.getWidth() - buffer * 2 );
-		MVCsManager.font.setScale( 1 );
+		CavemansFate.font.setScale( 1 );
 	}
 
 	@Override
