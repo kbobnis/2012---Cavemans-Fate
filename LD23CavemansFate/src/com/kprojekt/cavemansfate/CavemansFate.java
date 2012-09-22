@@ -7,9 +7,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.kprojekt.cavemansfate.MVC.cave.CaveManager;
 import com.kprojekt.cavemansfate.MVC.levelSelect.LevelSelectManager;
 import com.kprojekt.cavemansfate.core.Core;
-import com.kprojekt.cavemansfate.gui.ButtonEvent;
-import com.kprojekt.cavemansfate.gui.Container;
-import com.kprojekt.cavemansfate.gui.NewButton;
 import com.kprojekt.utils.fixes.MyFont;
 
 /**
@@ -68,6 +65,7 @@ public class CavemansFate extends Game implements Screen
 
 			Core.levels.getGotoMenuAction().addListener( levelSelectManager.getController() );
 			Core.levels.getResetLevelAction().addListener( levelSelectManager.getController() );
+			Core.levels.addBackPressedListener(levelSelectManager.getController());
 
 			Core.actualManager = levelSelectManager;
 

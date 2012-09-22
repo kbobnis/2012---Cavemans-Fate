@@ -58,4 +58,19 @@ public class MainInputHandler extends InputWrapper
 		this.controllers.add( caveController );
 	}
 
+	@Override
+	public boolean backPressed()
+	{
+		for( int i = controllers.size() - 1; i >= 0; i-- )
+		{
+			InputWrapper tmp = controllers.get( i );
+			if( tmp.backPressed(  ) )
+			{
+				return true;
+			}
+		}
+		return false;		
+	}
+
+
 }

@@ -41,4 +41,12 @@ public class TextScreenController extends InputWrapper
 		return true;
 	}
 
+	@Override
+	public boolean backPressed()
+	{
+		return false;
+		// TODO Auto-generated method stub
+		
+	}
+
 }

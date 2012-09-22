@@ -80,4 +80,12 @@ public class LevelSelectManager extends Manager
 		this.touchedDownY = y;
 	}
 
+	@Override
+	public void backPressed()
+	{
+		System.exit(0);
+	}
+	
+	
+
 }

@@ -51,4 +51,5 @@ public class Menu extends InputWrapper
 		return false;
 	}
 
+
 }

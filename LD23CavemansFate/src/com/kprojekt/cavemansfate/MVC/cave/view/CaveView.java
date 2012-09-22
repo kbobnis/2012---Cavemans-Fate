@@ -3,9 +3,9 @@ package com.kprojekt.cavemansfate.MVC.cave.view;
 import java.util.HashMap;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.kprojekt.cavemansfate.CavemansFate;
+import com.kprojekt.cavemansfate.MVC.cave.actions.menu.MenuActionListener;
 import com.kprojekt.cavemansfate.MVC.cave.controller.CaveController;
 import com.kprojekt.cavemansfate.MVC.cave.menu.Menu;
 import com.kprojekt.cavemansfate.MVC.cave.model.CaveModel;
@@ -33,6 +33,7 @@ public class CaveView extends InputWrapper
 	private CaveModel caveModel;
 
 	private CavemanView cavemanView;
+	private MenuActionListener listener;
 
 	public CaveView( CaveController caveController, HashMap<String, MyTextureAtlas> atlases, Menu menu )
 	{
@@ -61,23 +62,6 @@ public class CaveView extends InputWrapper
 
 		this.menu = menu;
 
-	}
-
-	@Override
-	public boolean keyDown( int keycode )
-	{
-		switch( keycode )
-		{
-			case Input.Keys.MENU:
-				System.out.println( "Menu pressed" );
-				Gdx.input.vibrate( 50 );
-				break;
-			case Input.Keys.BACK:
-				System.out.println( "Back pressed" );
-				Gdx.input.vibrate( 200 );
-				break;
-		}
-		return false;
 	}
 
 	public void render( float delta )
@@ -114,6 +98,19 @@ public class CaveView extends InputWrapper
 			CavemansFate.spriteBatch.draw( this.arrows, caveState.getTouchedX() - width / 2, Gdx.graphics.getHeight()
 					- caveState.getTouchedY() - height / 2, width, height );
 		}
+	}
+	
+	@Override
+	public boolean backPressed()
+	{
+		this.listener.resetLevelRequested();
+		this.listener.gotoMenuRequested();
+		return false;
+	}
+	
+	public void addBackPressedListener(MenuActionListener listener)
+	{
+		this.listener = listener;
 	}
 
 	@Override

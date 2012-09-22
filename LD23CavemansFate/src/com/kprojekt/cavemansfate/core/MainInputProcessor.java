@@ -36,4 +36,12 @@ public class MainInputProcessor extends InputWrapper
 		this.actualManager = actualManager;
 	}
 
+	@Override
+	public boolean backPressed()
+	{
+		this.actualManager.backPressed();
+		return false;
+	}
+
+
 }

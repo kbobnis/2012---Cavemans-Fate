@@ -22,6 +22,7 @@ import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Events;
 import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Trigger;
 import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Trigger.ACTIVATE_ACTION;
 import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.TriggerOnTile;
+import com.kprojekt.cavemansfate.MVC.levelSelect.LevelSelectController;
 import com.kprojekt.cavemansfate.MVC.screens.ScreensManager;
 import com.kprojekt.cavemansfate.MVC.screens.elements.ImageElement;
 import com.kprojekt.cavemansfate.MVC.screens.elements.ScreenElement;
@@ -298,6 +299,14 @@ public class Levels
 	public MenuAction getResetLevelAction()
 	{
 		return this.resetLevelAction;
+	}
+
+	public void addBackPressedListener(LevelSelectController controller)
+	{
+		for (CaveManager cavemanager : this.caveLevels )
+		{
+			cavemanager.addBackPressedManager(controller);
+		}
 	}
 
 }

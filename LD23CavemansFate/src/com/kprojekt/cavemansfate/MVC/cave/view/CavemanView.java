@@ -388,4 +388,12 @@ public class CavemanView extends InputWrapper
 		return true;
 	}
 
+	@Override
+	public boolean backPressed()
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
 }

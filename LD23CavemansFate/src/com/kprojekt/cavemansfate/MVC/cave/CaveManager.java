@@ -96,25 +96,11 @@ public class CaveManager extends Manager
 		getModel().reset();
 	}
 
-	@Override
-	public void touchDown( int x, int y )
+	public void addBackPressedManager(LevelSelectController controller)
 	{
-		// TODO @Krzysiek Auto-generated method stub
-
+		this.caveView.addBackPressedListener(controller);
+		
 	}
 
-	@Override
-	public void touchUp( int x, int y )
-	{
-		// TODO @Krzysiek Auto-generated method stub
-
-	}
-
-	@Override
-	public void dragged( int x, int y, int howX, int howY )
-	{
-		// TODO @Krzysiek Auto-generated method stub
-
-	}
 
 }
