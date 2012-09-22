@@ -38,7 +38,6 @@ public class CaveManager extends Manager
 		this.caveModel = new CaveModel( tmxFile, events );
 		
 		this.mainInputHandler = new MainInputHandler();
-		this.mainInputHandler.addInputHandler( menu );
 	}
 
 	@Override
@@ -48,7 +47,9 @@ public class CaveManager extends Manager
 		{
 			this.caveView = new CaveView( new CaveController( this.caveModel ), atlases, menu );
 			this.caveView.addBackPressedListener(controller);
+			
 			this.mainInputHandler.addInputHandler( this.caveView );
+			this.mainInputHandler.addInputHandler( menu );
 		}
 		Gdx.input.setInputProcessor( this.getMainInputHandler() );
 		if( this.caveModel.getEvents().isAnythingToRender() )

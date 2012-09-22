@@ -29,14 +29,8 @@ public class Menu extends InputWrapper
 	@Override
 	public boolean touchUp( int x, int y )
 	{
-		for( Button button : this.buttons )
-		{
-			if( button.touchUp( x, y ) )
-			{
-				return true;
-			}
-		}
 		return false;
+
 	}
 
 	@Override
@@ -48,6 +42,13 @@ public class Menu extends InputWrapper
 	@Override
 	public boolean touchDown( int x, int y )
 	{
+		for( Button button : this.buttons )
+		{
+			if( button.touchDown( x, y ) )
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 

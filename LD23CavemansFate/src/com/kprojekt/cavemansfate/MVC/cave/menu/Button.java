@@ -41,8 +41,10 @@ public class Button
 		CavemansFate.font.draw( CavemansFate.spriteBatch, this.name, x, Gdx.graphics.getHeight() - y );
 		CavemansFate.font.setScale( 1 );
 	}
+	
+	
 
-	public boolean touchUp( int x2, int y2 )
+	public boolean touchDown( int x2, int y2 )
 	{
 		if( x2 > this.x && x2 < this.maxX && this.y < y2 && this.maxY > y2 )
 		{
