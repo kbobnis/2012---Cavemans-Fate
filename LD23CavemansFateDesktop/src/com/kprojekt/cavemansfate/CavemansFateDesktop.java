@@ -15,6 +15,6 @@ public class CavemansFateDesktop
 		config.title = "Cavemans Fate";
 		config.width = 480;
 		config.height = 800;
-		new JoglApplication( new CavemansFate(), config );
+		new JoglApplication( new CavemansFate("pol"), config );
 	}
 }

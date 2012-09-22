@@ -3,277 +3,277 @@
 
 	<locale>
 	    <sentence name="menuOptionPlay" >
-	        <en value="Play" />
-	        <pl value="Graj" />
+	        <eng value="Play" />
+	        <pol value="Graj" />
 	    </sentence>
 	    <sentence name="menuOptionPreferences" >
-	        <en value="Preferences" />
-	        <pl value="Ustawienia" />
+	        <eng value="Preferences" />
+	        <pol value="Ustawienia" />
 	    </sentence>
 	    
 		<sentence name="level0.0.0">
-			<en value="Moving caveman: place your finger on the background, move it and touch up" />
-			<pl value="Poruszanie jaskiniowcem: dotknij palcem tła, przesuń go i podnieś›" />
+			<eng value="Moving caveman: place your finger on the background, move it and touch up" />
+			<pol value="Poruszanie jaskiniowcem: dotknij palcem tła, przesuń go i podnieś›" />
 		</sentence>
 		<sentence name="level0.0.1">
-			<en value="Go to the light, it is always in the upper right!" />
-			<pl value="Idź do światła, jest zawsze na górze po prawej!" />
+			<eng value="Go to the light, it is always in the upper right!" />
+			<pol value="Idź do światła, jest zawsze na górze po prawej!" />
 		</sentence>
 		<sentence name="level0.1.0">
-		    <en value="Great, you have found your way out. This is a way out of every level." />
-		    <pl value="Udało Ci się znaleźć drogę wyjścia. Wyjście jest zawsze na prawo do góry." />
+		    <eng value="Great, you have found your way out. This is a way out of every level." />
+		    <pol value="Udało Ci się znaleźć drogę wyjścia. Wyjście jest zawsze na prawo do góry." />
 		</sentence>
 		<sentence name="levelSelect.info" >
-		    <en value="Select level. you can move this list up and down" />
-		    <pl value="Wybierz poziom. Możesz przesuwać tą listę w góre i dół" />
+		    <eng value="Select level. you can move this list up and down" />
+		    <pol value="Wybierz poziom. Możesz przesuwać tą listę w góre i dół" />
 		</sentence>
 		<sentence name="textScreen.touchHereToContinue">
-			<en value="Touch here to continue..." />
-			<pl value="Dotknij tu, aby kontynuować..." />
+			<eng value="Touch here to continue..." />
+			<pol value="Dotknij tu, aby kontynuować..." />
 		</sentence>
 		<sentence name="menuGotoMenu">
-		    <en value="Menu" />
-		    <pl value="Menu" />
+		    <eng value="Menu" />
+		    <pol value="Menu" />
 		</sentence>
 		<sentence name="menuReset">
-		    <en value="Reset" />
-		    <pl value="Resetuj" />
+		    <eng value="Reset" />
+		    <pol value="Resetuj" />
 		</sentence>
 		<sentence name="level12.0.0">
-		    <en value="Caveman: I think the answer could be near the light. It has to do something with the ligth." />
-		    <pl value="Jaskiniowiec: Wydaje mi się, że odpowiedź może być blisko światła. To na pewno ma coś wspólnego ze światłem." />
+		    <eng value="Caveman: I think the answer could be near the light. It has to do something with the ligth." />
+		    <pol value="Jaskiniowiec: Wydaje mi się, że odpowiedź może być blisko światła. To na pewno ma coś wspólnego ze światłem." />
 		</sentence>
 		<sentence name="level12.1.0">
-		    <en value="Light is shining on caveman, there is a spark in his eyes." />
-		    <pl value="Światło świeci na jaskiniowca, widać błysk w jego oczach." />
+		    <eng value="Light is shining on caveman, there is a spark in his eyes." />
+		    <pol value="Światło świeci na jaskiniowca, widać błysk w jego oczach." />
 		</sentence>
 		<sentence name="level12.1.1">
-		    <en value="Caveman: Yes it was few days ago. You brought me here. That is why my skin is not pale." />
-		    <pl value="Jaskiniowiec: To była kilka dni temu... Przyprowadziłeś mnie tu. To dlatego moja skóra nie jest blada." />
+		    <eng value="Caveman: Yes it was few days ago. You brought me here. That is why my skin is not pale." />
+		    <pol value="Jaskiniowiec: To była kilka dni temu... Przyprowadziłeś mnie tu. To dlatego moja skóra nie jest blada." />
 		</sentence>
 		<sentence name="level12.1.2" >
-		    <en value="Voice is silent." />
-		    <pl value="Głos się nie odzywa." />
+		    <eng value="Voice is silent." />
+		    <pol value="Głos się nie odzywa." />
 		</sentence>
 		<sentence name="level12.1.3" >
-		    <en value="Caveman: I heard you talking about a disease. And a woman. Do I have the disease? " />
-		    <pl value="Jaskiniowiec: Mówiłeś coś o chorobie. I o kobiecie. Czy mam jakąś chorobę? " />
+		    <eng value="Caveman: I heard you talking about a disease. And a woman. Do I have the disease? " />
+		    <pol value="Jaskiniowiec: Mówiłeś coś o chorobie. I o kobiecie. Czy mam jakąś chorobę? " />
 		</sentence>
 		<sentence name="level11.0.0" >
-		    <en value="Voice: Just go.. <caveman interrupts>. " />
-		    <pl value="Głos: Po prostu... <jaskiniowiec przerywa>. " />
+		    <eng value="Voice: Just go.. <caveman interrupts>. " />
+		    <pol value="Głos: Po prostu... <jaskiniowiec przerywa>. " />
 		</sentence>
 		<sentence name="level11.0.1" >
-		    <en value="Caveman: I think I remember your voice, why, how?" />
-		    <pl value="Jaskowiec: Myślę, że pamiętam Twój głos" />
+		    <eng value="Caveman: I think I remember your voice, why, how?" />
+		    <pol value="Jaskowiec: Myślę, że pamiętam Twój głos" />
 		</sentence>
 		<sentece name="level11.0.2">
-		    <en value="Voice is silent." />
-		    <pl value="Głos się nie odzywa." />
+		    <eng value="Voice is silent." />
+		    <pol value="Głos się nie odzywa." />
 		</sentece>
 		<sentence name="level11.1.0">
-		    <en value="Voice: No, no go to the right!" />
-		    <pl value="Głos: Nie, nie idź w prawo!" />
+		    <eng value="Voice: No, no go to the right!" />
+		    <pol value="Głos: Nie, nie idź w prawo!" />
 		</sentence>
 		<sentence name="level11.1.1" >
-		    <en value="Caveman: I definitely remember your voice. I wasn't born in caves. I was brought here. Not long ago. But why?" />
-		    <pl value="Jaskiniowiec: Definitywnie pamiętam Twój" />
+		    <eng value="Caveman: I definitely remember your voice. I wasn't born in caves. I was brought here. Not long ago. But why?" />
+		    <pol value="Jaskiniowiec: Definitywnie pamiętam Twój" />
 		</sentence>
         <sentence name="level11.1.2" >
-            <en value="Voice is nervously silent." />
-            <pl value="Głos nerwowo się nie odzywa." />
+            <eng value="Voice is nervously silent." />
+            <pol value="Głos nerwowo się nie odzywa." />
         </sentence>	
         <sentence name="level13.0.0">
-            <en value="Caveman: Am I on earth?" />
-            <pl value="Jaskiniowiec: Czy jestem na ziemi?" />
+            <eng value="Caveman: Am I on earth?" />
+            <pol value="Jaskiniowiec: Czy jestem na ziemi?" />
         </sentence>	    
         <sentence name="level13.0.1" >
-            <en value="Voice: Yes. " />
-            <pl value="Głos: Tak. "/>
+            <eng value="Voice: Yes. " />
+            <pol value="Głos: Tak. "/>
         </sentence>
         <sentence name="level13.0.2" >
-            <en value="Caveman: Do I have a family?" />
-            <pl value="Jaskiniowiec: Czy mam rodzinę? " />
+            <eng value="Caveman: Do I have a family?" />
+            <pol value="Jaskiniowiec: Czy mam rodzinę? " />
         </sentence>
         <sentence name="level13.0.3" >
-            <en value="Voice: Yes, but not for too long." />
-            <pl value="Głos: Tak, ale nie na długo. " />
+            <eng value="Voice: Yes, but not for too long." />
+            <pol value="Głos: Tak, ale nie na długo. " />
         </sentence>
         <sentence name="level13.0.4" >
-            <en value="Caveman: What is hapening? Why are you not telling me something?" />
-            <pl value="Jaskiniowiec: Co się dzieje? Dlaczego mi nie mówisz wszystkiego?" />
+            <eng value="Caveman: What is hapening? Why are you not telling me something?" />
+            <pol value="Jaskiniowiec: Co się dzieje? Dlaczego mi nie mówisz wszystkiego?" />
         </sentence>
         <sentence name="level13.0.5">
-            <en value="Voice: Because you would like to change your future, but it can not be changed." />
-            <pl value="Głos: Ponieważ chciałbyś zmienić przyszłość, jednak tego nie da się zrobić. " />
+            <eng value="Voice: Because you would like to change your future, but it can not be changed." />
+            <pol value="Głos: Ponieważ chciałbyś zmienić przyszłość, jednak tego nie da się zrobić. " />
         </sentence>
         <sentence name="level10.0.0" >
-            <en value="Voice: If you have a tile and go into water, you lose it. Use it." />
-            <pl value="Głos: Jeśli trzymasz klocek i wpadniesz do wody, tracisz go. Wykorzystaj to. " />
+            <eng value="Voice: If you have a tile and go into water, you lose it. Use it." />
+            <pol value="Głos: Jeśli trzymasz klocek i wpadniesz do wody, tracisz go. Wykorzystaj to. " />
         </sentence>
         <sentence name="level10.0.1" >
-            <en value="Caveman: Why are you helping me? Do I know you?" />
-            <pl value="Jaskiniowiec: Dlaczego mi pomagasz? Czy Cię znam?" />
+            <eng value="Caveman: Why are you helping me? Do I know you?" />
+            <pol value="Jaskiniowiec: Dlaczego mi pomagasz? Czy Cię znam?" />
         </sentence>
         <sentence name="level10.0.2" >
-            <en value="Voice is silent. " />
-            <pl value="Głos się nie odzywa. " />
+            <eng value="Voice is silent. " />
+            <pol value="Głos się nie odzywa. " />
         </sentence>
         <sentence name="level10.1.0" >
-            <en value="Voice: Here, right here, that is the spot." />
-            <pl value="Głos: Tutaj, właśnie tutaj, to jest to miejsce." />
+            <eng value="Voice: Here, right here, that is the spot." />
+            <pol value="Głos: Tutaj, właśnie tutaj, to jest to miejsce." />
         </sentence>
         <sentence name="level10.1.1" >
-            <en value="Caveman: Don't help me, I can do it alone!" />
-            <pl value="Jaskiniowiec: Nie pomagaj mi. Potrafię zrobić to samemu!" />
+            <eng value="Caveman: Don't help me, I can do it alone!" />
+            <pol value="Jaskiniowiec: Nie pomagaj mi. Potrafię zrobić to samemu!" />
         </sentence>
         <sentence name="level9.0.0" >
-            <en value="Caveman: I fell into a hole, how do I get out of here." />
-            <pl value="Jaskiniowiek: Wpadłem do dziury, jak się stąd wydostać." />
+            <eng value="Caveman: I fell into a hole, how do I get out of here." />
+            <pol value="Jaskiniowiek: Wpadłem do dziury, jak się stąd wydostać." />
         </sentence>
         <sentence name="level9.0.1" >
-            <en value="Voice: Relocate the mud." />
-            <pl value="Głos: Przemieść klocki błota." />
+            <eng value="Voice: Relocate the mud." />
+            <pol value="Głos: Przemieść klocki błota." />
         </sentence>
         <sentence name="level9.0.2" >
-            <en value="Caveman: Who are you, voice?" />
-            <pl value="Jaskiniowiec: Kim jesteś, głosie?" />
+            <eng value="Caveman: Who are you, voice?" />
+            <pol value="Jaskiniowiec: Kim jesteś, głosie?" />
         </sentence>
         <sentence name="level9.0.3" >
-            <en value="Voice: Just a good soul helping you out" />
-            <pl value="Głos: Tylko dobrą duszą pomagająca Ci wyjść." />
+            <eng value="Voice: Just a good soul helping you out" />
+            <pol value="Głos: Tylko dobrą duszą pomagająca Ci wyjść." />
         </sentence>
         <sentence name="level8.0.0" >
-            <en value="Caveman: Yes, I definately remember this big pile of mud in the water. " />
-            <pl value="Jaskiniowiec: Tak, zdecydowanie pamiętam to dziwne skupisko błota wśród wody. " />
+            <eng value="Caveman: Yes, I definately remember this big pile of mud in the water. " />
+            <pol value="Jaskiniowiec: Tak, zdecydowanie pamiętam to dziwne skupisko błota wśród wody. " />
         </sentence>
         <sentence name="level7.0.0" >
-            <en value="Caveman: I am starting to remember something. " />
-            <pl value="Jaskiniowiec:  Zaczynam sobie coś przypominać." />
+            <eng value="Caveman: I am starting to remember something. " />
+            <pol value="Jaskiniowiec:  Zaczynam sobie coś przypominać." />
         </sentence>
         <sentence name="level7.0.1" >
-            <en value="Caveman: I wasn't here since I was born. " />
-            <pl value="Jaskiniowiec: Nie byłem tu od urodzenia." />
+            <eng value="Caveman: I wasn't here since I was born. " />
+            <pol value="Jaskiniowiec: Nie byłem tu od urodzenia." />
         </sentence>
         <sentence name="level7.0.2" >
-            <en value="Caveman: I remember the world. " />
-            <pl value="Jaskiniowiek: Tak, pamiętam świat zewnętrzny, promienie. " />
+            <eng value="Caveman: I remember the world. " />
+            <pol value="Jaskiniowiek: Tak, pamiętam świat zewnętrzny, promienie. " />
         </sentence>
         <sentence name="level6.0.0" >
-            <en value="Caveman: This cave is so beautiful. All the water dropping from the ceiling. " />
-            <pl value="Jaskiniowiec: Ta jaskinia jest piękna. Woda cudownie spływa ze stropu. " />
+            <eng value="Caveman: This cave is so beautiful. All the water dropping from the ceiling. " />
+            <pol value="Jaskiniowiec: Ta jaskinia jest piękna. Woda cudownie spływa ze stropu. " />
         </sentence>
         <sentence name="level6.0.1" >
-            <en value="Caveman: I think there is something moving in the darkness on the right. " />
-            <pl value="Jaskiniowiec: Wydaje mi się, że coś się rusza tam po prawej." />
+            <eng value="Caveman: I think there is something moving in the darkness on the right. " />
+            <pol value="Jaskiniowiec: Wydaje mi się, że coś się rusza tam po prawej." />
         </sentence>
         <sentence name="level6.1.0" >
-            <en value="Caveman: No, nothing is here, it was just my imagination." />
-            <pl value="Jaskiniowiec: Nie, jednak nic tu nie ma, to tylko moja wyobraźnia." />
+            <eng value="Caveman: No, nothing is here, it was just my imagination." />
+            <pol value="Jaskiniowiec: Nie, jednak nic tu nie ma, to tylko moja wyobraźnia." />
         </sentence>
         <sentence name="level5.0.0" >
-            <en value="Caveman wheezes: Grrrumpphh." />
-            <pl value="Jaskiniowiec dyszy: Grrrrummmpphh." />
+            <eng value="Caveman wheezes: Grrrumpphh." />
+            <pol value="Jaskiniowiec dyszy: Grrrrummmpphh." />
         </sentence>
         <sentence name="level5.1.0" >
-            <en value="Caveman: I need something to stand. No way I will jump." />
-            <pl value="Jaskiniowiec: Potrzebuję na czymś stanąć. Nie uda mi się tak wysoko skoczyć." />
+            <eng value="Caveman: I need something to stand. No way I will jump." />
+            <pol value="Jaskiniowiec: Potrzebuję na czymś stanąć. Nie uda mi się tak wysoko skoczyć." />
         </sentence>
         <sentence name="level4.0.0" >
-            <en value="Caveman: There is a waterfall, I can swim up on it!" />
-            <pl value="Jaskiniowiec: Widzę wodospad, potrafię wpłynąć na jego szczyt! Ale coś jescze trzeba przestawić." />
+            <eng value="Caveman: There is a waterfall, I can swim up on it!" />
+            <pol value="Jaskiniowiec: Widzę wodospad, potrafię wpłynąć na jego szczyt! Ale coś jescze trzeba przestawić." />
         </sentence>
         <sentence name="level4.1.0" >
-            <en value="Caveman: Great thinking, with your guidance, I will reach the surface." />
-            <pl value="Jaskiniowiec: Świetne myślenie, z Twoją pomocą dotrę do powierzchni." />
+            <eng value="Caveman: Great thinking, with your guidance, I will reach the surface." />
+            <pol value="Jaskiniowiec: Świetne myślenie, z Twoją pomocą dotrę do powierzchni." />
         </sentence>
         <sentence name="level99.0.0" >
-            <en value="Voice: This level is impossible to make, don't try to do it." />
-            <pl value="Głos: Ta jaskinia jest bez wyjścia, nie próbuj go zrobić." />
+            <eng value="Voice: This level is impossible to make, don't try to do it." />
+            <pol value="Głos: Ta jaskinia jest bez wyjścia, nie próbuj go zrobić." />
         </sentence>
         <sentence name="level99.0.1" >
-            <en value="Caveman: Yes, I am tired and hungry, lets just sleep and catch some fish." />
-            <pl value="Jaskiniowiec: Tak, jestem zmęczony i głodny, może położę się i połapię trochę ryb." />
+            <eng value="Caveman: Yes, I am tired and hungry, lets just sleep and catch some fish." />
+            <pol value="Jaskiniowiec: Tak, jestem zmęczony i głodny, może położę się i połapię trochę ryb." />
         </sentence>
         <sentence name="level99.1.0" >
-            <en value="Voice: Wait, wut, don't pick up this axe!" />
-            <pl value="Głos: Czekaj, co?! Nie podnoś tego kilofa!" />
+            <eng value="Voice: Wait, wut, don't pick up this axe!" />
+            <pol value="Głos: Czekaj, co?! Nie podnoś tego kilofa!" />
         </sentence>
         <sentence name="level99.2.0" >
-            <en value="You picked up a secret!" />
-            <pl value="Podniosłeś sekret!" />
+            <eng value="You picked up a secret!" />
+            <pol value="Podniosłeś sekret!" />
         </sentence>
         <sentence name="level99.2.1" >
-            <en value="Now you can digg even more tiles!" />
-            <pl value="Teraz możesz kopać więcej klocków!" />
+            <eng value="Now you can digg eveng more tiles!" />
+            <pol value="Teraz możesz kopać więcej klocków!" />
         </sentence>
         <sentence name="level99.2.2" >
-            <en value="You will lose this axe (and all imtems) when entering new level." />
-            <pl value="Stracisz ten kilof (i wszystkie inne przedmioty) podczas przechodzenia do następnej jaskini." />
+            <eng value="You will lose this axe (and all imtems) wheng entering new level." />
+            <pol value="Stracisz teng kilof (i wszystkie inne przedmioty) podczas przechodzenia do następnej jaskini." />
         </sentence>
         <sentence name="level99.3.0" >
-            <en value="Caveman: With the woodaxe, I can dig the tile I am standing on right now." />
-            <pl value="Jaskiniowiec: Z tym kilofem, mogę kopać klocek na którym właśnie stoję." />
+            <eng value="Caveman: With the woodaxe, I can dig the tile I am standing on right now." />
+            <pol value="Jaskiniowiec: Z tym kilofem, mogę kopać klocek na którym właśnie stoję." />
         </sentence>
         <sentence name="level99.4.0" >
-            <en value="Voice: You passed the test. Now go out to the light and save the world, it really needs you." />
-            <pl value="Głos: Zdałeś test. Teraz idź w kierunku światła i uratuj świat. Jesteś tam naprawdę potrzebny." />
+            <eng value="Voice: You passed the test. Now go out to the light and save the world, it really needs you." />
+            <pol value="Głos: Zdałeś test. Teraz idź w kierunku światła i uratuj świat. Jesteś tam naprawdę potrzebny." />
         </sentence>
         <sentence name="level100.0.0" >
-            <en value="That is it. A Krzysiek Projekt product, Programming, graphics, design, plot: Krzysztof Bobnis. Special thanks to my lil whoe Gosia Wilkosz for making me work instead of drinking beer. Also thanks to my brah Michal Bartynski for testing my crappy game." />
-            <pl value="To wszystko. Produkt firmy Krzysiek Projekt, Programowanie, grafika, projekt, fabuła: Krzysztof Bobnis. Specjalne podziękowania dla mojej małej mrocznej Gosi Wilkosz oraz dla mojego kolesia Michała Bartyńskiego jako pierwszego i jedynego prawdziwego testera." />
+            <eng value="That is it. A Krzysiek Projekt product, Programming, graphics, design, plot: Krzysztof Bobnis. Special thanks to my lil whoe Gosia Wilkosz for making me work instead of drinking beer. Also thanks to my brah Michal Bartynski for testing my crappy game." />
+            <pol value="To wszystko. Produkt firmy Krzysiek Projekt, Programowanie, grafika, projekt, fabuła: Krzysztof Bobnis. Specjalne podziękowania dla mojej małej mrocznej Gosi Wilkosz oraz dla mojego kolesia Michała Bartyńskiego jako pierwszego i jedynego prawdziwego testera." />
         </sentence>
         <sentence name="level100.1.0" >
-            <en value="Just go to the light, up and up, reach the surface, it is near." />
-            <pl value="Idź do światła, w górę i w górę. Osiągnij powierzchnię, jest już bardzo blisko." />
+            <eng value="Just go to the light, up and up, reach the surface, it is near." />
+            <pol value="Idź do światła, w górę i w górę. Osiągnij powierzchnię, jest już bardzo blisko." />
         </sentence>
         <sentence name="level100.1.1" >
-            <en value="Gamer: I don't want to sit all the time in the toilet on my android smart phone." />
-            <pl value="Gracz: Nie chcę siedzieć w toalecie całe życie i grać na moim telefonie androidowym." />
+            <eng value="Gamer: I don't want to sit all the time in the toilet on my android smart phone." />
+            <pol value="Gracz: Nie chcę siedzieć w toalecie całe życie i grać na moim telefonie androidowym." />
         </sentence>
         <sentence name="level1.0.0" >
-            <en value="Voice: You can create stairs with tiles and go up on them!" />
-            <pl value="Głos: Możesz tworzyć schody z klocków i wspinać się po nich!" />
+            <eng value="Voice: You can create stairs with tiles and go up on them!" />
+            <pol value="Głos: Możesz tworzyć schody z klocków i wspinać się po nich!" />
         </sentence>
         <sentence name="level1.1.0" >
-            <en value="Voice: Now you have to restart the level, no coming back from this." />
-            <pl value="Głos: Musisz zrestartować tą jaskinie, już nie wyjdziesz." />
+            <eng value="Voice: Now you have to restart the level, no coming back from this." />
+            <pol value="Głos: Musisz zrestartować tą jaskinie, już nie wyjdziesz." />
         </sentence>
         <sentence name="level2.0.0" >
-            <en value="Voice: This is water:" />
-            <pl value="Głos: To jest woda:" />
+            <eng value="Voice: This is water:" />
+            <pol value="Głos: To jest woda:" />
         </sentence>
         <sentence name="level2.0.1" >
-            <en value="Voice: When you are in the water you can MOVE in ALL DIRECTIONS." />
-            <pl value="Głos: Kiedy jesteś w wodzie, możesz poruszać się we wszystkich kierunkach." />
+            <eng value="Voice: Wheng you are in the water you can MOVE in ALL DIRECTIONS." />
+            <pol value="Głos: Kiedy jesteś w wodzie, możesz poruszać się we wszystkich kierunkach." />
         </sentence>
         <sentence name="level2.0.2" >
-            <en value="Voice: No worries, you will not drown nor freeze." />
-            <pl value="Głos: Bez zmartwień, nie utopisz się ani nie zamarzniesz." />
+            <eng value="Voice: No worries, you will not drown nor freeze." />
+            <pol value="Głos: Bez zmartwień, nie utopisz się ani nie zamarzniesz." />
         </sentence>
         <sentence name="level2.1.0" >
-            <en value="Caveman: damn, that is a little bit cold. But I will manage." />
-            <pl value="Jaskiniowiec: cholera, to jest całkiem chłodne. Dam sobie jednak radę." />
+            <eng value="Caveman: damn, that is a little bit cold. But I will manage." />
+            <pol value="Jaskiniowiec: cholera, to jest całkiem chłodne. Dam sobie jednak radę." />
         </sentence>
         <sentence name="level3.0.0" >
-            <en value="Voice: When you falls into water, you will loose the picked up tile." />
-            <pl value="Głos: Jeśli wpadniesz do wody, to tracisz trzymany klocek." />
+            <eng value="Voice: Wheng you falls into water, you will loose the picked up tile." />
+            <pol value="Głos: Jeśli wpadniesz do wody, to tracisz trzymany klocek." />
         </sentence>
         <sentence name="level0c.0.0" >
-            <en value="Voice: When you picked up a tile, You can leave it anywhere you like, by doing this:" />
-            <pl value="Głos: Gdy podniesiesz klocek, możesz go zostawić na wolnej przestrzeni w ten sposób. (Możesz także zostawić nad sobą)" />
+            <eng value="Voice: Wheng you picked up a tile, You can leave it anywhere you like, by doing this:" />
+            <pol value="Głos: Gdy podniesiesz klocek, możesz go zostawić na wolnej przestrzeni w teng sposób. (Możesz także zostawić nad sobą)" />
         </sentence>
         <sentence name="level0b.0.0" >
-            <en value="Voice: You can pick up a tile. Go near this tile:" />
-            <pl value="Głos: Możesz podnieść klocek. Podejdź blisko tego klocka:" />
+            <eng value="Voice: You can pick up a tile. Go near this tile:" />
+            <pol value="Głos: Możesz podnieść klocek. Podejdź blisko tego klocka:" />
         </sentence>
         <sentence name="level0b.0.1" >
-            <en value="Voice: Touch caveman and move your finger to the tile." />
-            <pl value="Głos: Dotknij jaskiniowca i przesuń palec do klocka." />
+            <eng value="Voice: Touch caveman and move your finger to the tile." />
+            <pol value="Głos: Dotknij jaskiniowca i przesuń palec do klocka." />
         </sentence>
         <sentence name="level19.0.0" >
-            <en value="Voice: This won't be easy." />
-            <pl value="Głos: To nie będzie łatwe." />
+            <eng value="Voice: This won't be easy." />
+            <pol value="Głos: To nie będzie łatwe." />
         </sentence>
         
 	</locale>

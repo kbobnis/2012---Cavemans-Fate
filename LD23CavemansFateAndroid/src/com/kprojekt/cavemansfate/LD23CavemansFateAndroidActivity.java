@@ -1,5 +1,7 @@
 package com.kprojekt.cavemansfate;
 
+import java.util.Locale;
+
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
@@ -18,6 +20,8 @@ public class LD23CavemansFateAndroidActivity extends AndroidApplication
 		config.useCompass = false;
 		config.useWakelock = false;
 		config.useGL20 = false;
-		initialize( new CavemansFate(), config );
+		String displayLanguage = Locale.getDefault().getISO3Language();
+
+		initialize( new CavemansFate(displayLanguage), config );
 	}
 }

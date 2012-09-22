@@ -29,10 +29,18 @@ public class CavemansFate extends Game implements Screen
 
 	public static float tileScale;
 
+	private final String iso3Lang;
+
+	public CavemansFate(String iso3Lang)
+	{
+		this.iso3Lang = iso3Lang;
+	}
+
 	@Override
 	public void create()
 	{
 		tileScale = Gdx.graphics.getWidth() / tileWidth / tilesPerWidth;
+
 		System.out.println( "Create" );
 		CavemansFate.font = new MyFont( Gdx.files.internal( "arial_polish.fnt" ), false );
 
@@ -47,7 +55,7 @@ public class CavemansFate extends Game implements Screen
 		CavemansFate.spriteBatch = new SpriteBatch();
 
 		//shiiiiit i spent 2 hours looking why this shit is breaking the whole application! it was because i executed before font scale was set!
-		Core.init( "model.xml", "pl" );
+		Core.init( "model.xml", this.iso3Lang );
 
 		try
 		{
@@ -61,53 +69,7 @@ public class CavemansFate extends Game implements Screen
 			Core.levels.getGotoMenuAction().addListener( levelSelectManager.getController() );
 			Core.levels.getResetLevelAction().addListener( levelSelectManager.getController() );
 
-			final Container mainMenu = new Container( Gdx.graphics.getHeight() );
-			NewButton newGameButton = new NewButton( Core.lang.get( "menuOptionPlay" ) );
-			newGameButton.addEvent( new ButtonEvent()
-			{
-				public void doAction()
-				{
-					Core.actualManager = levelSelectManager;
-				}
-			} );
-
-			final Container options = new Container( Gdx.graphics.getHeight() );
-			NewButton language = new NewButton( "Language" );
-			NewButton polish = new NewButton( "Polish" );
-			polish.addEvent( new ButtonEvent()
-			{
-				public void doAction()
-				{
-					Core.lang.changeLocale( "pl" );
-					Core.actualManager = mainMenu;
-				}
-			} );
-			NewButton english = new NewButton( "English" );
-			english.addEvent( new ButtonEvent()
-			{
-				public void doAction()
-				{
-					Core.lang.changeLocale( "en" );
-					Core.actualManager = mainMenu;
-				}
-			} );
-
-			options.add( language );
-			options.add( polish );
-			options.add( english );
-
-			NewButton optionsButton = new NewButton( Core.lang.get( "menuOptionPreferences" ) );
-			optionsButton.addEvent( new ButtonEvent()
-			{
-				public void doAction()
-				{
-					Core.actualManager = options;
-				}
-			} );
-
-			mainMenu.add( newGameButton );
-			mainMenu.add( optionsButton );
-			Core.actualManager = mainMenu;
+			Core.actualManager = levelSelectManager;
 
 		}
 		catch( Exception e )

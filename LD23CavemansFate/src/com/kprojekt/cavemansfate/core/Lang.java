@@ -13,10 +13,16 @@ import com.badlogic.gdx.utils.XmlReader.Element;
  */
 public class Lang
 {
+	
+	private static String plLocale = "pol";
+	private static String enLocale = "eng";
+	private static String defaultLocale = Lang.enLocale;
+	
 	private HashMap<String, String> actualDict = new HashMap<String, String>();
 	private HashMap<String, HashMap<String, String>> allDicts = new HashMap<String, HashMap<String, String>>();
+	
 
-	public Lang( String filePath, String localeName )
+	public Lang( String filePath, String iso3Lang )
 	{
 		XmlReader reader = new XmlReader();
 		Element parse;
@@ -32,8 +38,8 @@ public class Lang
 		HashMap<String, String> plDIct = new HashMap<String, String>();
 		HashMap<String, String> enDIct = new HashMap<String, String>();
 
-		this.allDicts.put( "pl", plDIct );
-		this.allDicts.put( "en", enDIct );
+		this.allDicts.put( Lang.plLocale, plDIct );
+		this.allDicts.put( Lang.enLocale, enDIct );
 
 		Element locale = parse.getChildByName( "locale" );
 
@@ -49,7 +55,13 @@ public class Lang
 				allDicts.get( langName ).put( id, value );
 			}
 		}
-		this.actualDict = this.allDicts.get( localeName );
+		String lang = Lang.defaultLocale;
+		if (iso3Lang.equalsIgnoreCase(Lang.plLocale))
+		{
+			lang = Lang.plLocale;
+		}
+		
+		this.actualDict = this.allDicts.get( lang );
 	}
 
 	public String get( String string )
