@@ -11,21 +11,25 @@ public class ImageElement implements ScreenElement
 {
 
 	private final TextureRegion playerRegion;
-	private int width;
+	private int width = -1;
 	private int height;
 	private int middleX;
 
 	public ImageElement( TextureRegion playerRegion )
 	{
 		this.playerRegion = playerRegion;
-		this.width = (int)(this.playerRegion.getRegionWidth() * CavemansFate.tileScale);
-		this.height = (int)(this.playerRegion.getRegionHeight() * CavemansFate.tileScale);
-		this.middleX = (int)(Gdx.graphics.getWidth() / 2f - this.width / 2f);
+		
 	}
 
 	@Override
 	public void render( int y )
 	{
+		if (this.width == -1)
+		{
+			this.width = (int)(this.playerRegion.getRegionWidth() * CavemansFate.tileScale);
+			this.height = (int)(this.playerRegion.getRegionHeight() * CavemansFate.tileScale);
+			this.middleX = (int)(Gdx.graphics.getWidth() / 2f - this.width / 2f);
+		}
 		CavemansFate.spriteBatch.draw( this.playerRegion, this.middleX, Gdx.graphics.getHeight() - this.height - y,
 				width, height );
 	}

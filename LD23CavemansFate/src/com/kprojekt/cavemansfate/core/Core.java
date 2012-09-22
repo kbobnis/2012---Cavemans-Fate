@@ -15,9 +15,14 @@ public class Core
 	public static Manager actualManager;
 	private static MainInputProcessor mainInputProcessor;
 
-	public static void init( String xmlPath, String iso3Lang )
+	public static void initLang(String xmlPath, String iso3Lang)
 	{
 		Core.lang = new Lang( xmlPath, iso3Lang );
+		
+	}
+	
+	public static void init( String xmlPath, String iso3Lang )
+	{
 		Core.levels = new Levels( xmlPath );
 		Core.mainInputProcessor = new MainInputProcessor();
 	}

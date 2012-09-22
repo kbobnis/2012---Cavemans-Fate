@@ -27,20 +27,29 @@ public class CaveManager extends Manager
 
 	private List<CaveManagerListener> listeners = new ArrayList<CaveManagerListener>();
 	private String path;
+	private final HashMap<String, MyTextureAtlas> atlases;
+	private final Menu menu;
+	private LevelSelectController controller;
 
 	public CaveManager( String tmxFile, Events events, Menu menu, HashMap<String, MyTextureAtlas> atlases )
 	{
+		this.menu = menu;
+		this.atlases = atlases;
 		this.caveModel = new CaveModel( tmxFile, events );
-		this.caveView = new CaveView( new CaveController( this.caveModel ), atlases, menu );
-
+		
 		this.mainInputHandler = new MainInputHandler();
-		this.mainInputHandler.addInputHandler( this.caveView );
 		this.mainInputHandler.addInputHandler( menu );
 	}
 
 	@Override
 	public void render( float delta, int x, int y )
 	{
+		if (this.caveView == null)
+		{
+			this.caveView = new CaveView( new CaveController( this.caveModel ), atlases, menu );
+			this.caveView.addBackPressedListener(controller);
+			this.mainInputHandler.addInputHandler( this.caveView );
+		}
 		Gdx.input.setInputProcessor( this.getMainInputHandler() );
 		if( this.caveModel.getEvents().isAnythingToRender() )
 		{
@@ -98,8 +107,7 @@ public class CaveManager extends Manager
 
 	public void addBackPressedManager(LevelSelectController controller)
 	{
-		this.caveView.addBackPressedListener(controller);
-		
+		this.controller = controller;
 	}
 
 

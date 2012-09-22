@@ -35,7 +35,6 @@ import com.kprojekt.utils.fixes.MyTextureAtlas;
 public class Levels
 {
 
-	private GotoMenuAction gotoMenuAction;
 	private ResetLevelAction resetLevelAction;
 	private List<CaveManager> caveLevels = new ArrayList<CaveManager>();
 	private XmlReader.Element parse;
@@ -278,9 +277,7 @@ public class Levels
 	private Menu prepareMenu()
 	{
 		Menu menu = new Menu();
-		this.gotoMenuAction = new GotoMenuAction();
 		this.resetLevelAction = new ResetLevelAction();
-		menu.addButton( new Button( 0, 10, Core.lang.get( "menuGotoMenu" ), this.gotoMenuAction ) );
 		menu.addButton( new Button( Gdx.graphics.getWidth() / 2, 10, Core.lang.get( "menuReset" ),
 				this.resetLevelAction ) );
 		return menu;
@@ -289,11 +286,6 @@ public class Levels
 	public List<CaveManager> getAll()
 	{
 		return this.caveLevels;
-	}
-
-	public MenuAction getGotoMenuAction()
-	{
-		return this.gotoMenuAction;
 	}
 
 	public MenuAction getResetLevelAction()

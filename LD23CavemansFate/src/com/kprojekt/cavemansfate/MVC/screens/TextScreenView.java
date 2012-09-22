@@ -11,11 +11,11 @@ import com.kprojekt.cavemansfate.core.Core;
  */
 public class TextScreenView
 {
-	private static int startingOffset = Gdx.graphics.getWidth() / 10;
-	private static int bufor = Gdx.graphics.getWidth() / 50;
+	private static int startingOffset  ;
+	private static int bufor ;
 	private TextScreenModel model;
 	private StringElement downElement;
-	private int downElementPos = (int)(Gdx.graphics.getHeight() / 10f * 9f);
+	private int downElementPos = -1;
 
 	public TextScreenView( TextScreenModel screenModel )
 	{
@@ -25,6 +25,12 @@ public class TextScreenView
 
 	public void render( float delta )
 	{
+		if (this.downElementPos == -1)
+		{
+			startingOffset = Gdx.graphics.getWidth() / 10;
+			bufor = Gdx.graphics.getWidth() / 50;
+			this.downElementPos = (int)(Gdx.graphics.getHeight() / 10f * 9f);
+		}
 		CavemansFate.font.setScale( CavemansFate.fontScale );
 		int y = TextScreenView.startingOffset;
 		for( ScreenElement element : this.model.getElements() )

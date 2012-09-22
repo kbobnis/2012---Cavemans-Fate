@@ -10,7 +10,7 @@ import com.kprojekt.cavemansfate.core.Core;
 import com.kprojekt.utils.fixes.MyFont;
 
 /**
- * @author Philon 
+ * @author Philon
  */
 public class CavemansFate extends Game implements Screen
 {
@@ -38,80 +38,64 @@ public class CavemansFate extends Game implements Screen
 	{
 		tileScale = Gdx.graphics.getWidth() / tileWidth / tilesPerWidth;
 
-		System.out.println( "Create" );
-		CavemansFate.font = new MyFont( Gdx.files.internal( "arial_polish.fnt" ), false );
+		System.out.println("Create");
+		CavemansFate.font = new MyFont(Gdx.files.internal("arial_polish.fnt"), false);
 
 		String testText = "";
-		for( int i = 0; i < CavemansFate.lettersPerWidth; i++ )
+		for (int i = 0; i < CavemansFate.lettersPerWidth; i++)
 		{
 			testText += "a";
 		}
-		float width = CavemansFate.font.getBounds( testText ).width;
+		float width = CavemansFate.font.getBounds(testText).width;
 		CavemansFate.fontScale = Gdx.graphics.getWidth() / width;
 
 		CavemansFate.spriteBatch = new SpriteBatch();
 
-		//shiiiiit i spent 2 hours looking why this shit is breaking the whole application! it was because i executed before font scale was set!
-		Core.init( "model.xml", this.iso3Lang );
+		// shiiiiit i spent 2 hours looking why this shit is breaking the whole
+		// application! it was because i executed before font scale was set!
 
-		try
-		{
-			CaveManager[] all = Core.levels.getAll().toArray( new CaveManager[] {} );
-			final LevelSelectManager levelSelectManager = new LevelSelectManager( all );
-			for( CaveManager caveManager : all )
-			{
-				caveManager.addCaveManagerListener( levelSelectManager.getController() );
-			}
+		String loadingText = "Loading caveman";
+		if (this.iso3Lang.equals("pol"))
+			loadingText = "Wczytywanie gry";
 
-			Core.levels.getGotoMenuAction().addListener( levelSelectManager.getController() );
-			Core.levels.getResetLevelAction().addListener( levelSelectManager.getController() );
-			Core.levels.addBackPressedListener(levelSelectManager.getController());
+		setScreen(new SplashScreen(loadingText, this, iso3Lang));
 
-			Core.actualManager = levelSelectManager;
-
-		}
-		catch( Exception e )
-		{
-			e.printStackTrace();
-			Gdx.app.exit();
-		}
-		setScreen( this );
 	}
 
-	public void render( float delta )
+	public void render(float delta)
 	{
-		Core.render( delta );
+		Core.render(delta);
 	}
 
 	@Override
 	public void show()
 	{
-		System.out.println( "Show" );
+		System.out.println("Show");
 	}
 
 	@Override
 	public void hide()
 	{
-		System.out.println( "Hide" );
+		System.out.println("Hide");
 	}
 
 	@Override
-	public void resize( int width, int height )
+	public void resize(int width, int height)
 	{
-		System.out.println( "Resize" );
+		System.out.println("Resize");
 	}
 
 	@Override
 	public void pause()
 	{
-		System.out.println( "Pause" );
+		System.out.println("Pause");
 		this.dispose();
 	}
 
 	@Override
 	public void resume()
 	{
-		System.out.println( "Resume" );
+		System.out.println("Resume");
 	}
 
 }
