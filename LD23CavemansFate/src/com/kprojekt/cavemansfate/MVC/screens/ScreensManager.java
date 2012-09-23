@@ -64,25 +64,4 @@ public class ScreensManager extends Manager
 		return this.controller;
 	}
 
-	@Override
-	public void touchDown( int x, int y )
-	{
-		// TODO @Krzysiek Auto-generated method stub
-
-	}
-
-	@Override
-	public void touchUp( int x, int y )
-	{
-		// TODO @Krzysiek Auto-generated method stub
-
-	}
-
-	@Override
-	public void dragged( int x, int y, int howX, int howY )
-	{
-		// TODO @Krzysiek Auto-generated method stub
-
-	}
-
 }
