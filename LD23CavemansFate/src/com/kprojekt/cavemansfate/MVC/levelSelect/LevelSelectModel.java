@@ -75,7 +75,7 @@ public class LevelSelectModel
 			if( tmp.isUnlocked() )
 			{
 				prefs.putBoolean( tmp.getLevelEntryFromFile(), true );
-				prefs.putBoolean( tmpNext.getLevelEntryFromFile(), true );
+				//prefs.putBoolean( tmpNext.getLevelEntryFromFile(), true );
 			}
 		}
 

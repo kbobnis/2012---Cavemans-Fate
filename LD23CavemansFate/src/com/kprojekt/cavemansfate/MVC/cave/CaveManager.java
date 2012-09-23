@@ -36,7 +36,7 @@ public class CaveManager extends Manager
 		this.menu = menu;
 		this.atlases = atlases;
 		this.caveModel = new CaveModel( tmxFile, events );
-		
+		this.path = tmxFile;
 		this.mainInputHandler = new MainInputHandler();
 	}
 

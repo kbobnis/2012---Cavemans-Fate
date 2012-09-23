@@ -40,8 +40,13 @@ public class LD23CavemansFateAndroidActivity extends AndroidApplication
 		View gameView = initializeForView(new CavemansFate(displayLanguage), config);
 
 		// Create and setup the AdMob view
-		adView = new AdView(this, AdSize.BANNER, "k278436533b84c7b1bfeb8b77383e36b");
-		adView.loadAd(new AdRequest());
+		//AdManager.setTestDevices( new String[] {AdManager.TEST_EMULATOR});
+
+		adView = new AdView(this, AdSize.SMART_BANNER, "k278436533b84c7b1bfeb8b77383e36b");
+		AdRequest adRequest = new AdRequest();
+		adRequest.addTestDevice("8214C563377ADF24D0E2754B98775413");
+		adView.loadAd(adRequest);
+		
 
 		// Add the AdMob view
 		RelativeLayout.LayoutParams adParams = new RelativeLayout.LayoutParams(

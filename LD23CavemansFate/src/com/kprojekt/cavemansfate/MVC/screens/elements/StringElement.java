@@ -15,7 +15,7 @@ public class StringElement implements ScreenElement
 	public StringElement( String string )
 	{
 		this.string = string;
-		StringElement.buffer = Gdx.graphics.getWidth() / 10;
+		StringElement.buffer = Gdx.graphics.getWidth() / 20;
 		CavemansFate.font.setScale( CavemansFate.fontScale );
 		this.height = (int)CavemansFate.font.getWrappedBounds( string, Gdx.graphics.getWidth() - buffer * 2 ).height;
 		CavemansFate.font.setScale( 1 );			

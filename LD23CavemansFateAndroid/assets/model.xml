@@ -29,7 +29,7 @@
 		</sentence>
 		<sentence name="textScreen.touchHereToContinue">
 			<eng value="Touch here to continue..." />
-			<pol value="Dotknij tu, aby kontynuować..." />
+			<pol value="Dotknij, aby kontynuować..." />
 		</sentence>
 		<sentence name="menuGotoMenu">
 		    <eng value="Menu" />

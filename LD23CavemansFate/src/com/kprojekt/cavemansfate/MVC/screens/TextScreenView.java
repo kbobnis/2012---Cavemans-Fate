@@ -14,16 +14,14 @@ public class TextScreenView
 	private static int startingOffset  ;
 	private static int bufor ;
 	private TextScreenModel model;
-	private StringElement downElement;
-	private int downElementPos = -1;
+	private StringElement downElement = new StringElement( Core.lang.get( "textScreen.touchHereToContinue" ) );
+	private int downElementPos = (int)(Gdx.graphics.getHeight() * 9f / 10f );
 
 	public TextScreenView( TextScreenModel screenModel )
 	{
 		this.model = screenModel;
-		this.downElement = new StringElement( Core.lang.get( "textScreen.touchHereToContinue" ) );
-		startingOffset = Gdx.graphics.getWidth() / 10;
+		startingOffset = Gdx.graphics.getWidth() / 20;
 		bufor = Gdx.graphics.getWidth() / 50;
-		this.downElementPos = (int)(Gdx.graphics.getHeight() / 10f * 9f);
 	}
 
 	public void render( float delta )
@@ -41,6 +39,6 @@ public class TextScreenView
 
 	public boolean isDownElementTouched( int y )
 	{
-		return y > downElementPos;
+		return true; //y > downElementPos;
 	}
 }
