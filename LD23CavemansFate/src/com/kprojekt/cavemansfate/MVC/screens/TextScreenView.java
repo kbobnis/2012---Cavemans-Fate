@@ -21,16 +21,13 @@ public class TextScreenView
 	{
 		this.model = screenModel;
 		this.downElement = new StringElement( Core.lang.get( "textScreen.touchHereToContinue" ) );
+		startingOffset = Gdx.graphics.getWidth() / 10;
+		bufor = Gdx.graphics.getWidth() / 50;
+		this.downElementPos = (int)(Gdx.graphics.getHeight() / 10f * 9f);
 	}
 
 	public void render( float delta )
 	{
-		if (this.downElementPos == -1)
-		{
-			startingOffset = Gdx.graphics.getWidth() / 10;
-			bufor = Gdx.graphics.getWidth() / 50;
-			this.downElementPos = (int)(Gdx.graphics.getHeight() / 10f * 9f);
-		}
 		CavemansFate.font.setScale( CavemansFate.fontScale );
 		int y = TextScreenView.startingOffset;
 		for( ScreenElement element : this.model.getElements() )
