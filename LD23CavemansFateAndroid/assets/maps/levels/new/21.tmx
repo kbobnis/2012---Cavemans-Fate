@@ -67,7 +67,7 @@
  </tileset>
  <layer name="background" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjZ2BgYCcSczDgBzB1hAA+dRxY1HEQsJtSe9mRaA486piRMDH2wtxNbPiCMAD8GAFM
+   eJxjZ2BgYCcSczDgBzB1hAA+dRxY1HEQsJtSe9mRaA486pjRaEL2wtxNbPiCMAD6+AFJ
   </data>
  </layer>
  <layer name="player" width="10" height="10">

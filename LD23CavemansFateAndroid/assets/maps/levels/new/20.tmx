@@ -67,7 +67,7 @@
  </tileset>
  <layer name="background" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjZ2BgYCcSIwMOKEYGMHXMUBqbGnR16ICDSHXEmMeMRuNTx0yEOmLtRQYcDMSHLwgDABv7AVg=
+   eJxjZ2BgYCcSIwMOKEYGMHXMUBqbGnR16ICDSHXEmjfQ6jgYiA9fEAYAExMBSQ==
   </data>
  </layer>
  <layer name="teleport" width="10" height="10">
