@@ -109,7 +109,7 @@ public class CavemanController
 		else if( side2 != null && caveman.canSwim( side2 ) )
 		{
 			caveman.move( side2 );
-			caveman.putTile( side2 );
+			caveman.putTile( SIDES.negate( side2 ) );
 		}
 		else if( side2 != null && caveman.canWalk( side2 ) )
 		{
