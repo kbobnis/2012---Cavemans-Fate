@@ -10,19 +10,26 @@
 	        <eng value="Preferences" />
 	        <pol value="Ustawienia" />
 	    </sentence>
-	    
-		<sentence name="level0.0.0">
-			<eng value="Moving caveman: place your finger on the background, move it and touch up" />
-			<pol value="Poruszanie jaskiniowcem: dotknij palcem tła, przesuń go i podnieś›" />
-		</sentence>
-		<sentence name="level0.0.1">
+		<sentence name="what_is_teleport">
 			<eng value="Go to the light, it is always in the upper right!" />
 			<pol value="Idź do światła, jest zawsze na górze po prawej!" />
+		</sentence>
+		<sentence name="you_can_digg" >
+			<eng value="You can dig. Dig yourself out." />
+			<pol value="Możesz kopać, wykop się." />			
+		</sentence>
+		<sentence name="congratz_for_digging" >
+			<eng value="Congratulations, you digged yourself out. Go to the light." />
+			<pol value="Brawo, wykopałeś sobie wyjście. Idź do światła." />					
 		</sentence>
 		<sentence name="level0.1.0">
 		    <eng value="Great, you have found your way out. This is a way out of every level." />
 		    <pol value="Udało Ci się znaleźć drogę wyjścia. Wyjście jest zawsze na prawo do góry." />
 		</sentence>
+        <sentence name="you_can_leave_tiles" >
+            <eng value="Voice: Wheng you picked up a tile, You can leave it anywhere you like. Even over your head." />
+            <pol value="Głos: Gdy podniesiesz klocek, możesz go zostawić na wolnej przestrzeni. Nad nad Twoją głową." />
+        </sentence>
 		<sentence name="levelSelect.info" >
 		    <eng value="Select level. you can move this list up and down" />
 		    <pol value="Wybierz poziom. Możesz przesuwać tą listę w góre i dół" />
@@ -39,26 +46,114 @@
 		    <eng value="Reset" />
 		    <pol value="Resetuj" />
 		</sentence>
-		<sentence name="level12.0.0">
-		    <eng value="Caveman: I think the answer could be near the light. It has to do something with the ligth." />
-		    <pol value="Jaskiniowiec: Wydaje mi się, że odpowiedź może być blisko światła. To na pewno ma coś wspólnego ze światłem." />
-		</sentence>
-		<sentence name="level12.1.0">
-		    <eng value="Light is shining on caveman, there is a spark in his eyes." />
-		    <pol value="Światło świeci na jaskiniowca, widać błysk w jego oczach." />
-		</sentence>
-		<sentence name="level12.1.1">
-		    <eng value="Caveman: Yes it was few days ago. You brought me here. That is why my skin is not pale." />
-		    <pol value="Jaskiniowiec: To była kilka dni temu... Przyprowadziłeś mnie tu. To dlatego moja skóra nie jest blada." />
-		</sentence>
-		<sentence name="level12.1.2" >
-		    <eng value="Voice is silent." />
-		    <pol value="Głos się nie odzywa." />
-		</sentence>
-		<sentence name="level12.1.3" >
-		    <eng value="Caveman: I heard you talking about a disease. And a woman. Do I have the disease? " />
-		    <pol value="Jaskiniowiec: Mówiłeś coś o chorobie. I o kobiecie. Czy mam jakąś chorobę? " />
-		</sentence>
+        <sentence name="level1.0.0" >
+            <eng value="Voice: You can create stairs with tiles and go up on them!" />
+            <pol value="Głos: Możesz tworzyć schody z klocków i wspinać się po nich!" />
+        </sentence>
+        <sentence name="level1.1.0" >
+            <eng value="Voice: You will not go out. Press restart after this screen closes." />
+            <pol value="Głos: Nie wyjdziesz. Naciśnij reset po zamknięciu tego okna. " />
+        </sentence>
+        <sentence name="level2.0.0" >
+            <eng value="Voice: This is water:" />
+            <pol value="Głos: To jest woda:" />
+        </sentence>
+        <sentence name="level2.0.1" >
+            <eng value="Voice: Wheng you are in the water you can MOVE in ALL DIRECTIONS." />
+            <pol value="Głos: Kiedy jesteś w wodzie, możesz poruszać się we wszystkich kierunkach." />
+        </sentence>
+        <sentence name="level2.0.2" >
+            <eng value="Voice: No worries, you will not drown nor freeze." />
+            <pol value="Głos: Bez zmartwień, nie utopisz się ani nie zamarzniesz." />
+        </sentence>
+        <sentence name="level2.1.0" >
+            <eng value="Caveman: damn, that is a little bit cold. But I will manage." />
+            <pol value="Jaskiniowiec: cholera, to jest całkiem chłodne. Dam sobie jednak radę." />
+        </sentence>
+        <sentence name="level3.0.0" >
+            <eng value="Voice: Wheng you falls into water, you will loose the picked up tile." />
+            <pol value="Głos: Jeśli wpadniesz do wody, to tracisz trzymany klocek." />
+        </sentence>
+        <sentence name="level4.0.0" >
+            <eng value="Caveman: There is a waterfall, I can swim up on it!" />
+            <pol value="Jaskiniowiec: Widzę wodospad, potrafię wpłynąć na jego szczyt! Ale coś jescze trzeba przestawić." />
+        </sentence>
+        <sentence name="level4.1.0" >
+            <eng value="Caveman: Great thinking, with your guidance, I will reach the surface." />
+            <pol value="Jaskiniowiec: Świetne myślenie, z Twoją pomocą dotrę do powierzchni." />
+        </sentence>
+        <sentence name="level5.0.0" >
+            <eng value="Caveman wheezes: Grrrumpphh." />
+            <pol value="Jaskiniowiec dyszy: Grrrrummmpphh." />
+        </sentence>
+        <sentence name="level5.1.0" >
+            <eng value="Caveman: I need something to stand. No way I will jump." />
+            <pol value="Jaskiniowiec: Potrzebuję na czymś stanąć. Nie uda mi się tak wysoko skoczyć." />
+        </sentence>
+        <sentence name="level6.0.0" >
+            <eng value="Caveman: This cave is so beautiful. All the water dropping from the ceiling. " />
+            <pol value="Jaskiniowiec: Ta jaskinia jest piękna. Woda cudownie spływa ze stropu. " />
+        </sentence>
+        <sentence name="level6.0.1" >
+            <eng value="Caveman: I think there is something moving in the darkness on the right. " />
+            <pol value="Jaskiniowiec: Wydaje mi się, że coś się rusza tam po prawej." />
+        </sentence>
+        <sentence name="level6.1.0" >
+            <eng value="Caveman: No, nothing is here, it was just my imagination." />
+            <pol value="Jaskiniowiec: Nie, jednak nic tu nie ma, to tylko moja wyobraźnia." />
+        </sentence>
+        <sentence name="level7.0.0" >
+            <eng value="Caveman: I am starting to remember something. " />
+            <pol value="Jaskiniowiec:  Zaczynam sobie coś przypominać." />
+        </sentence>
+        <sentence name="level7.0.1" >
+            <eng value="Caveman: I wasn't here since I was born. " />
+            <pol value="Jaskiniowiec: Nie byłem tu od urodzenia." />
+        </sentence>
+        <sentence name="level7.0.2" >
+            <eng value="Caveman: I remember the world. " />
+            <pol value="Jaskiniowiek: Tak, pamiętam świat zewnętrzny, promienie. " />
+        </sentence>
+        <sentence name="level8.0.0" >
+            <eng value="Caveman: Yes, I definately remember this big pile of mud in the water. " />
+            <pol value="Jaskiniowiec: Tak, zdecydowanie pamiętam to dziwne skupisko błota wśród wody. " />
+        </sentence>
+        <sentence name="level9.0.0" >
+            <eng value="Caveman: I fell into a hole, how do I get out of here." />
+            <pol value="Jaskiniowiek: Wpadłem do dziury, jak się stąd wydostać." />
+        </sentence>
+        <sentence name="level9.0.1" >
+            <eng value="Voice: Relocate the mud." />
+            <pol value="Głos: Przemieść klocki błota." />
+        </sentence>
+        <sentence name="level9.0.2" >
+            <eng value="Caveman: Who are you, voice?" />
+            <pol value="Jaskiniowiec: Kim jesteś, głosie?" />
+        </sentence>
+        <sentence name="level9.0.3" >
+            <eng value="Voice: Just a good soul helping you out" />
+            <pol value="Głos: Tylko dobrą duszą pomagająca Ci wyjść." />
+        </sentence>
+        <sentence name="level10.0.0" >
+            <eng value="Voice: If you have a tile and go into water, you lose it. Use it." />
+            <pol value="Głos: Jeśli trzymasz klocek i wpadniesz do wody, tracisz go. Wykorzystaj to. " />
+        </sentence>
+        <sentence name="level10.0.1" >
+            <eng value="Caveman: Why are you helping me? Do I know you?" />
+            <pol value="Jaskiniowiec: Dlaczego mi pomagasz? Czy Cię znam?" />
+        </sentence>
+        <sentence name="level10.0.2" >
+            <eng value="Voice is silent. " />
+            <pol value="Głos się nie odzywa. " />
+        </sentence>
+        <sentence name="level10.1.0" >
+            <eng value="Voice: Here, right here, that is the spot." />
+            <pol value="Głos: Tutaj, właśnie tutaj, to jest to miejsce." />
+        </sentence>
+        <sentence name="level10.1.1" >
+            <eng value="Caveman: Don't help me, I can do it alone!" />
+            <pol value="Jaskiniowiec: Nie pomagaj mi. Potrafię zrobić to samemu!" />
+        </sentence>
 		<sentence name="level11.0.0" >
 		    <eng value="Voice: Just go.. <caveman interrupts>. " />
 		    <pol value="Głos: Po prostu... <jaskiniowiec przerywa>. " />
@@ -83,6 +178,26 @@
             <eng value="Voice is nervously silent." />
             <pol value="Głos nerwowo się nie odzywa." />
         </sentence>	
+		<sentence name="level12.0.0">
+		    <eng value="Caveman: I think the answer could be near the light. It has to do something with the ligth." />
+		    <pol value="Jaskiniowiec: Wydaje mi się, że odpowiedź może być blisko światła. To na pewno ma coś wspólnego ze światłem." />
+		</sentence>
+		<sentence name="level12.1.0">
+		    <eng value="Light is shining on caveman, there is a spark in his eyes." />
+		    <pol value="Światło świeci na jaskiniowca, widać błysk w jego oczach." />
+		</sentence>
+		<sentence name="level12.1.1">
+		    <eng value="Caveman: Yes it was few days ago. You brought me here. That is why my skin is not pale." />
+		    <pol value="Jaskiniowiec: To była kilka dni temu... Przyprowadziłeś mnie tu. To dlatego moja skóra nie jest blada." />
+		</sentence>
+		<sentence name="level12.1.2" >
+		    <eng value="Voice is silent." />
+		    <pol value="Głos się nie odzywa." />
+		</sentence>
+		<sentence name="level12.1.3" >
+		    <eng value="Caveman: I heard you talking about a disease. And a woman. Do I have the disease? " />
+		    <pol value="Jaskiniowiec: Mówiłeś coś o chorobie. I o kobiecie. Czy mam jakąś chorobę? " />
+		</sentence>
         <sentence name="level13.0.0">
             <eng value="Caveman: Am I on earth?" />
             <pol value="Jaskiniowiec: Czy jestem na ziemi?" />
@@ -107,85 +222,9 @@
             <eng value="Voice: Because you would like to change your future, but it can not be changed." />
             <pol value="Głos: Ponieważ chciałbyś zmienić przyszłość, jednak tego nie da się zrobić. " />
         </sentence>
-        <sentence name="level10.0.0" >
-            <eng value="Voice: If you have a tile and go into water, you lose it. Use it." />
-            <pol value="Głos: Jeśli trzymasz klocek i wpadniesz do wody, tracisz go. Wykorzystaj to. " />
-        </sentence>
-        <sentence name="level10.0.1" >
-            <eng value="Caveman: Why are you helping me? Do I know you?" />
-            <pol value="Jaskiniowiec: Dlaczego mi pomagasz? Czy Cię znam?" />
-        </sentence>
-        <sentence name="level10.0.2" >
-            <eng value="Voice is silent. " />
-            <pol value="Głos się nie odzywa. " />
-        </sentence>
-        <sentence name="level10.1.0" >
-            <eng value="Voice: Here, right here, that is the spot." />
-            <pol value="Głos: Tutaj, właśnie tutaj, to jest to miejsce." />
-        </sentence>
-        <sentence name="level10.1.1" >
-            <eng value="Caveman: Don't help me, I can do it alone!" />
-            <pol value="Jaskiniowiec: Nie pomagaj mi. Potrafię zrobić to samemu!" />
-        </sentence>
-        <sentence name="level9.0.0" >
-            <eng value="Caveman: I fell into a hole, how do I get out of here." />
-            <pol value="Jaskiniowiek: Wpadłem do dziury, jak się stąd wydostać." />
-        </sentence>
-        <sentence name="level9.0.1" >
-            <eng value="Voice: Relocate the mud." />
-            <pol value="Głos: Przemieść klocki błota." />
-        </sentence>
-        <sentence name="level9.0.2" >
-            <eng value="Caveman: Who are you, voice?" />
-            <pol value="Jaskiniowiec: Kim jesteś, głosie?" />
-        </sentence>
-        <sentence name="level9.0.3" >
-            <eng value="Voice: Just a good soul helping you out" />
-            <pol value="Głos: Tylko dobrą duszą pomagająca Ci wyjść." />
-        </sentence>
-        <sentence name="level8.0.0" >
-            <eng value="Caveman: Yes, I definately remember this big pile of mud in the water. " />
-            <pol value="Jaskiniowiec: Tak, zdecydowanie pamiętam to dziwne skupisko błota wśród wody. " />
-        </sentence>
-        <sentence name="level7.0.0" >
-            <eng value="Caveman: I am starting to remember something. " />
-            <pol value="Jaskiniowiec:  Zaczynam sobie coś przypominać." />
-        </sentence>
-        <sentence name="level7.0.1" >
-            <eng value="Caveman: I wasn't here since I was born. " />
-            <pol value="Jaskiniowiec: Nie byłem tu od urodzenia." />
-        </sentence>
-        <sentence name="level7.0.2" >
-            <eng value="Caveman: I remember the world. " />
-            <pol value="Jaskiniowiek: Tak, pamiętam świat zewnętrzny, promienie. " />
-        </sentence>
-        <sentence name="level6.0.0" >
-            <eng value="Caveman: This cave is so beautiful. All the water dropping from the ceiling. " />
-            <pol value="Jaskiniowiec: Ta jaskinia jest piękna. Woda cudownie spływa ze stropu. " />
-        </sentence>
-        <sentence name="level6.0.1" >
-            <eng value="Caveman: I think there is something moving in the darkness on the right. " />
-            <pol value="Jaskiniowiec: Wydaje mi się, że coś się rusza tam po prawej." />
-        </sentence>
-        <sentence name="level6.1.0" >
-            <eng value="Caveman: No, nothing is here, it was just my imagination." />
-            <pol value="Jaskiniowiec: Nie, jednak nic tu nie ma, to tylko moja wyobraźnia." />
-        </sentence>
-        <sentence name="level5.0.0" >
-            <eng value="Caveman wheezes: Grrrumpphh." />
-            <pol value="Jaskiniowiec dyszy: Grrrrummmpphh." />
-        </sentence>
-        <sentence name="level5.1.0" >
-            <eng value="Caveman: I need something to stand. No way I will jump." />
-            <pol value="Jaskiniowiec: Potrzebuję na czymś stanąć. Nie uda mi się tak wysoko skoczyć." />
-        </sentence>
-        <sentence name="level4.0.0" >
-            <eng value="Caveman: There is a waterfall, I can swim up on it!" />
-            <pol value="Jaskiniowiec: Widzę wodospad, potrafię wpłynąć na jego szczyt! Ale coś jescze trzeba przestawić." />
-        </sentence>
-        <sentence name="level4.1.0" >
-            <eng value="Caveman: Great thinking, with your guidance, I will reach the surface." />
-            <pol value="Jaskiniowiec: Świetne myślenie, z Twoją pomocą dotrę do powierzchni." />
+        <sentence name="level19.0.0" >
+            <eng value="Voice: This won't be easy." />
+            <pol value="Głos: To nie będzie łatwe." />
         </sentence>
         <sentence name="level99.0.0" >
             <eng value="Voice: This level is impossible to make, don't try to do it." />
@@ -231,88 +270,30 @@
             <eng value="Gamer: I don't want to sit all the time in the toilet on my android smart phone." />
             <pol value="Gracz: Nie chcę siedzieć w toalecie całe życie i grać na moim telefonie androidowym." />
         </sentence>
-        <sentence name="level1.0.0" >
-            <eng value="Voice: You can create stairs with tiles and go up on them!" />
-            <pol value="Głos: Możesz tworzyć schody z klocków i wspinać się po nich!" />
-        </sentence>
-        <sentence name="level1.1.0" >
-            <eng value="Voice: Now you have to restart the level, no coming back from this." />
-            <pol value="Głos: Musisz zrestartować tą jaskinie, już nie wyjdziesz." />
-        </sentence>
-        <sentence name="level2.0.0" >
-            <eng value="Voice: This is water:" />
-            <pol value="Głos: To jest woda:" />
-        </sentence>
-        <sentence name="level2.0.1" >
-            <eng value="Voice: Wheng you are in the water you can MOVE in ALL DIRECTIONS." />
-            <pol value="Głos: Kiedy jesteś w wodzie, możesz poruszać się we wszystkich kierunkach." />
-        </sentence>
-        <sentence name="level2.0.2" >
-            <eng value="Voice: No worries, you will not drown nor freeze." />
-            <pol value="Głos: Bez zmartwień, nie utopisz się ani nie zamarzniesz." />
-        </sentence>
-        <sentence name="level2.1.0" >
-            <eng value="Caveman: damn, that is a little bit cold. But I will manage." />
-            <pol value="Jaskiniowiec: cholera, to jest całkiem chłodne. Dam sobie jednak radę." />
-        </sentence>
-        <sentence name="level3.0.0" >
-            <eng value="Voice: Wheng you falls into water, you will loose the picked up tile." />
-            <pol value="Głos: Jeśli wpadniesz do wody, to tracisz trzymany klocek." />
-        </sentence>
-        <sentence name="level0c.0.0" >
-            <eng value="Voice: Wheng you picked up a tile, You can leave it anywhere you like, by doing this:" />
-            <pol value="Głos: Gdy podniesiesz klocek, możesz go zostawić na wolnej przestrzeni w teng sposób. (Możesz także zostawić nad sobą)" />
-        </sentence>
-        <sentence name="level0b.0.0" >
-            <eng value="Voice: You can pick up a tile. Go near this tile:" />
-            <pol value="Głos: Możesz podnieść klocek. Podejdź blisko tego klocka:" />
-        </sentence>
-        <sentence name="level0b.0.1" >
-            <eng value="Voice: Touch caveman and move your finger to the tile." />
-            <pol value="Głos: Dotknij jaskiniowca i przesuń palec do klocka." />
-        </sentence>
-        <sentence name="level19.0.0" >
-            <eng value="Voice: This won't be easy." />
-            <pol value="Głos: To nie będzie łatwe." />
-        </sentence>
         
 	</locale>
 
 	<levels>
-	    
+		<level id="0" src="maps/levels/new/0.tmx"> 
+			<event trigger="regular" action="JUST_ON">
+				<element sentence="what_is_teleport" />
+				<element packfile="map" region="teleport" />
+			</event>
+		</level>	    
 	    <level id="0b" src="maps/levels/new/0b.tmx" >
 	        <event trigger="regular" action="JUST_ON">
-	            <element sentence="level0b.0.0" />
+	            <element sentence="you_can_digg" />
 	            <element packfile="map" region="mud" />
-	            <element sentence="level0b.0.1" />
-	            <element packfile="sprites" region="pickup2" />
 	        </event>
+			<event trigger="onTile" action="PICKUP_TILE" x="3" y="8">
+				<element sentence="congratz_for_digging" />
+			</event>
 	    </level>
-	    
 	    <level id="0c" src="maps/levels/new/0c.tmx" >
 	        <event trigger="regular" action="JUST_ON">
-	            <element sentence="level0c.0.0" />
+	            <element sentence="you_can_leave_tiles" />
 	        </event>
 	    </level>
-	    
-	    <level id="3" src="maps/levels/new/3.tmx" >
-	        <event trigger="regular" action="JUST_ON">
-	            <element sentence="level3.0.0" />
-	        </event>
-	    </level>
-	    <level id="2" src="maps/levels/new/2.tmx" >
-	        <event trigger="regular" action="JUST_ON">
-	            <element sentence="level2.0.0" />
-	            <element packfile="map" region="player" />
-	            <element sentence="level2.0.1" />
-	            <element sentence="level2.0.2" />
-	        </event>
-	        <event trigger="onTile" action="BE_ON_TILE" x="7" y="5">
-	            <element packfile="map" region="player" />
-	            <element sentence="level2.1.0" />
-	        </event>
-	    </level>
-	    
 	    <level id="1" src="maps/levels/new/1.tmx" >
 	        <event trigger="regular" action="JUST_ON">
 	            <element sentence="level1.0.0" />
@@ -321,40 +302,21 @@
 	            <element sentence="level1.1.0" />
 	        </event>
 	    </level>
-	    
-	    <level id="100" src="maps/levels/new/100.tmx" >
+	    <level id="2" src="maps/levels/new/2.tmx" >
 	        <event trigger="regular" action="JUST_ON">
-	            <element sentence="level100.0.0" />
+	            <element sentence="level2.0.0" />
+	            <element packfile="map" region="water" />
+	            <element sentence="level2.0.1" />
+	            <element sentence="level2.0.2" />
 	        </event>
-	        <event trigger="onTile" action="BE_ON_TILE" x="8" y="3">
-	            <element sentence="level100.1.0" />
+	        <event trigger="onTile" action="BE_ON_TILE" x="7" y="5">
 	            <element packfile="map" region="player" />
-	            <element sentence="level100.1.1" />
+	            <element sentence="level2.1.0" />
 	        </event>
 	    </level>
-	    
-	    <level id="99" src="maps/levels/new/99.tmx" >
+	    <level id="3" src="maps/levels/new/3.tmx" >
 	        <event trigger="regular" action="JUST_ON">
-	            <element sentence="level99.0.0" />
-	            <element packfile="map" region="player" />
-	            <element sentence="level99.0.1" />
-	        </event>
-	        <event trigger="onTile" action="PICKUP_TILE" x="8" y="8">
-	            <element sentence="level99.1.0" />
-	        </event>
-	        <event trigger="onTile" action="BE_ON_TILE" x="5" y="3">
-	            <element sentence="level99.2.0" />
-	            <element packfile="sprites" region="woodaxe" />
-	            <element sentence="level99.2.1" />
-	            <element packfile="map" region="mildRock" />
-	            <element sentence="level99.2.2" />
-	        </event>
-	        <event trigger="onTile" action="BE_ON_TILE" x="2" y="2">
-	            <element packfile="map" region="player" />
-	            <element sentence="level99.3.0" />
-	        </event>
-	        <event trigger="regular" action="ENTER_TELEPORT">
-	            <element sentence="level99.4.0" />
+	            <element sentence="level3.0.0" />
 	        </event>
 	    </level>
 	    <level id="4" src="maps/levels/new/4.tmx" >
@@ -377,7 +339,6 @@
 	            <element sentence="level5.1.0" />
 	        </event>
 	    </level>
-	    
 	    <level id="6" src="maps/levels/new/6.tmx" >
 	        <event trigger="regular" action="JUST_ON">
 	            <element packfile="map" region="player" />
@@ -426,29 +387,6 @@
 	            <element sentence="level10.1.1" />
 	        </event>
 	    </level>
-	    <level id="13" src="maps/levels/new/13.tmx">
-	        <event trigger="regular" action="JUST_ON">
-	            <element packfile="map" region="player" />
-	            <element sentence="level13.0.0" />
-	            <element sentence="level13.0.1" />
-	            <element sentence="level13.0.2" />
-	            <element sentence="level13.0.3" />
-	            <element sentence="level13.0.4" />
-	            <element sentence="level13.0.5" />
-	        </event>
-	    </level>
-		<level id="0" src="maps/levels/new/0.tmx"> 
-			<event trigger="regular" action="JUST_ON">
-			    <!--  there is no need to store the element type, just declare sentence of packfile -->
-				<element sentence="level0.0.0" />
-				<element packfile="sprites" region="move" />
-				<element sentence="level0.0.1" />
-			</event>
-			<event trigger="regular" action="ENTER_TELEPORT">
-				<element sentence="level0.1.0" />
-				<element packfile="map" region="teleport" />
-			</event>
-		</level>
 		<level id="11" src="maps/levels/new/11.tmx" >
 		    <event trigger="regular" action="JUST_ON">
 		        <element sentence="level11.0.0" />
@@ -476,6 +414,17 @@
 		        <element sentence="level12.1.3" />
 		    </event>
 		</level>
+	    <level id="13" src="maps/levels/new/13.tmx">
+	        <event trigger="regular" action="JUST_ON">
+	            <element packfile="map" region="player" />
+	            <element sentence="level13.0.0" />
+	            <element sentence="level13.0.1" />
+	            <element sentence="level13.0.2" />
+	            <element sentence="level13.0.3" />
+	            <element sentence="level13.0.4" />
+	            <element sentence="level13.0.5" />
+	        </event>
+	    </level>
 		<level id="14" src="maps/levels/new/14.tmx" />
 		<level id="15" src="maps/levels/new/15.tmx" />
 		<level id="16" src="maps/levels/new/16.tmx" />
@@ -489,6 +438,40 @@
 		<level id="20" src="maps/levels/new/20.tmx" />
 		<level id="21" src="maps/levels/new/21.tmx" />
 		<level id="22" src="maps/levels/new/22.tmx" />
+	    <level id="99" src="maps/levels/new/99.tmx" >
+	        <event trigger="regular" action="JUST_ON">
+	            <element sentence="level99.0.0" />
+	            <element packfile="map" region="player" />
+	            <element sentence="level99.0.1" />
+	        </event>
+	        <event trigger="onTile" action="PICKUP_TILE" x="8" y="8">
+	            <element sentence="level99.1.0" />
+	        </event>
+	        <event trigger="onTile" action="BE_ON_TILE" x="5" y="3">
+	            <element sentence="level99.2.0" />
+	            <element packfile="sprites" region="woodaxe" />
+	            <element sentence="level99.2.1" />
+	            <element packfile="map" region="mildRock" />
+	            <element sentence="level99.2.2" />
+	        </event>
+	        <event trigger="onTile" action="BE_ON_TILE" x="2" y="2">
+	            <element packfile="map" region="player" />
+	            <element sentence="level99.3.0" />
+	        </event>
+	        <event trigger="regular" action="ENTER_TELEPORT">
+	            <element sentence="level99.4.0" />
+	        </event>
+	    </level>
+	    <level id="100" src="maps/levels/new/100.tmx" >
+	        <event trigger="regular" action="JUST_ON">
+	            <element sentence="level100.0.0" />
+	        </event>
+	        <event trigger="onTile" action="BE_ON_TILE" x="8" y="3">
+	            <element sentence="level100.1.0" />
+	            <element packfile="map" region="player" />
+	            <element sentence="level100.1.1" />
+	        </event>
+	    </level>
 		    
 	</levels> 
 
@@ -558,6 +541,7 @@
         <action type="JUST_ON" />
         <action type="BE_ON_TILE" />
         <action type="ENTER_TELEPORT" />
+		<action type="PICKUP_TILE" />
     </actions>
 
     <triggers>
