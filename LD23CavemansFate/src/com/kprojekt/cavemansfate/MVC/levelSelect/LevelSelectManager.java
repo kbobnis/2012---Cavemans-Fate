@@ -1,5 +1,6 @@
 package com.kprojekt.cavemansfate.MVC.levelSelect;
 
+import com.badlogic.gdx.Gdx;
 import com.kprojekt.cavemansfate.MVC.cave.CaveManager;
 import com.kprojekt.cavemansfate.MVC.levelSelect.view.LevelSelectView;
 import com.kprojekt.utils.Manager;
@@ -9,6 +10,7 @@ import com.kprojekt.utils.Manager;
  */
 public class LevelSelectManager extends Manager
 {
+	private static int movedUntilUnselected;
 	private LevelSelectModel model;
 	private LevelSelectController levelSelectController;
 
@@ -22,6 +24,7 @@ public class LevelSelectManager extends Manager
 		this.model = new LevelSelectModel( levels );
 		this.view = new LevelSelectView( this.model );
 		this.levelSelectController = new LevelSelectController( this.model, this.view );
+		LevelSelectManager.movedUntilUnselected = Gdx.graphics.getHeight() / 5;
 	}
 
 	@Override
@@ -70,7 +73,7 @@ public class LevelSelectManager extends Manager
 	public void dragged( int x, int y, int howX, int howY )
 	{
 		this.movedSinceSelected += Math.abs( howY );
-		if( Math.abs( this.movedSinceSelected ) > 20 )
+		if( Math.abs( this.movedSinceSelected ) > LevelSelectManager.movedUntilUnselected )
 		{
 			this.movedSinceSelected = 0;
 			this.selected = null;
@@ -83,9 +86,7 @@ public class LevelSelectManager extends Manager
 	@Override
 	public void backPressed()
 	{
-		System.exit(0);
+		System.exit( 0 );
 	}
-	
-	
 
 }

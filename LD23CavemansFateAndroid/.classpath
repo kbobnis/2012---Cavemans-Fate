@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="src" path="assets"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="lib" path="libs/gdx-backend-android.jar"/>
 	<classpathentry exported="true" kind="lib" path="/LD23CavemansFate/libs/gdx.jar" sourcepath="/LD23CavemansFate/libs/gdx-sources.jar"/>

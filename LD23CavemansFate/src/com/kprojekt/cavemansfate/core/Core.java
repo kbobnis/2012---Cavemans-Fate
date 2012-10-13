@@ -15,12 +15,12 @@ public class Core
 	public static Manager actualManager;
 	private static MainInputProcessor mainInputProcessor;
 
-	public static void initLang(String xmlPath, String iso3Lang)
+	public static void initLang( String xmlPath, String iso3Lang )
 	{
 		Core.lang = new Lang( xmlPath, iso3Lang );
-		
+
 	}
-	
+
 	public static void init( String xmlPath, String iso3Lang )
 	{
 		Core.levels = new Levels( xmlPath );
@@ -33,7 +33,7 @@ public class Core
 		Core.mainInputProcessor.setDelegate( Core.actualManager );
 		Gdx.input.setInputProcessor( Core.mainInputProcessor );
 
-		Gdx.gl.glClearColor( 0.2f, 0f, 0f, 0 );
+		Gdx.gl.glClearColor( 0.0f, 0f, 0f, 0 );
 		Gdx.gl.glClear( GL10.GL_COLOR_BUFFER_BIT );
 
 		Core.actualManager.render( delta, 0, 0 );
