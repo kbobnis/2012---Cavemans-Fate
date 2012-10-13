@@ -27,8 +27,8 @@
 		    <pol value="Udało Ci się znaleźć drogę wyjścia. Wyjście jest zawsze na prawo do góry." />
 		</sentence>
         <sentence name="you_can_leave_tiles" >
-            <eng value="Voice: Wheng you picked up a tile, You can leave it anywhere you like. Even over your head." />
-            <pol value="Głos: Gdy podniesiesz klocek, możesz go zostawić na wolnej przestrzeni. Nad nad Twoją głową." />
+            <eng value="Voice: Wheng you picked up a tile, You can leave it anywhere you like. " />
+            <pol value="Głos: Gdy podniesiesz klocek, możesz go zostawić na wolnej przestrzeni. " />
         </sentence>
 		<sentence name="levelSelect.info" >
 		    <eng value="Select level. you can move this list up and down" />
@@ -46,7 +46,7 @@
 		    <eng value="Reset" />
 		    <pol value="Resetuj" />
 		</sentence>
-        <sentence name="level1.0.0" >
+        <sentence name="you_can_create_stairs" >
             <eng value="Voice: You can create stairs with tiles and go up on them!" />
             <pol value="Głos: Możesz tworzyć schody z klocków i wspinać się po nich!" />
         </sentence>
@@ -93,14 +93,6 @@
         <sentence name="level6.0.0" >
             <eng value="Caveman: This cave is so beautiful. All the water dropping from the ceiling. " />
             <pol value="Jaskiniowiec: Ta jaskinia jest piękna. Woda cudownie spływa ze stropu. " />
-        </sentence>
-        <sentence name="level6.0.1" >
-            <eng value="Caveman: I think there is something moving in the darkness on the right. " />
-            <pol value="Jaskiniowiec: Wydaje mi się, że coś się rusza tam po prawej." />
-        </sentence>
-        <sentence name="level6.1.0" >
-            <eng value="Caveman: No, nothing is here, it was just my imagination." />
-            <pol value="Jaskiniowiec: Nie, jednak nic tu nie ma, to tylko moja wyobraźnia." />
         </sentence>
         <sentence name="level7.0.0" >
             <eng value="Caveman: I am starting to remember something. " />
@@ -295,9 +287,6 @@
 	        </event>
 	    </level>
 	    <level id="1" src="maps/levels/new/1.tmx" >
-	        <event trigger="regular" action="JUST_ON">
-	            <element sentence="level1.0.0" />
-	        </event>
 	        <event trigger="onTile" action="BE_ON_TILE" x="5" y="9">
 	            <element sentence="level1.1.0" />
 	        </event>
@@ -309,6 +298,10 @@
 	            <element sentence="level2.0.1" />
 	            <element sentence="level2.0.2" />
 	        </event>
+            <event trigger="onTile" action="BE_ON_TILE" x="5" y="7">
+                <element sentence="you_can_create_stairs" />
+            </event>
+
 	        <event trigger="onTile" action="BE_ON_TILE" x="7" y="5">
 	            <element packfile="map" region="player" />
 	            <element sentence="level2.1.0" />
@@ -343,13 +336,7 @@
 	        <event trigger="regular" action="JUST_ON">
 	            <element packfile="map" region="player" />
 	            <element sentence="level6.0.0" />
-	            <element sentence="level6.0.1" />
 	        </event>
-	        <event trigger="onTile" action="BE_ON_TILE" x="8" y="8">
-	            <element packfile="map" region="player" />
-	            <element sentence="level6.1.0" />
-	        </event>
-	        
 	    </level>
 	    <level id="7" src="maps/levels/new/7.tmx" >
 	        <event trigger="regular" action="JUST_ON">
