@@ -15,12 +15,12 @@
 			<pol value="Idź do światła, jest zawsze na górze po prawej!" />
 		</sentence>
 		<sentence name="you_can_digg" >
-			<eng value="You can dig. Dig yourself out." />
-			<pol value="Możesz kopać, wykop się." />			
+			<eng value="You can dig. Dig yourself out. Tiles which you can dig will lighten up, touch them to dig." />
+			<pol value="Możesz kopać, wykop się. Klocki które możesz kopać podświetlą się, dotnij je, aby wykopać" />			
 		</sentence>
 		<sentence name="congratz_for_digging" >
-			<eng value="Congratulations, you digged yourself out. Go to the light." />
-			<pol value="Brawo, wykopałeś sobie wyjście. Idź do światła." />					
+			<eng value="Congratulations, you digged yourself out. You have the tile on your back, you can leave it by touching lightened space." />
+			<pol value="Brawo, wykopałeś sobie wyjście. Klocek masz teraz na plecach, możesz go zostawić gdzie chcesz poprzez dotknięcie podświetlonej przestrzeni." />					
 		</sentence>
 		<sentence name="level0.1.0">
 		    <eng value="Great, you have found your way out. This is a way out of every level." />
@@ -28,7 +28,7 @@
 		</sentence>
         <sentence name="you_can_leave_tiles" >
             <eng value="Voice: Wheng you picked up a tile, You can leave it anywhere you like. " />
-            <pol value="Głos: Gdy podniesiesz klocek, możesz go zostawić na wolnej przestrzeni. " />
+            <pol value="Głos: Gdy podniesiesz klocek, możesz go zostawić na wolnej przestrzeni.  " />
         </sentence>
 		<sentence name="levelSelect.info" >
 		    <eng value="Select level. you can move this list up and down" />
@@ -230,19 +230,15 @@
             <eng value="Voice: Wait, wut, don't pick up this axe!" />
             <pol value="Głos: Czekaj, co?! Nie podnoś tego kilofa!" />
         </sentence>
-        <sentence name="level99.2.0" >
+        <sentence name="picked_up_secret" >
             <eng value="You picked up a secret!" />
             <pol value="Podniosłeś sekret!" />
         </sentence>
-        <sentence name="level99.2.1" >
-            <eng value="Now you can digg eveng more tiles!" />
-            <pol value="Teraz możesz kopać więcej klocków!" />
-        </sentence>
-        <sentence name="level99.2.2" >
+        <sentence name="you_lose_items_on_next_level" >
             <eng value="You will lose this axe (and all imtems) wheng entering new level." />
             <pol value="Stracisz teng kilof (i wszystkie inne przedmioty) podczas przechodzenia do następnej jaskini." />
         </sentence>
-        <sentence name="level99.3.0" >
+        <sentence name="with_new_axe_dig_more" >
             <eng value="Caveman: With the woodaxe, I can dig the tile I am standing on right now." />
             <pol value="Jaskiniowiec: Z tym kilofem, mogę kopać klocek na którym właśnie stoję." />
         </sentence>
@@ -434,16 +430,15 @@
 	        <event trigger="onTile" action="PICKUP_TILE" x="8" y="8">
 	            <element sentence="level99.1.0" />
 	        </event>
-	        <event trigger="onTile" action="BE_ON_TILE" x="5" y="3">
-	            <element sentence="level99.2.0" />
+	        <event trigger="onTile" action="BE_ON_TILE" x="8" y="8">
+	            <element sentence="picked_up_secret" />
 	            <element packfile="sprites" region="woodaxe" />
-	            <element sentence="level99.2.1" />
-	            <element packfile="map" region="mildRock" />
-	            <element sentence="level99.2.2" />
+	            <element sentence="you_lose_items_on_next_level" />
+				<element packfile="map" region="mildRock" />
 	        </event>
 	        <event trigger="onTile" action="BE_ON_TILE" x="2" y="2">
 	            <element packfile="map" region="player" />
-	            <element sentence="level99.3.0" />
+	            <element sentence="with_new_axe_dig_more" />
 	        </event>
 	        <event trigger="regular" action="ENTER_TELEPORT">
 	            <element sentence="level99.4.0" />
