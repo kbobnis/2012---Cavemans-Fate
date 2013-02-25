@@ -40,39 +40,38 @@ public class CaveView extends InputWrapper
 	private MyTextureAtlas spritesAtlas;
 	private final CaveController caveController;
 
-	public CaveView(CaveController caveController, HashMap<String, MyTextureAtlas> atlases, Menu menu)
+	public CaveView( CaveController caveController, HashMap<String, MyTextureAtlas> atlases, Menu menu )
 	{
 		this.caveController = caveController;
-		spritesAtlas = atlases.get("sprites");
-		this.mapAtlas = atlases.get("map");
-		this.arrows = spritesAtlas.findRegion("arrows");
-		this.backgroundImage = spritesAtlas.findRegion("background");
+		spritesAtlas = atlases.get( "sprites" );
+		this.mapAtlas = atlases.get( "map" );
+		this.arrows = spritesAtlas.findRegion( "arrows" );
+		this.backgroundImage = spritesAtlas.findRegion( "background" );
 		this.caveModel = caveController.getModel();
 		this.cavemanController = caveController.getCavemanController();
 		this.menu = menu;
 	}
 
-	public void render(float delta)
+	public void render( float delta )
 	{
 
 		initView();
 
 		CavemansFate.spriteBatch.begin();
 
-		CavemansFate.spriteBatch.draw(this.backgroundImage, 0, 0, Gdx.graphics.getWidth() * 2,
-				Gdx.graphics.getHeight() * 2);
+		CavemansFate.spriteBatch.draw( this.backgroundImage, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight() );
 
 		CavemansFate.spriteBatch.end();
 
 		this.centerCameraOnCaveman();
 		camera.update();
-		if (this.tileMapRendererWrapper == null)
+		if( this.tileMapRendererWrapper == null )
 		{
-			this.tileMapRendererWrapper = new TileMapRendererWrapper(this.caveModel.getMap(), mapAtlas, tileW, tileH,
-					tileW, tileH);
+			this.tileMapRendererWrapper = new TileMapRendererWrapper( this.caveModel.getMap(), mapAtlas, tileW, tileH,
+					tileW, tileH );
 		}
-		this.tileMapRendererWrapper.updateCamera(camera.combined);
-		this.tileMapRendererWrapper.render(camera);
+		this.tileMapRendererWrapper.updateCamera( camera.combined );
+		this.tileMapRendererWrapper.render( camera );
 
 		CavemansFate.spriteBatch.begin();
 		this.cavemanView.render();
@@ -85,29 +84,29 @@ public class CaveView extends InputWrapper
 
 	private void initView()
 	{
-		if (this.cavemanView == null)
+		if( this.cavemanView == null )
 		{
 			this.mapHeight = caveController.getModel().getMap().height;
-			int tileW = (int) (20 * CavemansFate.tileScale);
-			int tileH = (int) (20 * CavemansFate.tileScale);
+			int tileW = (int)(20 * CavemansFate.tileScale);
+			int tileH = (int)(20 * CavemansFate.tileScale);
 			this.tileW = tileW;
 			this.tileH = tileH;
-			this.camera = new CameraWrapper(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-			this.camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-			this.cavemanView = new CavemanView(cavemanController, mapAtlas, spritesAtlas, tileW, tileH, this.camera);
+			this.camera = new CameraWrapper( Gdx.graphics.getWidth(), Gdx.graphics.getHeight() );
+			this.camera.setToOrtho( false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight() );
+			this.cavemanView = new CavemanView( cavemanController, mapAtlas, spritesAtlas, tileW, tileH, this.camera );
 		}
 	}
 
 	private void renderBackground()
 	{
-		if (this.caveModel.getCaveState().isBackgroundSelected())
+		if( this.caveModel.getCaveState().isBackgroundSelected() )
 		{
 			CaveState caveState = this.caveModel.getCaveState();
-			int width = (int) (this.arrows.getRegionWidth() * CavemansFate.tileScale);
-			int height = (int) (this.arrows.getRegionHeight() * CavemansFate.tileScale);
+			int width = (int)(this.arrows.getRegionWidth() * CavemansFate.tileScale);
+			int height = (int)(this.arrows.getRegionHeight() * CavemansFate.tileScale);
 
-			CavemansFate.spriteBatch.draw(this.arrows, caveState.getTouchedX() - width / 2, Gdx.graphics.getHeight()
-					- caveState.getTouchedY() - height / 2, width, height);
+			CavemansFate.spriteBatch.draw( this.arrows, caveState.getTouchedX() - width / 2, Gdx.graphics.getHeight()
+					- caveState.getTouchedY() - height / 2, width, height );
 		}
 	}
 
@@ -119,17 +118,17 @@ public class CaveView extends InputWrapper
 		return false;
 	}
 
-	public void addBackPressedListener(MenuActionListener listener)
+	public void addBackPressedListener( MenuActionListener listener )
 	{
 		this.listener = listener;
 	}
 
 	@Override
-	public boolean touchDown(int x, int y)
+	public boolean touchDown( int x, int y )
 	{
 		boolean result = false;
 		this.initView();
-		if (this.cavemanView.touchDown(x, y))
+		if( this.cavemanView.touchDown( x, y ) )
 		{
 			result = true;
 		}
@@ -139,11 +138,11 @@ public class CaveView extends InputWrapper
 	}
 
 	@Override
-	public boolean touchUp(int x, int y)
+	public boolean touchUp( int x, int y )
 	{
 		boolean result = false;
 		this.initView();
-		if (this.cavemanView.touchUp(x, y))
+		if( this.cavemanView.touchUp( x, y ) )
 		{
 			result = true;
 		}
@@ -152,11 +151,11 @@ public class CaveView extends InputWrapper
 	}
 
 	@Override
-	public boolean dragged(int x, int y, int howX, int howY)
+	public boolean dragged( int x, int y, int howX, int howY )
 	{
 		boolean result = false;
 		this.initView();
-		if (this.cavemanView.dragged(x, y, howX, howY))
+		if( this.cavemanView.dragged( x, y, howX, howY ) )
 		{
 			result = true;
 		}

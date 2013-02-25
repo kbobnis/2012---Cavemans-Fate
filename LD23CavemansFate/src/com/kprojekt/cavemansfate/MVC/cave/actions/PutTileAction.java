@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.tiled.TiledLayer;
 import com.badlogic.gdx.math.Vector3;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanModel;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanState.SIDES;
+import com.kprojekt.cavemansfate.core.Core;
 import com.kprojekt.utils.fixes.MyTiledMap;
 
 /**
@@ -40,6 +41,7 @@ public class PutTileAction extends CavemanAction
 			return false;
 		}
 		layer.tiles[(int)tilePos.y][(int)tilePos.x] = pickupedTileId;
+		Core.sounds.getPutMud().play();
 		map.changed();
 		return true;
 	}

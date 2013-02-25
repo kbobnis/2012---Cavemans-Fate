@@ -1,0 +1,75 @@
+
+allgraphics2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+z_dummy
+  rotate: false
+  xy: 0, 0
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 0
+woodaxe
+  rotate: false
+  xy: 0, 129
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 1
+water
+  rotate: false
+  xy: 0, 256
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 2
+teleport
+  rotate: false
+  xy: 0, 384
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 3
+stoneAxe
+  rotate: false
+  xy: 0, 512
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: 4
+steelAxe
+  rotate: false
+  xy: 0, 640
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 5
+rock
+  rotate: false
+  xy: 0, 768
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 6
+mud
+  rotate: false
+  xy: 0, 896
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 7
+mildRock
+  rotate: false
+  xy: 0, 1024
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 8
+player
+  rotate: false
+  xy: 0, 1152
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 9

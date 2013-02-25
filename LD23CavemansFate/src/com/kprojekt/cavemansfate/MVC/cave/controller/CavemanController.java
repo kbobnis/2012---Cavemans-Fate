@@ -3,11 +3,11 @@ package com.kprojekt.cavemansfate.MVC.cave.controller;
 import java.util.HashMap;
 
 import com.kprojekt.cavemansfate.MVC.cave.actions.CavemanAction;
-import com.kprojekt.cavemansfate.MVC.cave.actions.PutTileAction;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanModel;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanState;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanState.SIDES;
 import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Trigger.ACTIVATE_ACTION;
+import com.kprojekt.cavemansfate.core.Core;
 
 /**
  * 
@@ -61,10 +61,18 @@ public class CavemanController
 		if( this.model.isSwimming() )
 		{
 			result = tryToMoveInWater( side, side2 );
+			if( result )
+			{
+				Core.sounds.getSwim().play();
+			}
 		}
 		else
 		{
 			result = tryToMoveWhenWalking( side, side2 );
+			if( result )
+			{
+				Core.sounds.getWalk().play();
+			}
 		}
 
 		return result;

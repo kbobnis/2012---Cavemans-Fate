@@ -14,6 +14,7 @@ public class Core
 	public static Levels levels;
 	public static Manager actualManager;
 	private static MainInputProcessor mainInputProcessor;
+	public static Sounds sounds;
 
 	public static void initLang( String xmlPath, String iso3Lang )
 	{
@@ -25,6 +26,7 @@ public class Core
 	{
 		Core.levels = new Levels( xmlPath );
 		Core.mainInputProcessor = new MainInputProcessor();
+		Core.sounds = new Sounds();
 	}
 
 	public static void render( float delta )

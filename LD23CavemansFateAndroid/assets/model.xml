@@ -50,6 +50,11 @@
             <eng value="Voice: You can create stairs with tiles and go up on them!" />
             <pol value="Głos: Możesz tworzyć schody z klocków i wspinać się po nich!" />
         </sentence>
+        <sentence name="all_levels_can_be_made" >
+            <eng value="Every level can be completed." />
+            <pol value="Wszystkie poziomy można przejść." />
+        </sentence>        
+        
         <sentence name="level1.1.0" >
             <eng value="Voice: You will not go out. Press restart after this screen closes." />
             <pol value="Głos: Nie wyjdziesz. Naciśnij reset po zamknięciu tego okna. " />
@@ -266,6 +271,7 @@
 			<event trigger="regular" action="JUST_ON">
 				<element sentence="what_is_teleport" />
 				<element packfile="map" region="teleport" />
+				<element sentence="all_levels_can_be_made" />
 			</event>
 		</level>	    
 	    <level id="0b" src="maps/levels/new/0b.tmx" >

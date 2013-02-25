@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector3;
 import com.kprojekt.cavemansfate.MVC.cave.actions.CavemanAction;
 import com.kprojekt.cavemansfate.MVC.cave.actions.DiggAction;
@@ -16,6 +17,7 @@ import com.kprojekt.cavemansfate.MVC.cave.actions.ToHardRock;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanState.SIDES;
 import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Events;
 import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Trigger.ACTIVATE_ACTION;
+import com.kprojekt.cavemansfate.core.Core;
 import com.kprojekt.utils.fixes.MyTiledMap;
 
 /**
@@ -32,12 +34,12 @@ public class CavemanModel
 	private Events events;
 	private boolean enteredTeleport;
 
-	public CavemanModel( MyTiledMap tiledMap, Events events ) throws Exception
+	public CavemanModel( MyTiledMap tiledMap, Events events )
 	{
 		this.init( tiledMap, events );
 	}
 
-	private void init( MyTiledMap tiledMap, Events events ) throws Exception
+	private void init( MyTiledMap tiledMap, Events events )
 	{
 		this.tiledMap = tiledMap;
 		if( events == null )
@@ -45,10 +47,27 @@ public class CavemanModel
 			events = new Events();
 		}
 		this.events = events;
-		int cavemanId = this.tiledMap.getId( MyTiledMap.KEY_NAME, MyTiledMap.PLAYER_NAME, MyTiledMap.PLAYER_LAYER_NAME );
+		int cavemanId = -1;
+		try
+		{
+			cavemanId = this.tiledMap.getId( MyTiledMap.KEY_NAME, MyTiledMap.PLAYER_NAME, MyTiledMap.PLAYER_LAYER_NAME );
+		}
+		catch( Exception e )
+		{
+			// TODO @Krzysiek logger
+			e.printStackTrace();
+		}
 		String cavemansDiggPowerString = this.tiledMap.getTileProperty( cavemanId, MyTiledMap.POWER_NAME );
 		this.cavemansDiggPower = Integer.parseInt( cavemansDiggPowerString );
-		pos = this.tiledMap.getFirstPos( cavemanId, MyTiledMap.PLAYER_LAYER_NAME );
+		try
+		{
+			pos = this.tiledMap.getFirstPos( cavemanId, MyTiledMap.PLAYER_LAYER_NAME );
+		}
+		catch( Exception e )
+		{
+			// TODO @Krzysiek logger
+			e.printStackTrace();
+		}
 		this.tiledMap.removeTile( pos.x, pos.y, MyTiledMap.PLAYER_LAYER_NAME );
 		this.tilePickedUpId = 0;
 
@@ -59,7 +78,7 @@ public class CavemanModel
 		//actions.put( ToHardRock.name, new ToHardRock() );
 		//actions.put( NothingToDigg.name, new NothingToDigg() );
 
-		this.fall();
+		//this.fall();
 	}
 
 	public void fall()
@@ -362,6 +381,7 @@ public class CavemanModel
 				if( name.equalsIgnoreCase( MyTiledMap.TELEPORT_NAME ) )
 				{
 					this.events.updateAll( ACTIVATE_ACTION.ENTER_TELEPORT, (int)(this.pos.x), (int)(this.pos.y) );
+					Core.sounds.getExitLevel().play();
 					this.enteredTeleport = true;
 				}
 			}

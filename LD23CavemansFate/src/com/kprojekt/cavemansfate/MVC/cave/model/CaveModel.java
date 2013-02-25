@@ -39,14 +39,7 @@ public class CaveModel
 		String[] lastElement = last.split( "\\." );
 		this.levelName = "Level " + lastElement[0];
 
-		try
-		{
-			caveman = new CavemanModel( tiledMap, events );
-		}
-		catch( Exception e )
-		{
-			throw new RuntimeException( e );
-		}
+		caveman = new CavemanModel( tiledMap, events );
 
 		if( events == null )
 		{

@@ -3,6 +3,7 @@ package com.kprojekt.cavemansfate.MVC.levelSelect;
 import com.badlogic.gdx.Gdx;
 import com.kprojekt.cavemansfate.MVC.cave.CaveManager;
 import com.kprojekt.cavemansfate.MVC.levelSelect.view.LevelSelectView;
+import com.kprojekt.cavemansfate.core.Core;
 import com.kprojekt.utils.Manager;
 
 /**
@@ -64,6 +65,7 @@ public class LevelSelectManager extends Manager
 		{
 			if( selected.isUnlocked() )
 			{
+				Core.sounds.getIntoLevel().play();
 				model.setActiveLevel( this.selected );
 			}
 		}

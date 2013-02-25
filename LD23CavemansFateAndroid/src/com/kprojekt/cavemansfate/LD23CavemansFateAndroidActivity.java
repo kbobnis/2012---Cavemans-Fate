@@ -18,12 +18,12 @@ public class LD23CavemansFateAndroidActivity extends AndroidApplication
 
 	/** Called when the activity is first created. */
 	@Override
-	public void onCreate(Bundle savedInstanceState)
+	public void onCreate( Bundle savedInstanceState )
 	{
-		super.onCreate(savedInstanceState);
+		super.onCreate( savedInstanceState );
 
 		// Create the layout
-		RelativeLayout layout = new RelativeLayout(this);
+		RelativeLayout layout = new RelativeLayout( this );
 
 		// Do the stuff that initialize() would do for you
 		//requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -37,29 +37,29 @@ public class LD23CavemansFateAndroidActivity extends AndroidApplication
 		config.useWakelock = false;
 		config.useGL20 = false;
 		String displayLanguage = Locale.getDefault().getISO3Language();
-		View gameView = initializeForView(new CavemansFate(displayLanguage), config);
+		View gameView = initializeForView( new CavemansFate( displayLanguage ), config );
 
 		// Create and setup the AdMob view
 		//AdManager.setTestDevices( new String[] {AdManager.TEST_EMULATOR});
 
-		adView = new AdView(this, AdSize.SMART_BANNER, "k278436533b84c7b1bfeb8b77383e36b");
-		AdRequest adRequest = new AdRequest();
-		adRequest.addTestDevice("8214C563377ADF24D0E2754B98775413");
-		adView.loadAd(adRequest);
-		
-
-		// Add the AdMob view
-		RelativeLayout.LayoutParams adParams = new RelativeLayout.LayoutParams(
-				RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-		adParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-		adParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-
-		layout.addView(adView, adParams);
+		//		adView = new AdView(this, AdSize.SMART_BANNER, "k278436533b84c7b1bfeb8b77383e36b");
+		//		AdRequest adRequest = new AdRequest();
+		//		adRequest.addTestDevice("8214C563377ADF24D0E2754B98775413");
+		//		adView.loadAd(adRequest);
+		//		
+		//
+		//		// Add the AdMob view
+		//		RelativeLayout.LayoutParams adParams = new RelativeLayout.LayoutParams(
+		//				RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+		//		adParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+		//		adParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+		//
+		//		layout.addView(adView, adParams);
 
 		// Add the libgdx view
-		layout.addView(gameView);
+		layout.addView( gameView );
 		// Hook it all up
-		setContentView(layout);
+		setContentView( layout );
 
 	}
 }

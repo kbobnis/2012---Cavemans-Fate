@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanModel;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanState.SIDES;
 import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Trigger.ACTIVATE_ACTION;
+import com.kprojekt.cavemansfate.core.Core;
 import com.kprojekt.utils.fixes.MyTiledMap;
 
 /**
@@ -25,6 +26,7 @@ public class DiggAction extends CavemanAction
 		try
 		{
 			tileId = map.getId( (int)pos.x, (int)pos.y, MyTiledMap.BACKGROUND_LAYER_NAME );
+			Core.sounds.getDigg().play();
 			if( caveman.pickUpTile( tileId ) )
 			{
 				map.removeTile( pos.x, pos.y, MyTiledMap.BACKGROUND_LAYER_NAME );
