@@ -28,7 +28,7 @@ public class CavemansFate extends Game implements Screen
 
 	private final String iso3Lang;
 
-	public CavemansFate(String iso3Lang)
+	public CavemansFate( String iso3Lang )
 	{
 		this.iso3Lang = iso3Lang;
 	}
@@ -38,15 +38,15 @@ public class CavemansFate extends Game implements Screen
 	{
 		tileScale = Gdx.graphics.getWidth() / tileWidth / tilesPerWidth;
 
-		System.out.println("Create");
-		CavemansFate.font = new MyFont(Gdx.files.internal("arial_polish.fnt"), false);
+		System.out.println( "Create" );
+		CavemansFate.font = new MyFont( Gdx.files.internal( "arial_polish.fnt" ), false );
 
 		String testText = "";
-		for (int i = 0; i < CavemansFate.lettersPerWidth; i++)
+		for( int i = 0; i < CavemansFate.lettersPerWidth; i++ )
 		{
 			testText += "a";
 		}
-		float width = CavemansFate.font.getBounds(testText).width;
+		float width = CavemansFate.font.getBounds( testText ).width;
 		CavemansFate.fontScale = Gdx.graphics.getWidth() / width;
 
 		CavemansFate.spriteBatch = new SpriteBatch();
@@ -55,47 +55,47 @@ public class CavemansFate extends Game implements Screen
 		// application! it was because i executed before font scale was set!
 
 		String loadingText = "Loading caveman";
-		if (this.iso3Lang.equals("pol"))
+		if( this.iso3Lang.equals( "pol" ) )
 			loadingText = "Wczytywanie gry";
 
-		setScreen(new SplashScreen(loadingText, this, iso3Lang));
+		setScreen( new SplashScreen( loadingText, this, iso3Lang ) );
 
 	}
 
-	public void render(float delta)
+	public void render( float delta )
 	{
-		Core.render(delta);
+		Core.render( delta );
 	}
 
 	@Override
 	public void show()
 	{
-		System.out.println("Show");
+		System.out.println( "Show" );
 	}
 
 	@Override
 	public void hide()
 	{
-		System.out.println("Hide");
+		System.out.println( "Hide" );
 	}
 
 	@Override
-	public void resize(int width, int height)
+	public void resize( int width, int height )
 	{
-		System.out.println("Resize");
+		System.out.println( "Resize" );
 	}
 
 	@Override
 	public void pause()
 	{
-		System.out.println("Pause");
+		System.out.println( "Pause" );
 		this.dispose();
 	}
 
 	@Override
 	public void resume()
 	{
-		System.out.println("Resume");
+		System.out.println( "Resume" );
 	}
 
 }

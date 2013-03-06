@@ -88,11 +88,7 @@ public class CavemanView extends InputWrapper
 
 		Vector3 pos = this.getCavemansCenterInPixels( true );
 
-		int cavemanW = (int)(this.cavemanRegion.getRegionWidth() * CavemansFate.tileScale);
-		int cavemanH = (int)(this.cavemanRegion.getRegionHeight() * CavemansFate.tileScale);
-		CavemansFate.spriteBatch.draw( this.cavemanRegion, pos.x - cavemanW / 2, pos.y - cavemanH / 2, cavemanW,
-				cavemanH );
-
+		CavemansFate.spriteBatch.draw( this.cavemanRegion, pos.x - tileW / 2, pos.y - tileW / 2, tileW, tileW );
 		if( this.controller.getState().cavemanSelected )
 		{
 			this.renderCavemanShadow();
@@ -115,21 +111,17 @@ public class CavemanView extends InputWrapper
 
 		Vector3 pos = this.getCavemansCenterInPixels( true );
 
-		int cavemanW = (int)(this.cavemanRegion.getRegionWidth() * CavemansFate.tileScale);
-		int cavemanH = (int)(this.cavemanRegion.getRegionHeight() * CavemansFate.tileScale);
-
 		Color color = CavemansFate.spriteBatch.getColor();
 		CavemansFate.spriteBatch.setColor( 0.7f, 0.7f, 0.7f, 0.9f );
-		CavemansFate.spriteBatch.draw( this.cavemanRegion, pos.x - cavemanW / 2
-				+ this.controller.getState().shadowOffsetX, pos.y - cavemanH / 2
-				+ this.controller.getState().shadowOffsetY, cavemanW, cavemanH );
+		CavemansFate.spriteBatch.draw( this.cavemanRegion,
+				pos.x - tileW / 2 + this.controller.getState().shadowOffsetX, pos.y - tileW / 2
+						+ this.controller.getState().shadowOffsetY, tileW, tileW );
 		CavemansFate.spriteBatch.setColor( color );
 
 	}
 
 	private void renderNavigationArrows()
 	{
-
 		TextureRegion upArrow = this.arrowTextures.get( SIDES.UP );
 		Vector2 upArrowPos = this.getArrowPosMiddle( SIDES.UP );
 		CavemansFate.spriteBatch.draw( upArrow, upArrowPos.x - tileW / 2, upArrowPos.y - tileH / 2, 0, 0, tileW, tileH,
@@ -191,11 +183,8 @@ public class CavemanView extends InputWrapper
 			{
 				throw new RuntimeException( "There has to be a tile in the map called (" + bestWeapon.getName() + ")." );
 			}
-			int axeW = (int)(imageRegion.getRegionWidth() * CavemansFate.tileScale / 2);
-			int axeH = (int)(imageRegion.getRegionHeight() * CavemansFate.tileScale / 2);
-			int cavemanW = (int)(20 * CavemansFate.tileScale);
 
-			CavemansFate.spriteBatch.draw( imageRegion, pos.x + cavemanW / 2, pos.y, axeW, axeH );
+			CavemansFate.spriteBatch.draw( imageRegion, pos.x + circleW / 2, pos.y, circleW / 2, circleW / 2 );
 		}
 
 	}
@@ -207,12 +196,10 @@ public class CavemanView extends InputWrapper
 			int pickupedTileId = this.model.getPickupedTileId();
 			String tileName = this.model.getMap().getTileProperty( pickupedTileId, MyTiledMap.KEY_NAME );
 			AtlasRegion tileRegion = this.mapAtlas.findRegion( tileName );
-			int w = (int)(tileRegion.getRegionWidth() * CavemansFate.tileScale / 2);
-			int h = (int)(tileRegion.getRegionHeight() * CavemansFate.tileScale / 2);
 
 			//draw it on the caveman
 			Vector3 pos = this.getCavemansCenterInPixels( true );
-			CavemansFate.spriteBatch.draw( tileRegion, pos.x - w, pos.y + h / 2, w, h );
+			CavemansFate.spriteBatch.draw( tileRegion, pos.x - tileW / 2, pos.y, tileW / 2, tileW / 2 );
 		}
 	}
 
@@ -394,6 +381,5 @@ public class CavemanView extends InputWrapper
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 
 }

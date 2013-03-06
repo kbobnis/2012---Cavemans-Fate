@@ -18,10 +18,10 @@ public class ImageElement implements ScreenElement
 	public ImageElement( TextureRegion playerRegion )
 	{
 		this.playerRegion = playerRegion;
-		this.width = (int)(this.playerRegion.getRegionWidth() * CavemansFate.tileScale);
-		this.height = (int)(this.playerRegion.getRegionHeight() * CavemansFate.tileScale);
+		this.width = (int)(20 * CavemansFate.tileScale);
+		this.height = (int)(20 * CavemansFate.tileScale);
 		this.middleX = (int)(Gdx.graphics.getWidth() / 2f - this.width / 2f);
-		
+
 	}
 
 	@Override
