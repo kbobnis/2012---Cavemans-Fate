@@ -7,7 +7,7 @@
 	<classpathentry exported="true" kind="lib" path="libs/gdx-backend-android.jar"/>
 	<classpathentry exported="true" kind="lib" path="/LD23CavemansFate/libs/gdx.jar" sourcepath="/LD23CavemansFate/libs/gdx-sources.jar"/>
 	<classpathentry kind="lib" path="libs/GoogleAdMobAdsSdk-6.1.0.jar"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/LD23CavemansFate"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/LD23CavemansFate"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

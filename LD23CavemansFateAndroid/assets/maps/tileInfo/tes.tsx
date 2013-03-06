@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tileset SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<tileset name="tes" tilewidth="20" tileheight="20" spacing="2">
+<tileset name="tes" tilewidth="128" tileheight="128" spacing="2">
  <image source="allgraphics1.png" width="32" height="256"/>
  <tile id="0">
   <properties>

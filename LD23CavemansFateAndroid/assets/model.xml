@@ -496,7 +496,7 @@
 	
     <!--  THIS PART CHANGES ONLY A PROGRAMMIST! FOR PROPER XML VALIDATION PURPOSES (HELPS WITH ERRORS FOR NON TECHNICAL PEOPLE)-->
     <packfiles>
-        <map src="maps/tileInfo/pack">
+        <map src="maps/tileInfo/pack2">
             <region name="z_dummy" />
             <region name="stoneAxe" />
             <region name="steelAxe" />
