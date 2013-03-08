@@ -5,9 +5,9 @@ filter: Nearest,Nearest
 repeat: none
 background
   rotate: false
-  xy: 2, 2
-  size: 200, 200
-  orig: 200, 200
+  xy: 247, 0
+  size: 776, 1024
+  orig: 776, 1024
   offset: 0, 0
   index: -1
 arrows

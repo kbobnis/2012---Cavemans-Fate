@@ -3,11 +3,11 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="src" path="assets"/>
-	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry exported="true" kind="lib" path="libs/gdx-backend-android.jar"/>
-	<classpathentry exported="true" kind="lib" path="/LD23CavemansFate/libs/gdx.jar" sourcepath="/LD23CavemansFate/libs/gdx-sources.jar"/>
-	<classpathentry kind="lib" path="libs/GoogleAdMobAdsSdk-6.1.0.jar"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="lib" path="libs/GoogleAdMobAdsSdk-6.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/gdx.jar"/>
+	<classpathentry kind="lib" path="libs/gdx-backend-android.jar"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/LD23CavemansFate"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/LD23CavemansFate"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
