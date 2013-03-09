@@ -9,8 +9,9 @@ import com.kprojekt.cavemansfate.CavemansFate;
 public class StringElement implements ScreenElement
 {
 	private final String string;
-	private static int buffer = -1;
+	public static int buffer = -1;
 	private int height;
+	private float scale = 0;
 
 	public StringElement( String string )
 	{
@@ -18,13 +19,13 @@ public class StringElement implements ScreenElement
 		StringElement.buffer = Gdx.graphics.getWidth() / 20;
 		CavemansFate.font.setScale( CavemansFate.fontScale );
 		this.height = (int)CavemansFate.font.getWrappedBounds( string, Gdx.graphics.getWidth() - buffer * 2 ).height;
-		CavemansFate.font.setScale( 1 );			
+		CavemansFate.font.setScale( 1 );
 	}
 
 	@Override
 	public void render( int y )
 	{
-		CavemansFate.font.setScale( CavemansFate.fontScale );
+		CavemansFate.font.setScale( this.scale != 0 ? this.scale : CavemansFate.fontScale );
 		CavemansFate.font.drawWrapped( CavemansFate.spriteBatch, this.string, buffer, Gdx.graphics.getHeight() - y,
 				Gdx.graphics.getWidth() - buffer * 2 );
 		CavemansFate.font.setScale( 1 );
@@ -34,6 +35,12 @@ public class StringElement implements ScreenElement
 	public int getHeight()
 	{
 		return height;
+	}
+
+	public void setScale( float scale )
+	{
+		this.scale = scale;
+
 	}
 
 }

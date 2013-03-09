@@ -45,7 +45,6 @@ public abstract class InputWrapper implements InputProcessor
 	@Override
 	public final boolean touchDragged( int x, int y, int pointer )
 	{
-		System.out.println( "Touch draged: x: " + x + ", y: " + y );
 		this.movedX += x - lastTouchX;
 		this.movedY += y - lastTouchY;
 		this.lastTouchX = x;

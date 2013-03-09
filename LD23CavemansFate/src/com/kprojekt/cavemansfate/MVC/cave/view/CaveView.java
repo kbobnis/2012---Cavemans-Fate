@@ -171,7 +171,6 @@ public class CaveView extends InputWrapper
 		{
 			this.camera.position.x = touchedDownCameraPosX - 2 * howX;/// CavemansFate.tilesPerWidth;
 			this.camera.position.y = touchedDownCameraPosY + 2 * howY;// CavemansFate.tilesPerWidth;
-			System.out.println( "howX: " + howX + ", howY: " + howY );
 			this.camera.update();
 		}
 		return result;

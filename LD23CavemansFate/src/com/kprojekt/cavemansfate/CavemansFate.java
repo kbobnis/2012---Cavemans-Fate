@@ -39,7 +39,7 @@ public class CavemansFate extends Game implements Screen
 		tileScale = Gdx.graphics.getWidth() / tileWidth / tilesPerWidth;
 
 		System.out.println( "Create" );
-		CavemansFate.font = new MyFont( Gdx.files.internal( "arial_polish.fnt" ), false );
+		CavemansFate.font = new MyFont( Gdx.files.internal( "fonts/bazgroly.fnt" ), false );
 
 		String testText = "";
 		for( int i = 0; i < CavemansFate.lettersPerWidth; i++ )
