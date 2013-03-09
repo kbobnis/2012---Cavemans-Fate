@@ -8,11 +8,11 @@ import com.badlogic.gdx.InputProcessor;
  */
 public abstract class InputWrapper implements InputProcessor
 {
-	private int movedX;
-	private int movedY;
+	protected int movedX;
+	protected int movedY;
 
-	private int lastTouchX;
-	private int lastTouchY;
+	protected int lastTouchX;
+	protected int lastTouchY;
 
 	@Override
 	public final boolean keyTyped( char character )
@@ -45,12 +45,13 @@ public abstract class InputWrapper implements InputProcessor
 	@Override
 	public final boolean touchDragged( int x, int y, int pointer )
 	{
+		System.out.println( "Touch draged: x: " + x + ", y: " + y );
 		this.movedX += x - lastTouchX;
 		this.movedY += y - lastTouchY;
 		this.lastTouchX = x;
 		this.lastTouchY = y;
 
-		boolean res = this.dragged( this.lastTouchX, this.lastTouchY, this.movedX, this.movedY );
+		boolean res = this.dragged( x, y, this.movedX, this.movedY );
 		return res;
 	}
 
@@ -94,7 +95,7 @@ public abstract class InputWrapper implements InputProcessor
 
 	public boolean backPressed()
 	{
-		System.out.println("back pressed");
+		System.out.println( "back pressed" );
 		return false;
 	}
 

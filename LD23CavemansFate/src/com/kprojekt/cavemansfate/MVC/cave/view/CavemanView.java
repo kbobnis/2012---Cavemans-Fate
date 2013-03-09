@@ -272,6 +272,7 @@ public class CavemanView extends InputWrapper
 
 	public boolean touchDown( int x, int y )
 	{
+		boolean res = false;
 		//if touched in the cavemans circle area, you will be able to move the caveman
 		Vector3 cavemanPos = this.getCavemansCenterInPixels( false );
 		int cavx = (int)cavemanPos.x;
@@ -283,6 +284,7 @@ public class CavemanView extends InputWrapper
 		if( dist < tileW * 2 / 3f )
 		{
 			this.controller.getState().cavemanSelected( true );
+			res = true;
 		}
 		else
 		{
@@ -290,7 +292,7 @@ public class CavemanView extends InputWrapper
 			this.model.getEvents().updateAll( ACTIVATE_ACTION.FINGER_DOWN_NOT_ON_CAVEMAN, cavx, cavy );
 			this.checkAction( x, y );
 		}
-		return true;
+		return res;
 	}
 
 	private boolean checkAction( int x, int y )
@@ -371,8 +373,9 @@ public class CavemanView extends InputWrapper
 					this.controller.getState().sideSelected = SIDES.UP;
 				}
 			}
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	@Override

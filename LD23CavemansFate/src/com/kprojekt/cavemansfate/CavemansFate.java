@@ -20,7 +20,7 @@ public class CavemansFate extends Game implements Screen
 
 	public static float fontScale;
 
-	private static float tilesPerWidth = 6f;
+	public static float tilesPerWidth = 6f;
 	private static float lettersPerWidth = 25f;
 	private static float tileWidth = 20f;
 

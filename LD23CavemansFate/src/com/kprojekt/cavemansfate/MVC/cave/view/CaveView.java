@@ -39,6 +39,8 @@ public class CaveView extends InputWrapper
 	private CavemanController cavemanController;
 	private MyTextureAtlas spritesAtlas;
 	private final CaveController caveController;
+	private float touchedDownCameraPosX;
+	private float touchedDownCameraPosY;
 
 	public CaveView( CaveController caveController, HashMap<String, MyTextureAtlas> atlases, Menu menu )
 	{
@@ -63,7 +65,7 @@ public class CaveView extends InputWrapper
 
 		CavemansFate.spriteBatch.end();
 
-		this.centerCameraOnCaveman();
+		//this.centerCameraOnCaveman();
 		camera.update();
 		if( this.tileMapRendererWrapper == null )
 		{
@@ -131,8 +133,11 @@ public class CaveView extends InputWrapper
 		if( this.cavemanView.touchDown( x, y ) )
 		{
 			result = true;
+			this.centerCameraOnCaveman();
 		}
-		this.centerCameraOnCaveman();
+		this.touchedDownCameraPosX = this.camera.position.x;
+		this.touchedDownCameraPosY = this.camera.position.y;
+
 		return result;
 
 	}
@@ -155,11 +160,20 @@ public class CaveView extends InputWrapper
 	{
 		boolean result = false;
 		this.initView();
+		//drag caveman
 		if( this.cavemanView.dragged( x, y, howX, howY ) )
 		{
 			result = true;
+			this.centerCameraOnCaveman();
 		}
-		this.centerCameraOnCaveman();
+		//move camera
+		else
+		{
+			this.camera.position.x = touchedDownCameraPosX - 2 * howX;/// CavemansFate.tilesPerWidth;
+			this.camera.position.y = touchedDownCameraPosY + 2 * howY;// CavemansFate.tilesPerWidth;
+			System.out.println( "howX: " + howX + ", howY: " + howY );
+			this.camera.update();
+		}
 		return result;
 	}
 
