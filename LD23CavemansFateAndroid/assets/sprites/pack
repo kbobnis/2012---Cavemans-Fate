@@ -3,11 +3,18 @@ images1.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-background
+background_front
   rotate: false
-  xy: 247, 0
-  size: 776, 1024
-  orig: 776, 1024
+  xy: 250, 0
+  size: 1181, 1181
+  orig: 1181, 1181
+  offset: 0, 0
+  index: -1
+background_back
+  rotate: false
+  xy: 250, 1185
+  size: 1181, 1181
+  orig: 1181, 867
   offset: 0, 0
   index: -1
 arrows
