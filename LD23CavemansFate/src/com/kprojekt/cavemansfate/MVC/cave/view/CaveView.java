@@ -1,6 +1,5 @@
 package com.kprojekt.cavemansfate.MVC.cave.view;
 
-import java.io.Console;
 import java.util.HashMap;
 
 import com.badlogic.gdx.Gdx;
@@ -30,8 +29,7 @@ public class CaveView extends InputWrapper
 
 	private Menu menu;
 	private AtlasRegion arrows;
-	private AtlasRegion backgroundBack;
-	private AtlasRegion backgroundFront;
+	private AtlasRegion backgroundImage;
 
 	private CaveModel caveModel;
 
@@ -41,8 +39,6 @@ public class CaveView extends InputWrapper
 	private CavemanController cavemanController;
 	private MyTextureAtlas spritesAtlas;
 	private final CaveController caveController;
-	private float touchedDownCameraPosX;
-	private float touchedDownCameraPosY;
 
 	public CaveView( CaveController caveController, HashMap<String, MyTextureAtlas> atlases, Menu menu )
 	{
@@ -50,8 +46,7 @@ public class CaveView extends InputWrapper
 		spritesAtlas = atlases.get( "sprites" );
 		this.mapAtlas = atlases.get( "map" );
 		this.arrows = spritesAtlas.findRegion( "arrows" );
-		this.backgroundBack = spritesAtlas.findRegion( "background_back" );
-		this.backgroundFront = spritesAtlas.findRegion( "background_front" );
+		this.backgroundImage = spritesAtlas.findRegion( "background" );
 		this.caveModel = caveController.getModel();
 		this.cavemanController = caveController.getCavemanController();
 		this.menu = menu;
@@ -64,16 +59,11 @@ public class CaveView extends InputWrapper
 
 		CavemansFate.spriteBatch.begin();
 
-		CavemansFate.spriteBatch.draw( this.backgroundBack, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight() );
-
-		float startX = 0;
-		float startY = 0;
-		float width = Gdx.graphics.getWidth();
-		CavemansFate.spriteBatch.draw( this.backgroundFront, startX, startY, width, Gdx.graphics.getHeight() );
+		CavemansFate.spriteBatch.draw( this.backgroundImage, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight() );
 
 		CavemansFate.spriteBatch.end();
 
-		//this.centerCameraOnCaveman();
+		this.centerCameraOnCaveman();
 		camera.update();
 		if( this.tileMapRendererWrapper == null )
 		{
@@ -141,11 +131,8 @@ public class CaveView extends InputWrapper
 		if( this.cavemanView.touchDown( x, y ) )
 		{
 			result = true;
-			this.centerCameraOnCaveman();
 		}
-		this.touchedDownCameraPosX = this.camera.position.x;
-		this.touchedDownCameraPosY = this.camera.position.y;
-
+		this.centerCameraOnCaveman();
 		return result;
 
 	}
@@ -168,41 +155,12 @@ public class CaveView extends InputWrapper
 	{
 		boolean result = false;
 		this.initView();
-		//drag caveman
 		if( this.cavemanView.dragged( x, y, howX, howY ) )
 		{
 			result = true;
-			this.centerCameraOnCaveman();
 		}
-		//move camera
-		else
-		{
-			this.camera.position.x = dontExceedBorderX( touchedDownCameraPosX - 2 * howX );/// CavemansFate.tilesPerWidth;
-			this.camera.position.y = dontExceedBorderY( touchedDownCameraPosY + 2 * howY );// CavemansFate.tilesPerWidth;
-			this.camera.update();
-		}
+		this.centerCameraOnCaveman();
 		return result;
-	}
-
-	private float dontExceedBorderY( float y )
-	{
-		float tilesCountV = Gdx.graphics.getHeight() / (float)this.tileW;
-		int tilesToDown = (int)(tilesCountV / 2);
-		int tilesToUp = tilesToDown;
-
-		int heightToDown = (int)(tilesToUp * this.tileW + this.tileW / 2f);
-		int heightToUp = tilesToDown * this.tileW - this.tileW / 2;
-
-		System.out.println( "y: " + y );
-		if( y < heightToDown )
-		{
-			y = heightToDown;
-		}
-		if( y > Gdx.graphics.getHeight() - heightToUp )
-		{
-			y = Gdx.graphics.getHeight() - heightToUp;
-		}
-		return y;
 	}
 
 	private void centerCameraOnCaveman()
@@ -210,28 +168,9 @@ public class CaveView extends InputWrapper
 		int mapHeightInPixels = this.tileH * this.mapHeight;
 
 		// first, center on the caveman.
-		this.camera.position.x = dontExceedBorderX( this.caveModel.getCaveman().pos.x * this.tileW + this.tileW / 2 );
-		float posY = this.caveModel.getCaveman().pos.y;
-		this.camera.position.y = dontExceedBorderY( mapHeightInPixels - posY * this.tileH + this.tileW / 2 );
+		this.camera.position.x = this.caveModel.getCaveman().pos.x * this.tileW;
+		this.camera.position.y = mapHeightInPixels - this.caveModel.getCaveman().pos.y * this.tileH;
 		this.camera.update();
 	}
 
-	private float dontExceedBorderX( float x )
-	{
-		int tilesToLeft = (int)(CavemansFate.tilesPerWidth / 2);
-		int tilesToRight = tilesToLeft + 1;
-
-		int widthToLeft = tilesToLeft * this.tileW + this.tileW / 2;
-		int widthToRight = tilesToRight * this.tileW - this.tileW / 2;
-
-		if( x < widthToLeft )
-		{
-			x = widthToLeft;
-		}
-		if( caveController.getModel().getMap().width * this.tileW - x < widthToRight )
-		{
-			x = caveController.getModel().getMap().width * this.tileW - widthToRight;
-		}
-		return x;
-	}
 }

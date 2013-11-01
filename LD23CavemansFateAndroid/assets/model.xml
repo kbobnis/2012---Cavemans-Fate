@@ -509,8 +509,7 @@
             <region name="player" />
         </map>
         <sprites src="sprites/pack" >
-            <region name="background_back" />
-            <region name="background_front" />
+            <region name="background" />
             <region name="arrows" />
             <region name="steps" />
             <region name="circle" />

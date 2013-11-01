@@ -16,30 +16,33 @@ public class Button
 	private final MenuAction action;
 	private int maxX = -1;
 	private int maxY = -1;
+	private final static float buttonScale = 2;
 
 	public Button( int x, int y, String name, MenuAction action )
 	{
 		this.x = x;
 		this.y = y;
 		this.name = name;
-
+		
 		this.action = action;
 	}
 
 	public void render()
 	{
-		if( this.maxX == -1 )
+		if (this.maxX == -1)
 		{
-			CavemansFate.font.setScale( CavemansFate.fontScale );
+			CavemansFate.font.setScale( Button.buttonScale );
 			this.maxX = (int)(x + CavemansFate.font.getBounds( name ).width);
 			this.maxY = (int)(y + CavemansFate.font.getBounds( name ).height);
 			CavemansFate.font.setScale( 1 );
 		}
-
-		CavemansFate.font.setScale( CavemansFate.fontScale );
+		
+		CavemansFate.font.setScale( Button.buttonScale );
 		CavemansFate.font.draw( CavemansFate.spriteBatch, this.name, x, Gdx.graphics.getHeight() - y );
 		CavemansFate.font.setScale( 1 );
 	}
+	
+	
 
 	public boolean touchDown( int x2, int y2 )
 	{
