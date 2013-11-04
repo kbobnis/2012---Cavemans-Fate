@@ -92,15 +92,11 @@ public class CavemanView extends InputWrapper
 		Vector3 pos = this.getCavemansCenterInPixels( true );
 
 		CavemansFate.spriteBatch.draw( this.cavemanRegion, pos.x - tileW / 2, pos.y - tileW / 2, tileW, tileW );
-		if( this.controller.getState().cavemanSelected )
-		{
-			this.renderCavemanShadow();
-		}
-		else
+		if( !this.model.hasTilePickedUp() || !this.model.selected )
 		{
 			this.renderCircleAround();
-			this.renderActionMenu();
 		}
+		this.renderActionMenu();
 
 		CavemansFate.font.setColor( Color.WHITE );
 
@@ -221,7 +217,7 @@ public class CavemanView extends InputWrapper
 					Vector3 actionPos = this.getActionCenter( side, true );
 					Color color = CavemansFate.spriteBatch.getColor();
 
-					color.a = 0.3f;
+					color.a = 1f;//0.3f;
 					CavemansFate.spriteBatch.setColor( color );
 					CavemansFate.spriteBatch.draw( this.actionTextures.get( action.getName() ), actionPos.x
 							- this.tileW / 2, actionPos.y - this.tileH / 2, this.tileW, this.tileH );
@@ -284,14 +280,16 @@ public class CavemanView extends InputWrapper
 
 		if( dist < tileW * 2 / 3f )
 		{
-			this.controller.getState().cavemanSelected( true );
+			this.model.toggleCavemanSelected();
 		}
 		else
 		{
 			//check if one on the action buttons wasn't pressed
 			this.model.getEvents().updateAll( ACTIVATE_ACTION.FINGER_DOWN_NOT_ON_CAVEMAN, cavx, cavy );
 			this.checkAction( x, y );
+			this.model.cavemanSelected( false );
 		}
+
 		return true;
 	}
 
@@ -356,8 +354,8 @@ public class CavemanView extends InputWrapper
 
 	public boolean touchUp( int x, int y )
 	{
-		return this.controller.cavemanReleased();
-
+		//return this.controller.cavemanReleased();
+		return true;
 	}
 
 	@Override

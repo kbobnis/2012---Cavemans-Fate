@@ -5,16 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector3;
 import com.kprojekt.cavemansfate.MVC.cave.actions.CavemanAction;
 import com.kprojekt.cavemansfate.MVC.cave.actions.DiggAction;
 import com.kprojekt.cavemansfate.MVC.cave.actions.MoveAction;
-import com.kprojekt.cavemansfate.MVC.cave.actions.NoDiggingWhenPickuped;
-import com.kprojekt.cavemansfate.MVC.cave.actions.NotWhileSwimmingAction;
-import com.kprojekt.cavemansfate.MVC.cave.actions.NothingToDigg;
 import com.kprojekt.cavemansfate.MVC.cave.actions.PutTileAction;
-import com.kprojekt.cavemansfate.MVC.cave.actions.ToHardRock;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanState.SIDES;
 import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Events;
 import com.kprojekt.cavemansfate.MVC.cave.triggersAndEvents.Trigger.ACTIVATE_ACTION;
@@ -34,6 +29,7 @@ public class CavemanModel
 	private Map<String, CavemanAction> actions = new HashMap<String, CavemanAction>();
 	private Events events;
 	private boolean enteredTeleport;
+	public boolean selected;
 
 	public CavemanModel( MyTiledMap tiledMap, Events events )
 	{
@@ -293,6 +289,7 @@ public class CavemanModel
 			if( this.hasTilePickedUp() && side != SIDES.UP_LEFT && side != SIDES.UP_RIGHT && !isThereATeleport( side )
 					&& side != SIDES.DOWN_LEFT && side != SIDES.DOWN_RIGHT && !this.canSwim( side ) )
 			{
+				//put tile action will be when caveman will select the tile, not everytime
 				theList.add( this.actions.get( PutTileAction.name ) );
 			}
 
@@ -320,7 +317,28 @@ public class CavemanModel
 			}
 		}
 
-		return theList;
+		List<CavemanAction> secondList = new ArrayList<CavemanAction>();
+		//filter list depending on the state
+		for( CavemanAction tmpAction : theList )
+		{
+			if( this.selected && this.hasTilePickedUp() )
+			{
+				if( tmpAction.getName() == PutTileAction.name )
+				{
+					secondList.add( tmpAction );
+				}
+			}
+			else
+			{
+				//leave all other actions
+				if( tmpAction.getName() != PutTileAction.name )
+				{
+					secondList.add( tmpAction );
+				}
+			}
+		}
+
+		return secondList;
 	}
 
 	private boolean isThereATeleport( SIDES side )
@@ -456,5 +474,15 @@ public class CavemanModel
 		PutTileAction putTile = new PutTileAction();
 		putTile.doAction( this, this.getMap(), negate );
 
+	}
+
+	public void cavemanSelected( boolean b )
+	{
+		this.selected = b;
+	}
+
+	public void toggleCavemanSelected()
+	{
+		this.selected = !this.selected;
 	}
 }
