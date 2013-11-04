@@ -61,9 +61,13 @@ public class CavemanState
 					res.y += yDown ? 1 : -1;
 					break;
 				}
+				case CENTER:
+				{
+					break;
+				}
 
 				default:
-					throw new RuntimeException( "THere is no value " + side );
+					throw new RuntimeException( "There is no value " + side );
 			}
 			return res;
 		}

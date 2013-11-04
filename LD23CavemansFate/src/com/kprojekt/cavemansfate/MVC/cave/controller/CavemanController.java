@@ -1,6 +1,7 @@
 package com.kprojekt.cavemansfate.MVC.cave.controller;
 
 import java.util.HashMap;
+import java.util.List;
 
 import com.kprojekt.cavemansfate.MVC.cave.actions.CavemanAction;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanModel;
@@ -83,13 +84,17 @@ public class CavemanController
 		return this.state;
 	}
 
-	public HashMap<SIDES, CavemanAction> getAvailableActions()
+	public HashMap<SIDES, List<CavemanAction>> getAvailableActions()
 	{
-		HashMap<SIDES, CavemanAction> availableActions = new HashMap<CavemanState.SIDES, CavemanAction>();
+		HashMap<SIDES, List<CavemanAction>> availableActions = new HashMap<CavemanState.SIDES, List<CavemanAction>>();
 		availableActions.put( SIDES.RIGHT, this.getModel().getAvailableAction( SIDES.RIGHT ) );
+		availableActions.put( SIDES.UP_RIGHT, this.getModel().getAvailableAction( SIDES.UP_RIGHT ) );
 		availableActions.put( SIDES.LEFT, this.getModel().getAvailableAction( SIDES.LEFT ) );
+		availableActions.put( SIDES.UP_LEFT, this.getModel().getAvailableAction( SIDES.UP_LEFT ) );
 		availableActions.put( SIDES.UP, this.getModel().getAvailableAction( SIDES.UP ) );
 		availableActions.put( SIDES.DOWN, this.getModel().getAvailableAction( SIDES.DOWN ) );
+		availableActions.put( SIDES.DOWN_LEFT, this.getModel().getAvailableAction( SIDES.DOWN_LEFT ) );
+		availableActions.put( SIDES.DOWN_RIGHT, this.getModel().getAvailableAction( SIDES.DOWN_RIGHT ) );
 
 		return availableActions;
 	}
@@ -104,7 +109,7 @@ public class CavemanController
 
 		CavemanModel caveman = this.model;
 
-		if( caveman.canWalk( side ) )
+		if( caveman.canWalkOrSwim( side ) )
 		{
 			caveman.move( side );
 		}
@@ -119,20 +124,11 @@ public class CavemanController
 			caveman.move( side2 );
 			caveman.putTile( SIDES.negate( side2 ) );
 		}
-		else if( side2 != null && caveman.canWalk( side2 ) )
+		else if( side2 != null && caveman.canWalkOrSwim( side2 ) )
 		{
 			caveman.move( side2 );
 		}
 		return true;
-	}
-
-	public void cavemanSelected( boolean b )
-	{
-		this.getState().cavemanSelected = b;
-		if( b )
-		{
-			this.model.getEvents().updateAll( ACTIVATE_ACTION.FINGER_DOWN_ON_CAVEMAN, 0, 0 );
-		}
 	}
 
 	private boolean tryToMoveInWater( SIDES side, SIDES side2 )
@@ -151,22 +147,18 @@ public class CavemanController
 			{
 				caveman.move( side2 );
 			}
-			//no digging out of water anymore
-			//else if( caveman.canDigHimselfOutOfWater( side ) )
-			//{
-			//can not dig himself up, because he'll fall again
-			//if( side == SIDES.UP )
-			//{
-			//	return false;
-			//}
-			//no digging out of water anymore
-			//DiggAction diggAction = new DiggAction();
-			//diggAction.doAction( caveModel, side );
-			//caveman.move( side );
-			//}
 			return true;
 		}
 		return false;
+	}
+
+	public void cavemanSelected( boolean b )
+	{
+		this.getState().cavemanSelected = b;
+		if( b )
+		{
+			this.model.getEvents().updateAll( ACTIVATE_ACTION.FINGER_DOWN_ON_CAVEMAN, 0, 0 );
+		}
 	}
 
 	public void actionPressed( SIDES side, CavemanAction availableAction )

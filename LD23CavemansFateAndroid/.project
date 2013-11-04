@@ -3,6 +3,7 @@
 	<name>LD23CavemansFateAndroid</name>
 	<comment></comment>
 	<projects>
+		<project>LD23CavemansFate</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

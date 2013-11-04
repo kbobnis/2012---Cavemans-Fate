@@ -9,6 +9,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector3;
 import com.kprojekt.cavemansfate.MVC.cave.actions.CavemanAction;
 import com.kprojekt.cavemansfate.MVC.cave.actions.DiggAction;
+import com.kprojekt.cavemansfate.MVC.cave.actions.MoveAction;
 import com.kprojekt.cavemansfate.MVC.cave.actions.NoDiggingWhenPickuped;
 import com.kprojekt.cavemansfate.MVC.cave.actions.NotWhileSwimmingAction;
 import com.kprojekt.cavemansfate.MVC.cave.actions.NothingToDigg;
@@ -73,6 +74,7 @@ public class CavemanModel
 
 		actions.put( DiggAction.name, new DiggAction() );
 		actions.put( PutTileAction.name, new PutTileAction() );
+		actions.put( MoveAction.name, new MoveAction() );
 		//actions.put( NotWhileSwimmingAction.name, new NotWhileSwimmingAction() );
 		//actions.put( NoDiggingWhenPickuped.name, new NoDiggingWhenPickuped() );
 		//actions.put( ToHardRock.name, new ToHardRock() );
@@ -127,8 +129,8 @@ public class CavemanModel
 	 */
 	public boolean canDigg( SIDES side )
 	{
-		//if swimming, can not dig
-		if( this.isSwimming() )
+		if( side == SIDES.UP_RIGHT || side == SIDES.UP_LEFT || this.isSwimming() || side == SIDES.DOWN_LEFT
+				|| side == SIDES.DOWN_RIGHT )
 		{
 			return false;
 		}
@@ -182,29 +184,48 @@ public class CavemanModel
 
 	public boolean canWalk( SIDES side )
 	{
-		String movable = MyTiledMap.WALKABLE_NAME;
-		return canMoveInner( side, movable, true );
+		return canMoveInner( side, MyTiledMap.WALKABLE_NAME, true );
+	}
+
+	public boolean canWalkOrSwim( SIDES side )
+	{
+		return canMoveInner( side, MyTiledMap.WALKABLE_NAME, true )
+				|| canMoveInner( side, MyTiledMap.SWIMMABLE_NAME, true );
 	}
 
 	private boolean canMoveInner( SIDES side, String movable, boolean alsoAir )
 	{
 		Vector3 add = SIDES.add( side, this.pos, true );
 		Vector3 up = SIDES.add( SIDES.UP, this.pos, true );
+		Vector3 left = SIDES.add( SIDES.LEFT, this.pos, true );
+		Vector3 right = SIDES.add( SIDES.RIGHT, this.pos, true );
+
+		Vector3 tmp = null;
 		switch( side )
 		{
-			case DOWN:
 			case UP:
+			case DOWN:
 			case LEFT:
 			case RIGHT:
+			case CENTER:
 				return this.canMoveOnBackground( (int)add.x, (int)add.y, movable, alsoAir );
 			case UP_RIGHT:
 			case UP_LEFT:
-				return this.canMoveOnBackground( (int)add.x, (int)add.y, movable, alsoAir )
-						&& (this.canMoveOnBackground( (int)up.x, (int)up.y, MyTiledMap.WALKABLE_NAME, true ) || this.canMoveOnBackground(
-								(int)up.x, (int)up.y, MyTiledMap.SWIMMABLE_NAME, true ));
+				tmp = up;
+				break;
+			case DOWN_LEFT:
+				tmp = left;
+				break;
+			case DOWN_RIGHT:
+				tmp = right;
+				break;
 			default:
 				throw new RuntimeException( "There is no side " + side );
 		}
+
+		return this.canMoveOnBackground( (int)add.x, (int)add.y, movable, alsoAir )
+				&& (this.canMoveOnBackground( (int)tmp.x, (int)tmp.y, MyTiledMap.WALKABLE_NAME, true ) || this.canMoveOnBackground(
+						(int)tmp.x, (int)tmp.y, MyTiledMap.SWIMMABLE_NAME, true ));
 	}
 
 	public void move( SIDES side )
@@ -215,7 +236,7 @@ public class CavemanModel
 
 	private void moveCaveman( int newX, int newY )
 	{
-		//		this.tiledMap.moveTile( (int)pos.x, (int)pos.y, newX, newY, MyTiledMap.PLAYER_LAYER_NAME );
+		//this.tiledMap.moveTile( (int)pos.x, (int)pos.y, newX, newY, MyTiledMap.PLAYER_LAYER_NAME );
 		this.events.updateAll( ACTIVATE_ACTION.BE_ON_TILE, newX, newY );
 		this.pos.x = newX;
 		this.pos.y = newY;
@@ -234,11 +255,7 @@ public class CavemanModel
 			canMove = Boolean.parseBoolean( this.tiledMap.getValue( newX, newY, movableParameter,
 					MyTiledMap.BACKGROUND_LAYER_NAME ) );
 			//id == 0 has no attributes, its a 'nothing' tile, you can move there
-			if( alsoAir && id == 0 )
-			{
-				return true;
-			}
-			if( canMove )
+			if( (alsoAir && id == 0) || canMove )
 			{
 				return true;
 			}
@@ -263,51 +280,47 @@ public class CavemanModel
 		return bestWeaponsPower;
 	}
 
-	public CavemanAction getAvailableAction( SIDES side )
+	public List<CavemanAction> getAvailableAction( SIDES side )
 	{
-
+		ArrayList<CavemanAction> theList = new ArrayList<CavemanAction>();
 		//if there is no tile on the back -> checking if can be digged
 		if( this.canDigg( side ) )
 		{
-			return this.actions.get( DiggAction.name );
+			theList.add( this.actions.get( DiggAction.name ) );
 		}
-		if( this.hasTilePickedUp() && this.canWalk( side ) )
+		if( this.canWalkOrSwim( side ) )
 		{
-			//you can not live tile on the teleport
-			if( !isThereATeleport( side ) )
+			if( this.hasTilePickedUp() && side != SIDES.UP_LEFT && side != SIDES.UP_RIGHT && !isThereATeleport( side )
+					&& side != SIDES.DOWN_LEFT && side != SIDES.DOWN_RIGHT && !this.canSwim( side ) )
 			{
-				return this.actions.get( PutTileAction.name );
-			}
-		}
-		//what the caveman can not do
-		if( this.isSwimming() )
-		{
-			//			return this.actions.get( NotWhileSwimmingAction.name );
-		}
-		else
-		{
-			if( this.hasTilePickedUp() )
-			{
-				if( !this.canWalk( side ) )
-				{
-					//					return this.actions.get( NoDiggingWhenPickuped.name );
-				}
+				theList.add( this.actions.get( PutTileAction.name ) );
 			}
 
-			if( !this.canDigg( side ) )
+			if( side == SIDES.UP && !this.isThereATeleport( side ) && !this.canSwim( side ) )
 			{
-				if( this.canWalk( side ) )
-				{
-					//					return this.actions.get( NothingToDigg.name );
-				}
-				else
-				{
-					//					return this.actions.get( ToHardRock.name );
-				}
+			}
+			else if( side == SIDES.UP_LEFT && this.canWalk( SIDES.LEFT ) || side == SIDES.UP_RIGHT
+					&& this.canWalk( SIDES.RIGHT ) )
+			{
+			}
+			else if( !isThereATeleport( side )
+					&& (side == SIDES.LEFT && this.canWalk( SIDES.DOWN_LEFT ) || side == SIDES.RIGHT
+							&& this.canWalk( SIDES.DOWN_RIGHT )) )
+			{
+
+			}
+			else if( this.canWalk( side )
+					&& (side == SIDES.UP_LEFT && this.canSwim( SIDES.LEFT ) || (side == SIDES.UP_RIGHT && this.canSwim( SIDES.RIGHT ))) )
+			{
+
+			}
+			else
+			{
+				theList.add( this.actions.get( MoveAction.name ) );
 			}
 		}
 
-		return null;
+		return theList;
 	}
 
 	private boolean isThereATeleport( SIDES side )

@@ -1,6 +1,7 @@
 package com.kprojekt.cavemansfate.MVC.cave.view;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
 import com.badlogic.gdx.graphics.Camera;
@@ -14,6 +15,7 @@ import com.kprojekt.cavemansfate.CavemansFate;
 import com.kprojekt.cavemansfate.MVC.Packfiles;
 import com.kprojekt.cavemansfate.MVC.cave.actions.CavemanAction;
 import com.kprojekt.cavemansfate.MVC.cave.actions.DiggAction;
+import com.kprojekt.cavemansfate.MVC.cave.actions.MoveAction;
 import com.kprojekt.cavemansfate.MVC.cave.actions.PutTileAction;
 import com.kprojekt.cavemansfate.MVC.cave.controller.CavemanController;
 import com.kprojekt.cavemansfate.MVC.cave.model.CavemanModel;
@@ -65,6 +67,7 @@ public class CavemanView extends InputWrapper
 		this.actionTextures = new HashMap<String, TextureRegion>();
 		this.actionTextures.put( PutTileAction.name, spritesAtlas.findRegion( PutTileAction.name ) );
 		this.actionTextures.put( DiggAction.name, spritesAtlas.findRegion( DiggAction.name ) );
+		this.actionTextures.put( MoveAction.name, spritesAtlas.findRegion( MoveAction.name ) );
 
 		this.arrowTextures = new HashMap<SIDES, TextureRegion>();
 		AtlasRegion arrowUp = spritesAtlas.findRegion( "arrowUp" );
@@ -205,15 +208,15 @@ public class CavemanView extends InputWrapper
 
 	private void renderActionMenu()
 	{
-		HashMap<SIDES, CavemanAction> actions = this.controller.getAvailableActions();
+		HashMap<SIDES, List<CavemanAction>> allActions = this.controller.getAvailableActions();
 
-		Set<SIDES> keySet = actions.keySet();
+		Set<SIDES> keySet = allActions.keySet();
 		for( SIDES side : keySet )
 		{
-			CavemanAction action = null;
-			if( (action = actions.get( side )) != null )
+			List<CavemanAction> actions = null;
+			if( (actions = allActions.get( side )) != null )
 			{
-				if( action != null )
+				for( CavemanAction action : actions )
 				{
 					Vector3 actionPos = this.getActionCenter( side, true );
 					Color color = CavemansFate.spriteBatch.getColor();
@@ -226,7 +229,6 @@ public class CavemanView extends InputWrapper
 					color.a = 1f;
 					CavemansFate.spriteBatch.setColor( color );
 				}
-
 			}
 		}
 
@@ -295,16 +297,17 @@ public class CavemanView extends InputWrapper
 
 	private boolean checkAction( int x, int y )
 	{
-		SIDES sides[] = { SIDES.LEFT, SIDES.UP, SIDES.DOWN, SIDES.RIGHT };
+		SIDES sides[] = { SIDES.LEFT, SIDES.UP, SIDES.DOWN, SIDES.RIGHT, SIDES.UP_LEFT, SIDES.UP_RIGHT,
+				SIDES.DOWN_LEFT, SIDES.DOWN_RIGHT };
 
 		for( SIDES side : sides )
 		{
-
 			Vector3 sidePos = this.getActionCenter( side, false );
 			double dist = Math.sqrt( Math.pow( sidePos.x - x, 2 ) + Math.pow( sidePos.y - y, 2 ) );
-			if( dist < tileW )
+			List<CavemanAction> availableAction = this.model.getAvailableAction( side );
+			if( dist < tileW / 2 && availableAction.size() > 0 )
 			{
-				this.controller.actionPressed( side, this.model.getAvailableAction( side ) );
+				this.controller.actionPressed( side, availableAction.get( 0 ) );
 				return true;
 			}
 		}
@@ -326,6 +329,22 @@ public class CavemanView extends InputWrapper
 				pos.x -= tileW;
 				break;
 			case RIGHT:
+				pos.x += tileW;
+				break;
+			case UP_RIGHT:
+				pos.x += tileW;
+				pos.y += yUp ? tileH : -tileH;
+				break;
+			case UP_LEFT:
+				pos.x -= tileW;
+				pos.y += yUp ? tileH : -tileH;
+				break;
+			case DOWN_LEFT:
+				pos.y += yUp ? -tileH : tileH;
+				pos.x -= tileW;
+				break;
+			case DOWN_RIGHT:
+				pos.y += yUp ? -tileH : tileH;
 				pos.x += tileW;
 				break;
 			default:

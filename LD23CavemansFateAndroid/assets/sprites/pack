@@ -94,3 +94,10 @@ arrowUp
   orig: 20, 20
   offset: 0, 0
   index: -1
+move
+  rotate: false
+  xy: 226, 60
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1

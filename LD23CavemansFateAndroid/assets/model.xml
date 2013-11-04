@@ -522,6 +522,7 @@
             <region name="digg" />
             <region name="leaveTile" />
             <region name="arrowUp" />
+            <region name="move" />
         </sprites>
     </packfiles>
 
