@@ -92,7 +92,7 @@ public class CavemanView extends InputWrapper
 		Vector3 pos = this.getCavemansCenterInPixels( true );
 
 		CavemansFate.spriteBatch.draw( this.cavemanRegion, pos.x - tileW / 2, pos.y - tileW / 2, tileW, tileW );
-		if( !this.model.hasTilePickedUp() || !this.model.selected )
+		if( this.model.hasTilePickedUp() && !this.model.selected && !this.model.isSwimming() )
 		{
 			this.renderCircleAround();
 		}

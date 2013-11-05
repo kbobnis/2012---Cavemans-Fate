@@ -301,8 +301,9 @@ public class CavemanModel
 			{
 			}
 			else if( !isThereATeleport( side )
-					&& (side == SIDES.LEFT && this.canWalk( SIDES.DOWN_LEFT ) || side == SIDES.RIGHT
-							&& this.canWalk( SIDES.DOWN_RIGHT )) )
+					&& !this.canSwim( side )
+					&& ((side == SIDES.LEFT && this.canWalk( SIDES.DOWN_LEFT ) || side == SIDES.RIGHT
+							&& this.canWalk( SIDES.DOWN_RIGHT ))) )
 			{
 
 			}

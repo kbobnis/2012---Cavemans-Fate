@@ -88,6 +88,8 @@ public class CavemanState
 					return DOWN_LEFT;
 				case UP_LEFT:
 					return DOWN_RIGHT;
+				case DOWN_LEFT:
+					return UP_RIGHT;
 				default:
 					throw new RuntimeException( "THere is no negating needed for (" + side + ")." );
 			}
